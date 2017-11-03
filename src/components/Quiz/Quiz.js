@@ -8,7 +8,6 @@ class Quiz extends React.Component {
     this.questions = quizQuestions
     this.state = {
       question: {},
-      progress: [],
       showAnswer: false,
       selectedAnswer: null
     }
@@ -33,41 +32,14 @@ class Quiz extends React.Component {
         showAnswer: true
       }
     })
-    if (target.value === '1') {
-      while (this.state.progress.includes(questionId)) {
-        questionId += 300
-      }
-      if (questionId <= 3000) {
-        this.setState(prevState => ({
-            progress: [...prevState.progress, questionId]
-        }))
-      }
-    }
-  }
-
-  componentDidUpdate(nextProps, nextState) {
-    this.state.progress.sort(function (a, b){return a-b})
   }
 
   generateNextQuestion(questions) {
-    let correctAnswers = this.state.progress
-    //correctAnswers.sort(function (a, b){return a-b})
-    let maxNumber = 3000 - correctAnswers.length
+    let maxNumber = 300
     let minNumber = 1
     let randNumber = Math.floor((Math.random() * maxNumber) + minNumber);
-    for (let i = 0; i < correctAnswers.length; i++) {
-      if (randNumber >= correctAnswers[i]) {
-        randNumber += 1
-      }
-    }
-    while (randNumber > 300) {
-      randNumber -= 300
-    }
     let randomNumbersIndex = randNumber - 1
     return questions[randomNumbersIndex]
-  }
-
-  componentWillReceiveProps(nextProps) {
   }
 
   nextQuestion() {
@@ -125,14 +97,6 @@ class Quiz extends React.Component {
 
   render () {
     let question = this.state.question
-    let userProgress = this.state.progress.length / 3000 * 100
-    let userProgressLabel = Math.ceil(userProgress)
-    let userProgressStyle = {
-      flexBasis: userProgress + '%',
-    }
-    let userProgressLabelStyle = {
-      marginLeft: userProgress + '%',
-    }
     return (
       <div className="Container">
         <div className="QuizContainer">
@@ -142,9 +106,6 @@ class Quiz extends React.Component {
             </div>
             <div className="QuestionCategory">
               {question.category}
-            </div>
-            <div className="UserScore">
-              1 x
             </div>
           </div>
           <div className="QuizBodyContainer">
@@ -157,16 +118,6 @@ class Quiz extends React.Component {
             <div className={'NextQuestion'}>
               <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} />
             </div>
-          </div>
-        </div>
-        <div className="UserProgressBarContainer">
-          <div className ="UserProgressBar">
-            <div className ="UserProgressBarCorrect" style={userProgressStyle}></div>
-            <div className ="UserProgressBarIncomplete"></div>
-          </div>
-          <div className ="UserProgressLabelContainer" style={userProgressLabelStyle}>
-            <div className ="UserProgressArrow"></div>
-            <div className ="UserProgressLabel">{userProgressLabel}%</div>
           </div>
         </div>
       </div>
