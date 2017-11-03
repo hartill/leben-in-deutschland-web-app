@@ -1,0 +1,200 @@
+.QuizContainer {
+  min-width: 20rem;
+  width: 100%;
+  background-color: #fff;
+}
+
+.QuizBodyContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.QuizHeader {
+  display: flex;
+  background-color: #20221D;
+  height: 3.75rem;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.QuestionNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //border-right: 3px solid #174665;
+  background-color: #339DE5;
+  width: 3.75rem;
+}
+
+.QuestionCategory {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.UserScore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2ECC71;
+  color: #fff;
+  width: 3.75rem;
+}
+
+.QuizBody {
+  padding: 1rem;
+  width: 100%;
+}
+
+.QuizCheckbox {
+  border-radius: 50%;
+}
+
+.QuestionText {
+  padding: 1rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  background-color: #fff;
+}
+
+li:hover {
+  background-color: #339DE5;
+  color: #fff;
+}
+
+.AnswerOption {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.85rem 0.85rem 0.85rem 0rem;
+  //border: 1px solid #e7e7e7;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  color: #555;
+  line-height: 1rem;
+}
+
+.AnswerOption:hover {
+  color: #333;
+}
+
+.AnswerInput {
+  margin: 0 0.75rem;
+  cursor: pointer;
+}
+
+.disabled .AnswerInput {
+  cursor: auto;
+}
+
+.disabled {
+  cursor: auto;
+}
+
+.disabled:hover {
+  color: #555;
+}
+
+.incorrectAnswer {
+  //background-color: #EF4836;
+  background-color: #FF7256;
+  color: #fff;
+}
+
+.incorrectAnswer:hover, .correctAnswer:hover {
+  color: #fff;
+}
+
+.correctAnswer {
+  background-color: #2ECC71;
+  color: #fff;
+}
+
+.NextQuestion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  width: 2rem;
+  background-color: #fff;
+}
+
+.NextQuestionButton {
+  height: 100%;
+  width: 100%;
+  background: url('./../../static/images/next-qu-icon-blue.png') no-repeat center center;
+  color: #339DE5;
+  cursor: pointer;
+  border: none;
+  padding: 0px;
+}
+
+.Hidden {
+  display: none;
+}
+
+.visible {
+  cursor: pointer;
+}
+
+.UserProgressBarContainer {
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  //padding: 1rem;
+}
+
+.UserProgressBar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+}
+
+.UserProgressBarIncomplete {
+  flex-grow: 1;
+  height: 100%;
+  background-color: #222;
+}
+
+.UserProgressBarCorrect {
+  height: 100%;
+  background-color: #2ECC71;
+}
+
+.UserProgressLabelContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 2rem;
+  //justify-content: flex-start;
+}
+
+.UserProgressArrow {
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 1rem solid #222;
+  margin-left: -0.5rem;
+}
+
+.UserProgressLabel {
+  width: 100%;
+  text-align: center;
+  margin-left: -1rem;
+}

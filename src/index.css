@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  font-size: 1rem;
+  color: #333;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.Footer {
+  height: 3.75rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.headerContainer {
+  height: 3.75rem;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.headerLeftSection {
+  box-sizing: border-box;
+  flex: 0 0 25%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.headerCenterSection {
+  box-sizing: border-box;
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.headerRightSection {
+  box-sizing: border-box;
+  flex: 0 0 25%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.Container {
+  max-width: 40rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 48.75rem) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  .headerCenterSection {
+    justify-content: flex-start;
+    padding: 0 0.5rem;
+    flex: 0 0 100%;
+  }
+
+  .headerLeftSection {
+    box-sizing: border-box;
+    flex: 0 0 0;
+  }
+
+  .Container {
+    min-width: 100%;
+    align-self: flex-start;
+  }
+
+  .App {
+    //justify-content: flex-start;
+  }
+}
