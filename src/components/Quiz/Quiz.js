@@ -62,8 +62,7 @@ class Quiz extends React.Component {
         }
       }
       let randomNumbersIndex = randNumber - 1
-      //return questions[randomNumbersIndex]
-      return questions[175]
+      return questions[randomNumbersIndex]
     } else {
       this.setState(prevState => ({
           completed: true
@@ -135,9 +134,6 @@ class Quiz extends React.Component {
       {isOpen &&
       <Lightbox
           mainSrc={image}
-          //nextSrc=
-          //prevSrc={}
-
           onCloseRequest={() => this.setState({ isOpen: false })}
           onMovePrevRequest={() => {}}
           onMoveNextRequest={() => {}}
