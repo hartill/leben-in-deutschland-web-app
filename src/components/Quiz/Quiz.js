@@ -129,7 +129,7 @@ class Quiz extends React.Component {
     return (
       <div className="QuestionImage" onClick={() => this.setState({ isOpen: true })}>
         <p>
-          View Image
+          Bild ansehen
         </p>
       {isOpen &&
       <Lightbox
@@ -145,6 +145,10 @@ class Quiz extends React.Component {
 
   render () {
     let userProgress = this.state.progress.length
+    let userProgressPercent = 100 - (userProgress / 300 * 100)
+    let userProgressStyle = {
+      right: userProgressPercent + '%',
+    }
     if (this.state.completed === false) {
       let question = this.state.question
       let image = this.state.question.image !== undefined ? require(`./../../static/images/${question.image}`) : null
@@ -170,7 +174,10 @@ class Quiz extends React.Component {
             </div>
             <div className='NextQuestion'>
               <div className="UserScore">
-                {userProgress} / 300
+                <div className='UserProgress' style={userProgressStyle}></div>
+                <div className='Score'>
+                  {userProgress} / 300
+                </div>
               </div>
               <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} >
                 <img src ={require("./../../static/images/next-qu-icon-01.png")} alt='next-question' />
