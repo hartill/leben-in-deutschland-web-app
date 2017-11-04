@@ -47,7 +47,6 @@ class Quiz extends React.Component {
 
   componentDidUpdate(nextProps, nextState) {
     this.state.progress.sort(function (a, b){return a-b})
-    console.log(this.state.progress)
   }
 
   generateNextQuestion(questions) {
