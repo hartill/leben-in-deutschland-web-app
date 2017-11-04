@@ -115,9 +115,11 @@ class Quiz extends React.Component {
               </div>
               {this.renderAnswerOptions(question, this.showAnswer)}
             </div>
-            <div className={'NextQuestion'}>
-              <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} />
-            </div>
+          </div>
+          <div className={'NextQuestion'}>
+            <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} >
+              <img src ={require("./../../static/images/next-qu-icon-01.png")} alt='next-question' />
+            </button>
           </div>
         </div>
       </div>

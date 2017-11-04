@@ -79,7 +79,6 @@ li:hover {
   justify-content: flex-start;
   align-items: center;
   padding: 0.85rem 0.85rem 0.85rem 0rem;
-  //border: 1px solid #e7e7e7;
   cursor: pointer;
   margin-bottom: 0.5rem;
   color: #555;
@@ -124,22 +123,36 @@ li:hover {
 
 .NextQuestion {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  width: 2rem;
-  background-color: #fff;
+  width: 100%;
+  height: 3.75rem;
+  background-color: #222;
 }
 
 .NextQuestionButton {
+  display: flex;
+  justify-content: flex-end;
   align-self: stretch;
   height: 100%;
   width: 100%;
-  background: url('./../../static/images/next-qu-icon-blue.png') no-repeat center center;
-  color: #339DE5;
+  background-color: #222;
+  //background: url('./../../static/images/next-qu-icon-01.png') no-repeat right center;
   cursor: pointer;
   border: none;
   padding: 0px;
+  transition: background-color 0.3s;
+}
+
+.NextQuestionButton:hover {
+  background-color: #339DE5;
+}
+
+@media screen and (max-width: 48.75rem) {
+  .QuizContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    justify-content: space-between;
+  }
 }
 
 .Hidden {
