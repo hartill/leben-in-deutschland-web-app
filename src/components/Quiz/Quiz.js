@@ -20,6 +20,7 @@ class Quiz extends React.Component {
   componentWillMount() {
     this.setState({
       question: this.generateNextQuestion(this.questions),
+      //question: this.questions[20],
     })
   }
 
@@ -112,6 +113,9 @@ class Quiz extends React.Component {
             <div className="QuizBody">
               <div className="QuestionText">
                 {question.question}
+              </div>
+              <div className="QuestionImage">
+                {question.image !== undefined ? <img src ={require(`./../../static/images/${question.image}`)} alt='leben-in-deutschland-test' /> : null}
               </div>
               {this.renderAnswerOptions(question, this.showAnswer)}
             </div>

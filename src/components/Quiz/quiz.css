@@ -1,5 +1,5 @@
 .QuizContainer {
-  min-width: 20rem;
+  min-width: 15rem;
   width: 100%;
   background-color: #fff;
 }
@@ -13,6 +13,7 @@
 
 .QuizHeader {
   display: flex;
+  flex-shrink: 0;
   background-color: #20221D;
   height: 3.75rem;
   justify-content: space-between;
@@ -21,6 +22,7 @@
 
 .QuestionNumber {
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   //border-right: 3px solid #174665;
@@ -34,6 +36,11 @@
   flex-grow: 1;
   text-align: left;
   padding: 0 1rem;
+}
+
+.QuestionImage {
+    display: flex;
+    justify-content: space-around;
 }
 
 .UserScore {
@@ -55,7 +62,7 @@
 }
 
 .QuestionText {
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 ul {
@@ -78,7 +85,7 @@ li:hover {
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.85rem 0.85rem 0.85rem 0rem;
+  padding: 0.85rem 0;
   cursor: pointer;
   margin-bottom: 0.5rem;
   color: #555;
@@ -90,7 +97,7 @@ li:hover {
 }
 
 .AnswerInput {
-  margin: 0 0.75rem;
+  margin: 0 0.75rem 0 0;
   cursor: pointer;
 }
 
@@ -143,7 +150,7 @@ li:hover {
 }
 
 .NextQuestionButton:hover {
-  background-color: #339DE5;
+  background-color: #333;
 }
 
 @media screen and (max-width: 48.75rem) {

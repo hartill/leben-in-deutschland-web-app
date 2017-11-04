@@ -116,4 +116,8 @@ h1 {
   .Footer {
     display: none;
   }
+
+  .headerContainer {
+    display: none;
+  }
 }

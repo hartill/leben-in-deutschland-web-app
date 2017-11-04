@@ -441,6 +441,7 @@ key: 1
 }, {
     "id": "21",
     "question": "Welches ist das Wappen der Bundesrepublik Deutschland?",
+    "image": "021.png",
     "answers": [
 {
 content: "1",
@@ -1189,6 +1190,7 @@ key: 1
 }, {
     "id": "55",
     "question": "Was zeigt dieses Bild?",
+    "image": "055.png",
     "answers": [
 {
 content: "den Bundestagssitz in Berlin",
@@ -1519,6 +1521,7 @@ key: 0
 }, {
     "id": "70",
     "question": "Der deutsche Bundespr\u00e4sident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was geh\u00f6rt zu den Aufgaben des deutschen Bundespr\u00e4sidenten \\ der deutschen Bundespr\u00e4sidentin?",
+    "image": "070.png",
     "answers": [
 {
 content: "Er \\ Sie f\u00fchrt die Regierungsgesch\u00e4fte.",
@@ -2839,6 +2842,7 @@ key: 0
 }, {
     "id": "130",
     "question": "Welcher Stimmzettel w\u00e4re bei einer Bundestagswahl g\u00fcltig?",
+    "image": "130.png",
     "answers": [
 {
 content: "1",
@@ -3851,6 +3855,7 @@ key: 0
 }, {
     "id": "176",
     "question": "Wie waren die Besatzungszonen Deutschlands nach 1945 verteilt?",
+    "image": "176.png",
     "answers": [
 {
 content: "1=Gro\u00dfbritannien, 2=Sowjetunion, 3=Frankreich, 4=USA",
@@ -3961,6 +3966,7 @@ key: 0
 }, {
     "id": "181",
     "question": "Was wollte Willy Brandt mit seinem Kniefall 1970 im ehemaligen j\u00fcdischen Ghetto in Warschau ausdr\u00fccken?",
+    "image": "181.png",
     "answers": [
 {
 content: "Er hat sich den ehemaligen Alliierten unterworfen.",
@@ -4093,6 +4099,7 @@ key: 0
 }, {
     "id": "187",
     "question": "Welcher deutsche Staat hatte eine schwarz-rot-goldene Flagge mit Hammer, Zirkel und \u00c4hrenkranz?",
+    "image": "187.png",
     "answers": [
 {
 content: "Preu\u00dfen",
@@ -4577,6 +4584,7 @@ key: 0
 }, {
     "id": "209",
     "question": "Welches war das Wappen der Deutschen Demokratischen Republik?",
+    "image": "209.png",
     "answers": [
 {
 content: "1",
@@ -4731,6 +4739,7 @@ key: 0
 }, {
     "id": "216",
     "question": "Welches Symbol ist im Plenarsaal des Deutschen Bundestages zu sehen?",
+    "image": "216.png",
     "answers": [
 {
 content: "die Fahne der Stadt Berlin.",
@@ -4951,6 +4960,7 @@ key: 1
 }, {
     "id": "226",
     "question": "Welche ist die Flagge der Europ\u00e4ischen Union?",
+    "image": "226.png",
     "answers": [
 {
 content: "1",
@@ -5149,6 +5159,7 @@ key: 1
 }, {
     "id": "235",
     "question": "Der franz\u00f6sische Staatspr\u00e4sident Fran\u00e7ois Mitterrand und der deutsche Bundeskanzler Helmut Kohl gedenken in Verdun gemeinsam der Toten beider Weltkriege. Welches Ziel der Europ\u00e4ischen Union wird bei diesem Treffen deutlich?",
+    "image": "235.png",
     "answers": [
 {
 content: "Freundschaft zwischen England und Deutschland",
