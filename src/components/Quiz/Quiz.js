@@ -1,6 +1,7 @@
 import React from 'react';
 import './quiz.css';
 import quizQuestions from './../../api/quizQuestions'
+import Lightbox from 'react-image-lightbox';
 
 class Quiz extends React.Component {
   constructor(props){
@@ -8,8 +9,11 @@ class Quiz extends React.Component {
     this.questions = quizQuestions
     this.state = {
       question: {},
+      progress: [],
       showAnswer: false,
-      selectedAnswer: null
+      selectedAnswer: null,
+      completed: false,
+      isOpen: false
     }
     this.generateNextQuestion = this.generateNextQuestion.bind(this);
     this.renderAnswerOptions = this.renderAnswerOptions.bind(this);
@@ -20,7 +24,6 @@ class Quiz extends React.Component {
   componentWillMount() {
     this.setState({
       question: this.generateNextQuestion(this.questions),
-      //question: this.questions[20],
     })
   }
 
@@ -33,14 +36,39 @@ class Quiz extends React.Component {
         showAnswer: true
       }
     })
+    if (target.value === '1') {
+      if (this.state.progress.includes(questionId) === false) {
+        this.setState(prevState => ({
+            progress: [...prevState.progress, questionId]
+        }))
+      }
+    }
+  }
+
+  componentDidUpdate(nextProps, nextState) {
+    this.state.progress.sort(function (a, b){return a-b})
+    console.log(this.state.progress)
   }
 
   generateNextQuestion(questions) {
-    let maxNumber = 300
+    let correctAnswers = this.state.progress
+    let maxNumber = 300 - correctAnswers.length
     let minNumber = 1
-    let randNumber = Math.floor((Math.random() * maxNumber) + minNumber);
-    let randomNumbersIndex = randNumber - 1
-    return questions[randomNumbersIndex]
+    if (maxNumber !== 0) {
+      let randNumber = Math.floor((Math.random() * maxNumber) + minNumber);
+      for (let i = 0; i < correctAnswers.length; i++) {
+        if (randNumber >= correctAnswers[i]) {
+          randNumber += 1
+        }
+      }
+      let randomNumbersIndex = randNumber - 1
+      //return questions[randomNumbersIndex]
+      return questions[175]
+    } else {
+      this.setState(prevState => ({
+          completed: true
+      }))
+    }
   }
 
   nextQuestion() {
@@ -96,38 +124,84 @@ class Quiz extends React.Component {
     return output
   }
 
-  render () {
-    let question = this.state.question
+  renderImage(image) {
+    let isOpen = this.state.isOpen
+    let photoIndex = 0
     return (
-      <div className="Container">
-        <div className="QuizContainer">
-          <div className="QuizHeader">
-            <div className="QuestionNumber">
-              {question.id}
-            </div>
-            <div className="QuestionCategory">
-              {question.category}
-            </div>
-          </div>
-          <div className="QuizBodyContainer">
-            <div className="QuizBody">
-              <div className="QuestionText">
-                {question.question}
-              </div>
-              <div className="QuestionImage">
-                {question.image !== undefined ? <img src ={require(`./../../static/images/${question.image}`)} alt='leben-in-deutschland-test' /> : null}
-              </div>
-              {this.renderAnswerOptions(question, this.showAnswer)}
-            </div>
-          </div>
-          <div className={'NextQuestion'}>
-            <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} >
-              <img src ={require("./../../static/images/next-qu-icon-01.png")} alt='next-question' />
-            </button>
-          </div>
-        </div>
+      <div className="QuestionImage" onClick={() => this.setState({ isOpen: true })}>
+        <p>
+          View Image
+        </p>
+      {isOpen &&
+      <Lightbox
+          mainSrc={image}
+          //nextSrc=
+          //prevSrc={}
+
+          onCloseRequest={() => this.setState({ isOpen: false })}
+          onMovePrevRequest={() => {}}
+          onMoveNextRequest={() => {}}
+      />
+      }
       </div>
     )
+  }
+
+  render () {
+    let userProgress = this.state.progress.length
+    if (this.state.completed === false) {
+      let question = this.state.question
+      let image = this.state.question.image !== undefined ? require(`./../../static/images/${question.image}`) : null
+      return (
+        <div className="Container">
+          <div className="QuizContainer">
+            <div className="QuizHeader">
+              <div className="QuestionNumber">
+                {question.id}
+              </div>
+              <div className="QuestionCategory">
+                {question.category}
+              </div>
+            </div>
+            <div className="QuizBodyContainer">
+              <div className="QuizBody">
+                <div className="QuestionText">
+                  {question.question}
+                </div>
+                {question.image !== undefined ? this.renderImage(image) : null}
+                {this.renderAnswerOptions(question, this.showAnswer)}
+              </div>
+            </div>
+            <div className='NextQuestion'>
+              <div className="UserScore">
+                {userProgress} / 300
+              </div>
+              <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} >
+                <img src ={require("./../../static/images/next-qu-icon-01.png")} alt='next-question' />
+              </button>
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="Container">
+          <div className="QuizContainer">
+            <div className="QuizHeader">
+              Alle 300 richtig!
+            </div>
+            <div className="QuizBodyContainer">
+              Fur Ne&uuml;start Seite neu laden
+            </div>
+            <div className='NextQuestion'>
+              <div className="UserScore">
+                {userProgress} / 300
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
   }
 }
 

@@ -39,17 +39,12 @@
 }
 
 .QuestionImage {
-    display: flex;
-    justify-content: space-around;
+  cursor: pointer;
+  color: #555;
 }
 
-.UserScore {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #2ECC71;
-  color: #fff;
-  width: 3.75rem;
+.QuestionImage:hover {
+  color: #222;
 }
 
 .QuizBody {
@@ -65,17 +60,17 @@
   padding: 1rem 0;
 }
 
-ul {
+.QuizBody ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-li {
+.QuizBody li {
   background-color: #fff;
 }
 
-li:hover {
+.QuizBody li:hover {
   background-color: #339DE5;
   color: #fff;
 }
@@ -135,14 +130,24 @@ li:hover {
   background-color: #222;
 }
 
+.UserScore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2ECC71;
+  color: #fff;
+  flex-basis: 7.5rem;
+  flex-shrink: 0;
+}
+
 .NextQuestionButton {
   display: flex;
   justify-content: flex-end;
-  align-self: stretch;
+  //align-self: stretch;
+  flex-grow: 1;
   height: 100%;
-  width: 100%;
+  //width: 100%;
   background-color: #222;
-  //background: url('./../../static/images/next-qu-icon-01.png') no-repeat right center;
   cursor: pointer;
   border: none;
   padding: 0px;
