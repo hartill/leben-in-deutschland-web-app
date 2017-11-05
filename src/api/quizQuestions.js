@@ -2141,11 +2141,11 @@ key: 0
     "answers": [
 {
 content: "kann die Regierung ihre Mehrheit verlieren.",
-key: 0
+key: 1
 },
 {
 content: "d\u00fcrfen sie nicht mehr an den Sitzungen des Parlaments teilnehmen.",
-key: 1
+key: 0
 },
 {
 content: "muss der Bundespr\u00e4sident \\ die Bundespr\u00e4sidentin zuvor sein \\ ihr Einverst\u00e4ndnis geben.",
@@ -5174,7 +5174,7 @@ content: "Frieden und Sicherheit in den L\u00e4ndern der EU",
 key: 1
 },
 {
-content: "einheitliche Feiertage in den L\u00e4ndern der EU",
+content: "Einheitliche Feiertage in den L\u00e4ndern der EU",
 key: 0
 }
 ],

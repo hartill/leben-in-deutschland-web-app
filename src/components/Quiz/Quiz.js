@@ -124,7 +124,6 @@ class Quiz extends React.Component {
 
   renderImage(image) {
     let isOpen = this.state.isOpen
-    let photoIndex = 0
     return (
       <div className="QuestionImage" onClick={() => this.setState({ isOpen: true })}>
         <p>
