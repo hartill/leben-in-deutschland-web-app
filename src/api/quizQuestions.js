@@ -47,7 +47,7 @@ key: 0
     "question": "Deutschland ist ein Rechtsstaat. Was ist damit gemeint?",
     "answers": [
 {
-content: "Alle Einwohner \\ Einwohnerinnen und der Staat m\u00fcssen sich an die Gesetze halten.",
+content: "Alle Einwohner / Einwohnerinnen und der Staat m\u00fcssen sich an die Gesetze halten.",
 key: 1
 },
 {
@@ -91,7 +91,7 @@ key: 0
     "question": "Wahlen in Deutschland sind frei. Was bedeutet das?",
     "answers": [
 {
-content: "Man darf Geld annehmen, wenn man daf\u00fcr einen bestimmten Kandidaten \\ eine bestimmte Kandidatin w\u00e4hlt.",
+content: "Man darf Geld annehmen, wenn man daf\u00fcr einen bestimmten Kandidaten / eine bestimmte Kandidatin w\u00e4hlt.",
 key: 0
 },
 {
@@ -176,7 +176,7 @@ key: 0
     "category": "Grundrechte",
 }, {
     "id": "9",
-    "question": "Welches Grundrecht gilt in Deutschland nur f\u00fcr Ausl\u00e4nder \\ Ausl\u00e4nderinnen? Das Grundrecht auf...",
+    "question": "Welches Grundrecht gilt in Deutschland nur f\u00fcr Ausl\u00e4nder / Ausl\u00e4nderinnen? Das Grundrecht auf...",
     "answers": [
 {
 content: "Schutz der Familie",
@@ -271,8 +271,8 @@ content: "die regierenden Parteien.",
 key: 0
 },
 {
-content: "alle Abgeordneten, die nicht zu der Regierungspartei\\den Regierungsparteien geh\u00f6ren.",
-key: 0
+content: "alle Abgeordneten, die nicht zu der Regierungspartei/den Regierungsparteien geh\u00f6ren.",
+key: 1
 },
 {
 content: "die Fraktion mit den meisten Abgeordneten.",
@@ -280,7 +280,7 @@ key: 0
 },
 {
 content: "alle Parteien, die bei der letzten Wahl die 5%-H\u00fcrde erreichen konnten.",
-key: 1
+key: 0
 }
 ],
     "category": "Verfassungsorgane",
@@ -793,22 +793,22 @@ key: 0
     "category": "Sozialsystem",
 }, {
     "id": "37",
-    "question": "Wie werden die Regierungschefs \\ Regierungschefinnen der meisten Bundesl\u00e4nder in Deutschland genannt?",
+    "question": "Wie werden die Regierungschefs / Regierungschefinnen der meisten Bundesl\u00e4nder in Deutschland genannt?",
     "answers": [
 {
-content: "Erster Minister \\ Erste Ministerin",
+content: "Erster Minister / Erste Ministerin",
 key: 0
 },
 {
-content: "Premierminister \\ Premierministerin",
+content: "Premierminister / Premierministerin",
 key: 0
 },
 {
-content: "Senator \\ Senatorin",
+content: "Senator / Senatorin",
 key: 0
 },
 {
-content: "Ministerpr\u00e4sident \\ Ministerpr\u00e4sidentin",
+content: "Ministerpr\u00e4sident / Ministerpr\u00e4sidentin",
 key: 1
 }
 ],
@@ -840,7 +840,7 @@ key: 0
     "question": "Was hat jedes deutsche Bundesland?",
     "answers": [
 {
-content: "einen eigenen Au\u00dfenminister \\ eine eigene Au\u00dfenministerin",
+content: "einen eigenen Au\u00dfenminister / eine eigene Au\u00dfenministerin",
 key: 0
 },
 {
@@ -947,14 +947,14 @@ key: 0
     "category": "Verfassungsorgane",
 }, {
     "id": "44",
-    "question": "Wen kann man als B\u00fcrger \\ B\u00fcrgerin in Deutschland nicht direkt w\u00e4hlen?",
+    "question": "Wen kann man als B\u00fcrger / B\u00fcrgerin in Deutschland nicht direkt w\u00e4hlen?",
     "answers": [
 {
 content: "Abgeordnete des EU-Parlaments",
 key: 0
 },
 {
-content: "den Bundespr\u00e4sidenten \\ die Bundespr\u00e4sidentin",
+content: "den Bundespr\u00e4sidenten / die Bundespr\u00e4sidentin",
 key: 1
 },
 {
@@ -1042,7 +1042,7 @@ content: "der Bundesrat",
 key: 0
 },
 {
-content: "der Bundespr\u00e4sident \\ die Bundespr\u00e4sidentin",
+content: "der Bundespr\u00e4sident / die Bundespr\u00e4sidentin",
 key: 0
 },
 {
@@ -1234,44 +1234,44 @@ key: 0
     "category": "Kommune",
 }, {
     "id": "57",
-    "question": "Wer wird meistens zum Pr\u00e4sidenten \\ zur Pr\u00e4sidentin des Deutschen Bundestages gew\u00e4hlt?",
+    "question": "Wer wird meistens zum Pr\u00e4sidenten / zur Pr\u00e4sidentin des Deutschen Bundestages gew\u00e4hlt?",
     "answers": [
 {
-content: "der \\ die \u00e4lteste Abgeordnete im Parlament",
+content: "der / die \u00e4lteste Abgeordnete im Parlament",
 key: 0
 },
 {
-content: "der Ministerpr\u00e4sident \\ die Ministerpr\u00e4sidentin des gr\u00f6\u00dften Bundeslandes",
+content: "der Ministerpr\u00e4sident / die Ministerpr\u00e4sidentin des gr\u00f6\u00dften Bundeslandes",
 key: 0
 },
 {
-content: "ein Abgeordneter \\ eine Abgeordnete der st\u00e4rksten Fraktion",
+content: "ein Abgeordneter / eine Abgeordnete der st\u00e4rksten Fraktion",
 key: 0
 },
 {
-content: "ein ehemaliger Bundeskanzler \\ eine ehemalige Bundeskanzlerin",
+content: "ein ehemaliger Bundeskanzler / eine ehemalige Bundeskanzlerin",
 key: 1
 }
 ],
     "category": "Verfassungsorgane",
 }, {
     "id": "58",
-    "question": "Wer ernennt in Deutschland die Minister \\ die Ministerinnen der Bundesregierung?",
+    "question": "Wer ernennt in Deutschland die Minister / die Ministerinnen der Bundesregierung?",
     "answers": [
 {
-content: "der Pr\u00e4sident \\ die Pr\u00e4sidentin des Bundesverfassungsgerichtes",
+content: "der Pr\u00e4sident / die Pr\u00e4sidentin des Bundesverfassungsgerichtes",
 key: 0
 },
 {
-content: "der Bundespr\u00e4sident \\ die Bundespr\u00e4sidentin",
+content: "der Bundespr\u00e4sident / die Bundespr\u00e4sidentin",
 key: 1
 },
 {
-content: "der Bundesratspr\u00e4sident \\ die Bundesratspr\u00e4sidentin",
+content: "der Bundesratspr\u00e4sident / die Bundesratspr\u00e4sidentin",
 key: 0
 },
 {
-content: "der Bundestagspr\u00e4sident \\ die Bundestagspr\u00e4sidentin",
+content: "der Bundestagspr\u00e4sident / die Bundestagspr\u00e4sidentin",
 key: 0
 }
 ],
@@ -1293,7 +1293,7 @@ content: "CSU und FDP",
 key: 0
 },
 {
-content: "B\u00fcndnis 90\\Die Gr\u00fcnen und SPD",
+content: "B\u00fcndnis 90/Die Gr\u00fcnen und SPD",
 key: 0
 }
 ],
@@ -1325,7 +1325,7 @@ key: 0
     "question": "Was bedeutet \u201eVolkssouver\u00e4nit\u00e4t\u201c?",
     "answers": [
 {
-content: "Der K\u00f6nig \\ die K\u00f6nigin herrscht \u00fcber das Volk.",
+content: "Der K\u00f6nig / die K\u00f6nigin herrscht \u00fcber das Volk.",
 key: 0
 },
 {
@@ -1421,7 +1421,7 @@ content: "die Bundesregierung zu kontrollieren.",
 key: 0
 },
 {
-content: "den Bundeskanzler \\ die Bundeskanzlerin zu w\u00e4hlen.",
+content: "den Bundeskanzler / die Bundeskanzlerin zu w\u00e4hlen.",
 key: 0
 },
 {
@@ -1520,30 +1520,30 @@ key: 0
     "category": "Kommune",
 }, {
     "id": "70",
-    "question": "Der deutsche Bundespr\u00e4sident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was geh\u00f6rt zu den Aufgaben des deutschen Bundespr\u00e4sidenten \\ der deutschen Bundespr\u00e4sidentin?",
+    "question": "Der deutsche Bundespr\u00e4sident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was geh\u00f6rt zu den Aufgaben des deutschen Bundespr\u00e4sidenten / der deutschen Bundespr\u00e4sidentin?",
     "image": "070.png",
     "answers": [
 {
-content: "Er \\ Sie f\u00fchrt die Regierungsgesch\u00e4fte.",
+content: "Er / Sie f\u00fchrt die Regierungsgesch\u00e4fte.",
 key: 0
 },
 {
-content: "Er \\ Sie kontrolliert die Regierungspartei.",
+content: "Er / Sie kontrolliert die Regierungspartei.",
 key: 0
 },
 {
-content: "Er \\ Sie w\u00e4hlt die Minister \\ Ministerinnen aus.",
+content: "Er / Sie w\u00e4hlt die Minister / Ministerinnen aus.",
 key: 0
 },
 {
-content: "Er \\ Sie schl\u00e4gt den Kanzler \\ die Kanzlerin zur Wahl vor.",
+content: "Er / Sie schl\u00e4gt den Kanzler / die Kanzlerin zur Wahl vor.",
 key: 1
 }
 ],
     "category": "Verfassungsorgane",
 }, {
     "id": "71",
-    "question": "Wo h\u00e4lt sich der deutsche Bundeskanzler \\ die deutsche Bundeskanzlerin am h\u00e4ufigsten auf? Am h\u00e4ufigsten ist er \\ sie...",
+    "question": "Wo h\u00e4lt sich der deutsche Bundeskanzler / die deutsche Bundeskanzlerin am h\u00e4ufigsten auf? Am h\u00e4ufigsten ist er / sie...",
     "answers": [
 {
 content: "in Bonn, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
@@ -1551,21 +1551,21 @@ key: 0
 },
 {
 content: "in Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden. ",
-key: 0
+key: 1
 },
 {
 content: "auf Schloss Meseberg, dem G\u00e4stehaus der Bundesregieung, um Staatsg\u00e4ste zu empfangen.",
 key: 0
 },
 {
-content: "auf Schloss Bellevue, dem Amtssitz des Bundespr\u00e4sidenten \\ der Bundespr\u00e4sidentin, um Staatsg\u00e4ste zu empfangen.",
-key: 1
+content: "auf Schloss Bellevue, dem Amtssitz des Bundespr\u00e4sidenten / der Bundespr\u00e4sidentin, um Staatsg\u00e4ste zu empfangen.",
+key: 0
 }
 ],
     "category": "Verfassungsorgane",
 }, {
     "id": "72",
-    "question": "Wie hei\u00dft der jetzige Bundeskanzler \\ die jetzige Bundeskanzlerin von Deutschland?",
+    "question": "Wie hei\u00dft der jetzige Bundeskanzler / die jetzige Bundeskanzlerin von Deutschland?",
     "answers": [
 {
 content: "Gerhard Schr\u00f6der",
@@ -1590,11 +1590,11 @@ key: 1
     "question": "Die beiden gr\u00f6\u00dften Fraktionen im Deutschen Bundestag hei\u00dfen zurzeit...",
     "answers": [
 {
-content: "CDU\\CSU und SPD.",
+content: "CDU/CSU und SPD.",
 key: 1
 },
 {
-content: "Die Linke und B\u00fcndnis 90\\Die Gr\u00fcnen.",
+content: "Die Linke und B\u00fcndnis 90/Die Gr\u00fcnen.",
 key: 0
 },
 {
@@ -1763,7 +1763,7 @@ key: 0
     "category": "Verfassungsorgane",
 }, {
     "id": "81",
-    "question": "Wer w\u00e4hlt den Bundeskanzler \\ die Bundeskanzlerin in Deutschland?",
+    "question": "Wer w\u00e4hlt den Bundeskanzler / die Bundeskanzlerin in Deutschland?",
     "answers": [
 {
 content: "der Bundesrat",
@@ -1785,29 +1785,29 @@ key: 1
     "category": "Verfassungsorgane",
 }, {
     "id": "82",
-    "question": "Wie nennt man den Regierungschef \\ die Regierungschefin der Bundesrepublik Deutschland?",
+    "question": "Wer leitet das deutsche Bundeskabinett?",
     "answers": [
 {
-content: "Premierminister \\ Premierministerin",
+content: "der Bundestagspräsident / die Bundestagspräsidentin",
 key: 0
 },
 {
-content: "Bundespr\u00e4sident \\ Bundespr\u00e4sidentin",
+content: "der Bundespräsident / die Bundespräsidentin",
 key: 0
 },
 {
-content: "Bundeskanzler \\ Bundeskanzlerin",
+content: "der Bundesratspräsident / die Bundesratspräsidentin",
 key: 0
 },
 {
-content: "Ministerpr\u00e4sident \\ Ministerpr\u00e4sidentin",
+content: "der Bundeskanzler / die Bundeskanzlerin",
 key: 1
 }
 ],
     "category": "Verfassungsorgane",
 }, {
     "id": "83",
-    "question": "Wer w\u00e4hlt den deutschen Bundeskanzler \\ die deutsche Bundeskanzlerin?",
+    "question": "Wer w\u00e4hlt den deutschen Bundeskanzler / die deutsche Bundeskanzlerin?",
     "answers": [
 {
 content: "das Volk",
@@ -1829,7 +1829,7 @@ key: 0
     "category": "Verfassungsorgane",
 }, {
     "id": "84",
-    "question": "Welche Hauptaufgabe hat der deutsche Bundespr\u00e4sident \\ die deutsche Bundespr\u00e4sidentin? Er \\ Sie...",
+    "question": "Welche Hauptaufgabe hat der deutsche Bundespr\u00e4sident / die deutsche Bundespr\u00e4sidentin? Er / Sie...",
     "answers": [
 {
 content: "regiert das Land.",
@@ -1873,7 +1873,7 @@ key: 0
     "category": "Verfassungsorgane",
 }, {
     "id": "86",
-    "question": "Wer w\u00e4hlt in Deutschland den Bundespr\u00e4sidenten \\ die Bundespr\u00e4sidentin?",
+    "question": "Wer w\u00e4hlt in Deutschland den Bundespr\u00e4sidenten / die Bundespr\u00e4sidentin?",
     "answers": [
 {
 content: "die Bundesversammlung",
@@ -1898,19 +1898,19 @@ key: 0
     "question": "Wer ist das Staatsoberhaupt der Bundesrepublik Deutschland?",
     "answers": [
 {
-content: "der Bundeskanzler \\ die Bundeskanzlerin",
+content: "der Bundeskanzler / die Bundeskanzlerin",
 key: 0
 },
 {
-content: "der Bundespr\u00e4sident \\ die Bundespr\u00e4sidentin",
+content: "der Bundespr\u00e4sident / die Bundespr\u00e4sidentin",
 key: 1
 },
 {
-content: "der Bundesratspr\u00e4sident \\ die Bundesratspr\u00e4sidentin",
+content: "der Bundesratspr\u00e4sident / die Bundesratspr\u00e4sidentin",
 key: 0
 },
 {
-content: "der Bundestagspr\u00e4sident \\ die Bundestagspr\u00e4sidentin",
+content: "der Bundestagspr\u00e4sident / die Bundestagspr\u00e4sidentin",
 key: 0
 }
 ],
@@ -1924,7 +1924,7 @@ content: "kontrolliert die Regierung.",
 key: 1
 },
 {
-content: "entscheidet, wer Bundesminister \\ Bundesministerin wird.",
+content: "entscheidet, wer Bundesminister / Bundesministerin wird.",
 key: 0
 },
 {
@@ -1932,7 +1932,7 @@ content: "bestimmt, wer im Bundesrat sitzt.",
 key: 0
 },
 {
-content: "schl\u00e4gt die Regierungschefs \\ Regierungschefinnen der L\u00e4nder vor.",
+content: "schl\u00e4gt die Regierungschefs / Regierungschefinnen der L\u00e4nder vor.",
 key: 0
 }
 ],
@@ -2093,7 +2093,7 @@ key: 0
     "category": "Pflichten",
 }, {
     "id": "96",
-    "question": "Was muss jeder deutsche Staatsb\u00fcrger \\ jede deutsche Staatsb\u00fcrgerin ab dem 16. Lebensjahr besitzen?",
+    "question": "Was muss jeder deutsche Staatsb\u00fcrger / jede deutsche Staatsb\u00fcrgerin ab dem 16. Lebensjahr besitzen?",
     "answers": [
 {
 content: "einen Reisepass",
@@ -2148,11 +2148,11 @@ content: "d\u00fcrfen sie nicht mehr an den Sitzungen des Parlaments teilnehmen.
 key: 0
 },
 {
-content: "muss der Bundespr\u00e4sident \\ die Bundespr\u00e4sidentin zuvor sein \\ ihr Einverst\u00e4ndnis geben.",
+content: "muss der Bundespr\u00e4sident / die Bundespr\u00e4sidentin zuvor sein / ihr Einverst\u00e4ndnis geben.",
 key: 0
 },
 {
-content: "d\u00fcrfen die W\u00e4hler \\ W\u00e4hlerinnen dieser Abgeordneten noch einmal w\u00e4hlen.",
+content: "d\u00fcrfen die W\u00e4hler / W\u00e4hlerinnen dieser Abgeordneten noch einmal w\u00e4hlen.",
 key: 0
 }
 ],
@@ -2162,11 +2162,11 @@ key: 0
     "question": "Wer bezahlt in Deutschland die Sozialversicherungen?",
     "answers": [
 {
-content: "Arbeitgeber \\ Arbeitgeberinnen und Arbeitnehmer \\ Arbeitnehmerinnen",
+content: "Arbeitgeber / Arbeitgeberinnen und Arbeitnehmer / Arbeitnehmerinnen",
 key: 1
 },
 {
-content: "nur Arbeitnehmer \\ Arbeitnehmerinnen",
+content: "nur Arbeitnehmer / Arbeitnehmerinnen",
 key: 0
 },
 {
@@ -2174,7 +2174,7 @@ content: "alle Staatsangeh\u00f6rigen",
 key: 0
 },
 {
-content: "nur Arbeitgeber \\ Arbeitgeberinnen",
+content: "nur Arbeitgeber / Arbeitgeberinnen",
 key: 0
 }
 ],
@@ -2254,11 +2254,11 @@ content: "der Bundestagsfraktionen von CDU und CSU",
 key: 0
 },
 {
-content: "von SPD, FDP und B\u00fcndnis 90\\Die Gr\u00fcnen in einer Regierung",
+content: "von SPD, FDP und B\u00fcndnis 90/Die Gr\u00fcnen in einer Regierung",
 key: 1
 },
 {
-content: "von CSU, Die LINKE und B\u00fcndnis 90\\Die Gr\u00fcnen in einer Regierung",
+content: "von CSU, Die LINKE und B\u00fcndnis 90/Die Gr\u00fcnen in einer Regierung",
 key: 0
 },
 {
@@ -2291,7 +2291,7 @@ key: 1
     "category": "Recht und Alltag",
 }, {
     "id": "105",
-    "question": "Was ist eine Aufgabe von Wahlhelfern \\ Wahlhelferinnen in Deutschland?",
+    "question": "Was ist eine Aufgabe von Wahlhelfern / Wahlhelferinnen in Deutschland?",
     "answers": [
 {
 content: "Sie helfen alten Menschen bei der Stimmabgabe in der Wahlkabine.",
@@ -2313,7 +2313,7 @@ key: 1
     "category": "Pflichten",
 }, {
     "id": "106",
-    "question": "In Deutschland helfen ehrenamtliche Wahlhelfer und Wahlhelferinnen bei den Wahlen. Was ist eine Aufgabe von Wahlhelfern \\ Wahlhelferinnen?",
+    "question": "In Deutschland helfen ehrenamtliche Wahlhelfer und Wahlhelferinnen bei den Wahlen. Was ist eine Aufgabe von Wahlhelfern / Wahlhelferinnen?",
     "answers": [
 {
 content: "Sie helfen Kindern und alten Menschen beim W\u00e4hlen.",
@@ -2364,7 +2364,7 @@ content: "in der Bundesrepublik Deutschland wohnt und w\u00e4hlen m\u00f6chte.",
 key: 0
 },
 {
-content: "B\u00fcrger \\ B\u00fcrgerin der Bundesrepublik Deutschland ist und mindestens 18 Jahre alt ist.",
+content: "B\u00fcrger / B\u00fcrgerin der Bundesrepublik Deutschland ist und mindestens 18 Jahre alt ist.",
 key: 1
 },
 {
@@ -2372,7 +2372,7 @@ content: "seit mindestens 3 Jahren in der Bundesrepublik Deutschland lebt.",
 key: 0
 },
 {
-content: "B\u00fcrger \\ B\u00fcrgerin der Bundesrepublik Deutschland ist und mindestens 21 Jahre alt ist.",
+content: "B\u00fcrger / B\u00fcrgerin der Bundesrepublik Deutschland ist und mindestens 21 Jahre alt ist.",
 key: 0
 }
 ],
@@ -2478,11 +2478,11 @@ content: "die meisten M\u00e4nner mehrheitlich gew\u00e4hlt haben.",
 key: 0
 },
 {
-content: "die meisten Stimmen bei den Arbeitern \\ Arbeiterinnen bekommen hat.",
+content: "die meisten Stimmen bei den Arbeitern / Arbeiterinnen bekommen hat.",
 key: 0
 },
 {
-content: "die meisten Erststimmen f\u00fcr ihren Kanzlerkandidaten \\ ihre Kanzlerkandidatin erhalten hat.",
+content: "die meisten Erststimmen f\u00fcr ihren Kanzlerkandidaten / ihre Kanzlerkandidatin erhalten hat.",
 key: 0
 }
 ],
@@ -2602,11 +2602,11 @@ key: 1
     "question": "Wahlen in Deutschland sind frei. Was bedeutet das?",
     "answers": [
 {
-content: "Alle verurteilten Straft\u00e4ter \\ Straft\u00e4terinnen d\u00fcrfen nicht w\u00e4hlen.",
+content: "Alle verurteilten Straft\u00e4ter / Straft\u00e4terinnen d\u00fcrfen nicht w\u00e4hlen.",
 key: 0
 },
 {
-content: "Wenn ich w\u00e4hlen gehen m\u00f6chte, muss mein Arbeitgeber \\ meine Arbeitgeberin mir frei geben.",
+content: "Wenn ich w\u00e4hlen gehen m\u00f6chte, muss mein Arbeitgeber / meine Arbeitgeberin mir frei geben.",
 key: 0
 },
 {
@@ -2712,7 +2712,7 @@ key: 0
     "question": "Die Bundestagswahl in Deutschland ist die Wahl...",
     "answers": [
 {
-content: "des Bundeskanzlers \\ der Bundeskanzlerin.",
+content: "des Bundeskanzlers / der Bundeskanzlerin.",
 key: 0
 },
 {
@@ -2724,7 +2724,7 @@ content: "des Parlaments f\u00fcr Deutschland.",
 key: 1
 },
 {
-content: "des Bundespr\u00e4sidenten \\ der Bundespr\u00e4sidentin.",
+content: "des Bundespr\u00e4sidenten / der Bundespr\u00e4sidentin.",
 key: 0
 }
 ],
@@ -2760,7 +2760,7 @@ content: "eine Wahlbenachrichtigung von der Gemeinde",
 key: 1
 },
 {
-content: "eine Wahlerlaubnis vom Bundespr\u00e4sidenten \\ von der Bundespr\u00e4sidentin",
+content: "eine Wahlerlaubnis vom Bundespr\u00e4sidenten / von der Bundespr\u00e4sidentin",
 key: 0
 },
 {
@@ -2804,15 +2804,15 @@ content: "Abgeordnete.",
 key: 1
 },
 {
-content: "Kanzler \\ Kanzlerinnen.",
+content: "Kanzler / Kanzlerinnen.",
 key: 0
 },
 {
-content: "Botschafter \\ Botschafterinnen.",
+content: "Botschafter / Botschafterinnen.",
 key: 0
 },
 {
-content: "Ministerpr\u00e4sidenten \\ Ministerpr\u00e4sidentinnen.",
+content: "Ministerpr\u00e4sidenten / Ministerpr\u00e4sidentinnen.",
 key: 0
 }
 ],
@@ -2822,11 +2822,11 @@ key: 0
     "question": "Vom Volk gew\u00e4hlt wird in Deutschland...",
     "answers": [
 {
-content: "der Bundeskanzler \\ die Bundeskanzlerin.",
+content: "der Bundeskanzler / die Bundeskanzlerin.",
 key: 0
 },
 {
-content: "der Ministerpr\u00e4sident \\ die Ministerpr\u00e4sidentin eines Bundeslandes.",
+content: "der Ministerpr\u00e4sident / die Ministerpr\u00e4sidentin eines Bundeslandes.",
 key: 0
 },
 {
@@ -2834,7 +2834,7 @@ content: "der Bundestag.",
 key: 1
 },
 {
-content: "der Bundespr\u00e4sident \\ die Bundespr\u00e4sidentin.",
+content: "der Bundespr\u00e4sident / die Bundespr\u00e4sidentin.",
 key: 0
 }
 ],
@@ -2864,14 +2864,14 @@ key: 0
     "category": "Wahlen",
 }, {
     "id": "131",
-    "question": "In Deutschland ist ein B\u00fcrgermeister \\ eine B\u00fcrgermeisterin...",
+    "question": "In Deutschland ist ein B\u00fcrgermeister / eine B\u00fcrgermeisterin...",
     "answers": [
 {
-content: "der Leiter \\ die Leiterin einer Schule.",
+content: "der Leiter / die Leiterin einer Schule.",
 key: 0
 },
 {
-content: "der Chef \\ die Chefin einer Bank.",
+content: "der Chef / die Chefin einer Bank.",
 key: 0
 },
 {
@@ -2879,7 +2879,7 @@ content: "das Oberhaupt einer Gemeinde.",
 key: 1
 },
 {
-content: "der \\ die Vorsitzende einer Partei.",
+content: "der / die Vorsitzende einer Partei.",
 key: 0
 }
 ],
@@ -2889,7 +2889,7 @@ key: 0
     "question": "Viele Menschen in Deutschland arbeiten in ihrer Freizeit ehrenamtlich. Was bedeutet das?",
     "answers": [
 {
-content: "Sie arbeiten als Soldaten \\ Soldatinnen.",
+content: "Sie arbeiten als Soldaten / Soldatinnen.",
 key: 0
 },
 {
@@ -2941,7 +2941,7 @@ content: "Ich werde Mitglied in einem Sportverein und trainiere Rad fahren.",
 key: 0
 },
 {
-content: "Ich wende mich an das Finanzamt, weil ich als Steuerzahler \\ Steuerzahlerin ein Recht auf die Buslinie habe.",
+content: "Ich wende mich an das Finanzamt, weil ich als Steuerzahler / Steuerzahlerin ein Recht auf die Buslinie habe.",
 key: 0
 },
 {
@@ -2981,11 +2981,11 @@ content: "falscher Nebenkostenabrechnung.",
 key: 0
 },
 {
-content: "ungerechtfertigter K\u00fcndigung durch Ihren Chef \\ Ihre Chefin.",
+content: "ungerechtfertigter K\u00fcndigung durch Ihren Chef / Ihre Chefin.",
 key: 1
 },
 {
-content: "Problemen mit den Nachbarn \\ Nachbarinnen.",
+content: "Problemen mit den Nachbarn / Nachbarinnen.",
 key: 0
 },
 {
@@ -3018,14 +3018,14 @@ key: 0
     "category": "Recht und Alltag",
 }, {
     "id": "138",
-    "question": "Was kann ich in Deutschland machen, wenn mir mein Arbeitgeber \\ meine Arbeitgeberin zu Unrecht gek\u00fcndigt hat?",
+    "question": "Was kann ich in Deutschland machen, wenn mir mein Arbeitgeber / meine Arbeitgeberin zu Unrecht gek\u00fcndigt hat?",
     "answers": [
 {
-content: "weiter arbeiten und freundlich zum Chef \\ zur Chefin sein",
+content: "weiter arbeiten und freundlich zum Chef / zur Chefin sein",
 key: 0
 },
 {
-content: "ein Mahnverfahren gegen den Arbeitgeber \\ die Arbeitgeberin f\u00fchren",
+content: "ein Mahnverfahren gegen den Arbeitgeber / die Arbeitgeberin f\u00fchren",
 key: 0
 },
 {
@@ -3033,7 +3033,7 @@ content: "K\u00fcndigungsschutzklage erheben",
 key: 1
 },
 {
-content: "den Arbeitgeber \\ die Arbeitgeberin bei der Polizei anzeigen",
+content: "den Arbeitgeber / die Arbeitgeberin bei der Polizei anzeigen",
 key: 0
 }
 ],
@@ -3062,14 +3062,14 @@ key: 0
     "category": "Recht und Alltag",
 }, {
     "id": "140",
-    "question": "Was macht ein Sch\u00f6ffe \\ eine Sch\u00f6ffin in Deutschland? Er \\ Sie...",
+    "question": "Was macht ein Sch\u00f6ffe / eine Sch\u00f6ffin in Deutschland? Er / Sie...",
     "answers": [
 {
-content: "entscheidet mit Richtern \\ Richterinnen \u00fcber Schuld und Strafe.",
+content: "entscheidet mit Richtern / Richterinnen \u00fcber Schuld und Strafe.",
 key: 1
 },
 {
-content: "gibt B\u00fcrgern \\ B\u00fcrgerinnen rechtlichen Rat.",
+content: "gibt B\u00fcrgern / B\u00fcrgerinnen rechtlichen Rat.",
 key: 0
 },
 {
@@ -3077,7 +3077,7 @@ content: "stellt Urkunden aus.",
 key: 0
 },
 {
-content: "verteidigt den Angeklagten \\ die Angeklagte.",
+content: "verteidigt den Angeklagten / die Angeklagte.",
 key: 0
 }
 ],
@@ -3087,26 +3087,26 @@ key: 0
     "question": "Wer ber\u00e4t in Deutschland Personen bei Rechtsfragen und vertritt sie vor Gericht?",
     "answers": [
 {
-content: "ein Rechtsanwalt \\ eine Rechtsanw\u00e4ltin",
+content: "ein Rechtsanwalt / eine Rechtsanw\u00e4ltin",
 key: 1
 },
 {
-content: "ein Richter \\ eine Richterin",
+content: "ein Richter / eine Richterin",
 key: 0
 },
 {
-content: "ein Sch\u00f6ffe \\ eine Sch\u00f6ffin",
+content: "ein Sch\u00f6ffe / eine Sch\u00f6ffin",
 key: 0
 },
 {
-content: "ein Staatsanwalt \\ eine Staatsanw\u00e4ltin",
+content: "ein Staatsanwalt / eine Staatsanw\u00e4ltin",
 key: 0
 }
 ],
     "category": "Recht und Alltag",
 }, {
     "id": "142",
-    "question": "Was ist die Hauptaufgabe eines Richters \\ einer Richterin in Deutschland? Ein Richter \\ eine Richterin...",
+    "question": "Was ist die Hauptaufgabe eines Richters / einer Richterin in Deutschland? Ein Richter / eine Richterin...",
     "answers": [
 {
 content: "vertritt B\u00fcrger und B\u00fcrgerinnen vor einem Gericht.",
@@ -3128,7 +3128,7 @@ key: 0
     "category": "Recht und Alltag",
 }, {
     "id": "143",
-    "question": "Ein Richter \\ eine Richterin in Deutschland geh\u00f6rt zur \u2026",
+    "question": "Ein Richter / eine Richterin in Deutschland geh\u00f6rt zur \u2026",
     "answers": [
 {
 content: "Judikative.",
@@ -3150,7 +3150,7 @@ key: 0
     "category": "Verfassungsprinzipien",
 }, {
     "id": "144",
-    "question": "Ein Richter \\ eine Richterin geh\u00f6rt in Deutschland zur...",
+    "question": "Ein Richter / eine Richterin geh\u00f6rt in Deutschland zur...",
     "answers": [
 {
 content: "vollziehenden Gewalt.",
@@ -3172,7 +3172,7 @@ key: 0
     "category": "Verfassungsprinzipien",
 }, {
     "id": "145",
-    "question": "In Deutschland wird die Staatsgewalt geteilt. F\u00fcr welche Staatsgewalt arbeitet ein Richter \\ eine Richterin? F\u00fcr die...",
+    "question": "In Deutschland wird die Staatsgewalt geteilt. F\u00fcr welche Staatsgewalt arbeitet ein Richter / eine Richterin? F\u00fcr die...",
     "answers": [
 {
 content: "Judikative.",
@@ -3216,7 +3216,7 @@ key: 1
     "category": "Recht und Alltag",
 }, {
     "id": "147",
-    "question": "Was ist die Arbeit eines Richters \\ einer Richterin in Deutschland?",
+    "question": "Was ist die Arbeit eines Richters / einer Richterin in Deutschland?",
     "answers": [
 {
 content: "Deutschland regieren",
@@ -3260,10 +3260,10 @@ key: 1
     "category": "Verfassungsprinzipien",
 }, {
     "id": "149",
-    "question": "Wer kann Gerichtssch\u00f6ffe \\ Gerichtssch\u00f6ffin in Deutschland werden?",
+    "question": "Wer kann Gerichtssch\u00f6ffe / Gerichtssch\u00f6ffin in Deutschland werden?",
     "answers": [
 {
-content: "alle in Deutschland geborenen Einwohner \\ Einwohnerinnen \u00fcber 18 Jahre",
+content: "alle in Deutschland geborenen Einwohner / Einwohnerinnen \u00fcber 18 Jahre",
 key: 0
 },
 {
@@ -3282,14 +3282,14 @@ key: 0
     "category": "Recht und Alltag",
 }, {
     "id": "150",
-    "question": "Ein Gerichtssch\u00f6ffe \\ eine Gerichtssch\u00f6ffin in Deutschland ist...",
+    "question": "Ein Gerichtssch\u00f6ffe / eine Gerichtssch\u00f6ffin in Deutschland ist...",
     "answers": [
 {
-content: "der Stellvertreter \\ die Stellvertreterin des Stadtoberhaupts.",
+content: "der Stellvertreter / die Stellvertreterin des Stadtoberhaupts.",
 key: 0
 },
 {
-content: "ein ehrenamtlicher Richter \\ eine ehrenamtliche Richterin.",
+content: "ein ehrenamtlicher Richter / eine ehrenamtliche Richterin.",
 key: 1
 },
 {
@@ -3638,7 +3638,7 @@ key: 0
     "answers": [
 {
 content: "bei den Montagsdemonstrationen 1989 in der DDR",
-key: 0
+key: 1
 },
 {
 content: "beim Arbeiteraufstand 1953 in der DDR",
@@ -3650,7 +3650,7 @@ key: 0
 },
 {
 content: "bei den Anti-Atomkraft-Demonstrationen 1985 in der Bundesrepublik Deutschland",
-key: 1
+key: 0
 }
 ],
     "category": "Wichtige Stationen nach 1945",
@@ -3906,7 +3906,7 @@ content: "F\u00fcr Frankreich war eine Versorgung der West-Berliner Bev\u00f6lke
 key: 0
 },
 {
-content: "Die amerikanischen Soldaten \\ Soldatinnen hatten beim Landtransport Angst vor \u00dcberf\u00e4llen.",
+content: "Die amerikanischen Soldaten / Soldatinnen hatten beim Landtransport Angst vor \u00dcberf\u00e4llen.",
 key: 0
 },
 {
@@ -4743,11 +4743,11 @@ key: 0
     "answers": [
 {
 content: "die Fahne der Stadt Berlin.",
-key: 1
+key: 0
 },
 {
 content: "der Bundesadler.",
-key: 0
+key: 1
 },
 {
 content: "der Reichsadler.",
@@ -5104,11 +5104,11 @@ key: 0
 },
 {
 content: "die europ\u00e4ische Verfassung",
-key: 1
+key: 0
 },
 {
 content: "die Abgeordneten des Europ\u00e4ischen Parlaments",
-key: 0
+key: 1
 }
 ],
     "category": "Deutschland in Europa",
@@ -5324,7 +5324,7 @@ content: "die Bundesl\u00e4nder",
 key: 0
 },
 {
-content: "die Eltern\\die Erziehungsberechtigten",
+content: "die Eltern/die Erziehungsberechtigten",
 key: 1
 },
 {
@@ -5431,11 +5431,11 @@ key: 0
 },
 {
 content: "Geburtsvorbereitung",
-key: 1
+key: 0
 },
 {
 content: "Mutterschutz",
-key: 0
+key: 1
 },
 {
 content: "Wochenbett",
@@ -5536,11 +5536,11 @@ key: 1
     "question": "In Deutschland \u2026",
     "answers": [
 {
-content: "darf man zur gleichen Zeit nur mit einem Partner \\ einer Partnerin verheiratet sein.",
+content: "darf man zur gleichen Zeit nur mit einem Partner / einer Partnerin verheiratet sein.",
 key: 1
 },
 {
-content: "kann man mehrere Ehepartner \\ Ehepartnerinnen gleichzeitig haben.",
+content: "kann man mehrere Ehepartner / Ehepartnerinnen gleichzeitig haben.",
 key: 0
 },
 {
@@ -5998,7 +5998,7 @@ key: 1
     "question": "Bei Erziehungsproblemen gehen Sie in Deutschland \u2026",
     "answers": [
 {
-content: "zum Arzt \\ zur \u00c4rztin.",
+content: "zum Arzt / zur \u00c4rztin.",
 key: 0
 },
 {
@@ -6046,7 +6046,7 @@ content: "die Einwilligung der Eltern",
 key: 0
 },
 {
-content: "ein Attest eines Arztes \\ einer \u00c4rztin",
+content: "ein Attest eines Arztes / einer \u00c4rztin",
 key: 0
 },
 {
@@ -6054,14 +6054,14 @@ content: "die Einwilligung der Kinder",
 key: 0
 },
 {
-content: "die Unterst\u00fctzung eines Anwalts \\ einer Anw\u00e4ltin",
+content: "die Unterst\u00fctzung eines Anwalts / einer Anw\u00e4ltin",
 key: 1
 }
 ],
     "category": "Recht und Alltag",
 }, {
     "id": "276",
-    "question": "Was sollten Sie tun, wenn Sie von Ihrem Ansprechpartner \\ Ihrer Ansprechpartnerin in einer deutschen Beh\u00f6rde schlecht behandelt werden?",
+    "question": "Was sollten Sie tun, wenn Sie von Ihrem Ansprechpartner / Ihrer Ansprechpartnerin in einer deutschen Beh\u00f6rde schlecht behandelt werden?",
     "answers": [
 {
 content: "Ich kann nichts tun.",
@@ -6076,7 +6076,7 @@ content: "Ich drohe der Person.",
 key: 0
 },
 {
-content: "Ich kann mich beim Beh\u00f6rdenleiter \\ bei der Beh\u00f6rdenleiterin beschweren.",
+content: "Ich kann mich beim Beh\u00f6rdenleiter / bei der Beh\u00f6rdenleiterin beschweren.",
 key: 1
 }
 ],
@@ -6193,22 +6193,22 @@ key: 0
     "category": "Grundrechte",
 },{
     "id": "282",
-    "question": "Welches Ehrenamt m\u00fcssen deutsche Staatsb\u00fcrger \\ Staatsb\u00fcrgerinnen \u00fcbernehmen, wenn sie dazu aufgefordert werden?",
+    "question": "Welches Ehrenamt m\u00fcssen deutsche Staatsb\u00fcrger / Staatsb\u00fcrgerinnen \u00fcbernehmen, wenn sie dazu aufgefordert werden?",
     "answers": [
 {
-content: "Vereinstrainer \\ Vereinstrainerin",
+content: "Vereinstrainer / Vereinstrainerin",
 key: 0
 },
 {
 content: "Bibliotheksaufsicht",
-key: 1
-},
-{
-content: "Wahlhelfer \\ Wahlhelferin",
 key: 0
 },
 {
-content: "Lehrer \\ Lehrerin",
+content: "Wahlhelfer / Wahlhelferin",
+key: 1
+},
+{
+content: "Lehrer / Lehrerin",
 key: 0
 }
 ],
@@ -6281,14 +6281,14 @@ key: 0
     "category": "Sozialsystem",
 },  {
     "id": "286",
-    "question": "Welche Organisation in einer Firma hilft den Arbeitnehmern und Arbeitnehmerinnen bei Problemen mit dem Arbeitgeber \\ der Arbeitgeberin?",
+    "question": "Welche Organisation in einer Firma hilft den Arbeitnehmern und Arbeitnehmerinnen bei Problemen mit dem Arbeitgeber / der Arbeitgeberin?",
     "answers": [
 {
 content: "der Betriebsrat",
 key: 1
 },
 {
-content: "der Betriebspr\u00fcfer \\ die Betriebspr\u00fcferin",
+content: "der Betriebspr\u00fcfer / die Betriebspr\u00fcferin",
 key: 0
 },
 {
@@ -6395,11 +6395,11 @@ key: 0
     "answers": [
 {
 content: "das f\u00fcr die Statistik in Deutschland wichtig ist.",
-key: 1
+key: 0
 },
 {
 content: "es eine Kirchensteuer gibt, die an die Einkommen- und Lohnsteuer gekn\u00fcpft ist.",
-key: 0
+key: 1
 },
 {
 content: "man mehr Steuern zahlen muss, wenn man nicht zu einer Kirche geh\u00f6rt.",
@@ -6523,7 +6523,7 @@ key: 0
     "category": "Religiöse Vielfalt",
 }, {
     "id": "297",
-    "question": "Aus welchem Land sind die meisten Migranten \\ Migrantinnen nach Deutschland gekommen?",
+    "question": "Aus welchem Land sind die meisten Migranten / Migrantinnen nach Deutschland gekommen?",
     "answers": [
 {
 content: "Italien",
@@ -6570,26 +6570,26 @@ key: 0
     "question": "Ausl\u00e4ndische Arbeitnehmer und Arbeitnehmerinnen, die in den 50er und 60er Jahren von der Bundesrepublik Deutschland angeworben wurden, nannte man \u2026",
     "answers": [
 {
-content: "Schwarzarbeiter \\ Schwarzarbeiterinnen",
+content: "Schwarzarbeiter / Schwarzarbeiterinnen",
 key: 0
 },
 {
-content: "Gastarbeiter \\ Gastarbeiterinnen",
+content: "Gastarbeiter / Gastarbeiterinnen",
 key: 1
 },
 {
-content: "Zeitarbeiter \\ Zeitarbeiterinnen",
+content: "Zeitarbeiter / Zeitarbeiterinnen",
 key: 0
 },
 {
-content: "Schichtarbeiter \\ Schichtarbeiterinnen",
+content: "Schichtarbeiter / Schichtarbeiterinnen",
 key: 0
 }
 ],
     "category": "Migrationsgeschichte",
 }, {
     "id": "300",
-    "question": "Aus welchem Land kamen die ersten Gastarbeiter \\ Gastarbeiterinnen nach Deutschland?",
+    "question": "Aus welchem Land kamen die ersten Gastarbeiter / Gastarbeiterinnen nach Deutschland?",
     "answer_type": "single",
     "answers": [
 {
