@@ -96,11 +96,11 @@ key: 0
 },
 {
 content: "Der W\u00e4hler darf bei der Wahl weder beeinflusst noch zu einer bestimmten Stimmabgabe gezwungen werden und keine Nachteile durch die Wahl haben.",
-key: 0
+key: 1
 },
 {
 content: "Nur Personen, die noch nie im Gef\u00e4ngnis waren, d\u00fcrfen w\u00e4hlen.",
-key: 1
+key: 0
 },
 {
 content: "Alle wahlberechtigten Personen m\u00fcssen w\u00e4hlen.",
@@ -2031,7 +2031,7 @@ key: 1
     "answers": [
 {
 content: "mehr Sitze erh\u00e4lt die Partei im Parlament.",
-key: 0
+key: 1
 },
 {
 content: "weniger Erststimmen kann sie haben.",
@@ -2043,7 +2043,7 @@ key: 0
 },
 {
 content: "gr\u00f6\u00dfer ist das Risiko, eine Koalition bilden zu m\u00fcssen.",
-key: 1
+key: 0
 }
 ],
     "category": "Wahlen und Beteiligung",
@@ -2185,11 +2185,11 @@ key: 0
     "answers": [
 {
 content: "die gesetzliche Rentenversicherung",
-key: 1
+key: 0
 },
 {
 content: "die Lebensversicherung",
-key: 0
+key: 1
 },
 {
 content: "die Arbeitslosenversicherung",
@@ -2229,11 +2229,11 @@ key: 0
     "answers": [
 {
 content: "Bundesadler",
-key: 1
+key: 0
 },
 {
 content: "Bundesverdienstkreuz",
-key: 0
+key: 1
 },
 {
 content: "Vaterl\u00e4ndischen Verdienstorden",
@@ -2577,28 +2577,6 @@ key: 0
     "category": "Wahlen und Beteiligung",
 }, {
     "id": "118",
-    "question": "Wahlen in Deutschland sind frei. Was bedeutet das?",
-    "answers": [
-{
-content: "Alle verurteilten Straft\u00e4ter \\ Straft\u00e4terinnen d\u00fcrfen nicht w\u00e4hlen.",
-key: 0
-},
-{
-content: "Wenn ich w\u00e4hlen gehen m\u00f6chte, muss mein Arbeitgeber \\ meine Arbeitgeberin mir frei geben.",
-key: 0
-},
-{
-content: "Jede Person kann ohne Zwang entscheiden, ob sie w\u00e4hlen m\u00f6chte und wen sie w\u00e4hlen m\u00f6chte.",
-key: 0
-},
-{
-content: "Ich kann frei entscheiden, wo ich w\u00e4hlen gehen m\u00f6chte.",
-key: 1
-}
-],
-    "category": "Wahlen und Beteiligung",
-}, {
-    "id": "119",
     "question": "Was regelt das Wahlrecht in Deutschland?",
     "answers": [
 {
@@ -2611,10 +2589,32 @@ key: 0
 },
 {
 content: "Wer nicht w\u00e4hlt, verliert das Recht zu w\u00e4hlen.",
-key: 1
+key: 0
 },
 {
 content: "Wer w\u00e4hlen darf, kann w\u00e4hlen.",
+key: 1
+}
+],
+    "category": "Wahlen und Beteiligung",
+}, {
+    "id": "119",
+    "question": "Wahlen in Deutschland sind frei. Was bedeutet das?",
+    "answers": [
+{
+content: "Alle verurteilten Straft\u00e4ter \\ Straft\u00e4terinnen d\u00fcrfen nicht w\u00e4hlen.",
+key: 0
+},
+{
+content: "Wenn ich w\u00e4hlen gehen m\u00f6chte, muss mein Arbeitgeber \\ meine Arbeitgeberin mir frei geben.",
+key: 0
+},
+{
+content: "Jede Person kann ohne Zwang entscheiden, ob sie w\u00e4hlen m\u00f6chte und wen sie w\u00e4hlen m\u00f6chte.",
+key: 1
+},
+{
+content: "Ich kann frei entscheiden, wo ich w\u00e4hlen gehen m\u00f6chte.",
 key: 0
 }
 ],
@@ -3312,11 +3312,11 @@ key: 0
 },
 {
 content: "die Bundesrepublik Deutschland",
-key: 1
+key: 0
 },
 {
 content: "die DDR",
-key: 0
+key: 1
 },
 {
 content: "die USA",
@@ -4111,11 +4111,11 @@ key: 0
 },
 {
 content: "DDR",
-key: 0
+key: 1
 },
 {
 content: "\u201eDrittes Reich\u201c",
-key: 1
+key: 0
 }
 ],
     "category": "Wichtige Stationen nach 1945",
@@ -5016,11 +5016,11 @@ key: 0
 },
 {
 content: "Europ\u00e4ische Gemeinschaft",
-key: 1
+key: 0
 },
 {
 content: "Deutsche Wiedervereinigung",
-key: 0
+key: 1
 }
 ],
     "category": "Wiedervereinigung",
@@ -5339,11 +5339,11 @@ key: 0
     "answers": [
 {
 content: "Sie m\u00fcssen nichts tun. Man darf in Deutschland jederzeit \u00fcberall demonstrieren.",
-key: 1
+key: 0
 },
 {
 content: "Sie m\u00fcssen die Demonstration anmelden.",
-key: 0
+key: 1
 },
 {
 content: "Sie k\u00f6nnen gar nichts tun, denn Demonstrationen sind in Deutschland grunds\u00e4tzlich verboten.",
@@ -5893,7 +5893,7 @@ key: 0
 },
 {
 content: "Sie kann die Theorie-Pr\u00fcfung vielleicht in ihrer Muttersprache machen. Es gibt mehr als zehn Sprachen zur Auswahl.",
-key: 0
+key: 1
 },
 {
 content: "Wenn sie kein Deutsch kann, darf sie keinen F\u00fchrerschein haben.",
@@ -5901,7 +5901,7 @@ key: 0
 },
 {
 content: "Sie muss den F\u00fchrerschein in dem Land machen, in dem man ihre Sprache spricht.",
-key: 1
+key: 0
 }
 ],
     "category": "Recht und Alltag",
@@ -5915,11 +5915,11 @@ key: 0
 },
 {
 content: "einen Kindergartenplatz.",
-key: 0
+key: 1
 },
 {
 content: "einen Platz in einem Sportverein.",
-key: 1
+key: 0
 },
 {
 content: "einen Ferienpass.",
@@ -6245,11 +6245,11 @@ key: 0
 },
 {
 content: "Kinder lernen in der Schule alles, was im Beruf wichtig ist. Nach der Schule muss man nicht weiter lernen.",
-key: 1
+key: 0
 },
 {
 content: "Erwachsene m\u00fcssen auch nach der Ausbildung immer weiter lernen.",
-key: 0
+key: 1
 },
 {
 content: "Alle m\u00fcssen fr\u00fcher aufh\u00f6ren zu arbeiten, weil sich alles \u00e4ndert.",
@@ -6263,7 +6263,7 @@ key: 0
     "answers": [
 {
 content: "Umsatzsteuer",
-key: 0
+key: 1
 },
 {
 content: "Lohnsteuer",
@@ -6275,7 +6275,7 @@ key: 0
 },
 {
 content: "Beitr\u00e4ge zur Renten- und Krankenversicherung",
-key: 1
+key: 0
 }
 ],
     "category": "Sozialsystem",
