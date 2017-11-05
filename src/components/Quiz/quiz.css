@@ -164,6 +164,9 @@
   border: none;
   padding: 0px;
   transition: background-color 0.3s;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
 }
 
 .NextQuestionButton:hover {
@@ -235,4 +238,22 @@
   width: 100%;
   text-align: center;
   margin-left: -1rem;
+}
+
+.ResultBarBlack {
+  width: 100%;
+  height: 4.5rem;
+  background-color: #222;
+}
+
+.ResultBarRed {
+  width: 100%;
+  height: 4.5rem;
+  background-color: #f03434;
+}
+
+.ResultBarYellow {
+  width: 100%;
+  height: 4.5rem;
+  background-color: #F39C12;
 }

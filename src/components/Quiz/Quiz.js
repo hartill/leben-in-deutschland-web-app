@@ -2,10 +2,12 @@ import React from 'react';
 import './quiz.css';
 import quizQuestions from './../../api/quizQuestions'
 import Lightbox from 'react-image-lightbox';
+import Cookies from 'universal-cookie';
 
 class Quiz extends React.Component {
   constructor(props){
     super(props);
+    this.cookies = new Cookies();
     this.questions = quizQuestions
     this.state = {
       question: {},
@@ -19,11 +21,18 @@ class Quiz extends React.Component {
     this.renderAnswerOptions = this.renderAnswerOptions.bind(this);
     this.onAnswerSelected = this.onAnswerSelected.bind(this);
     this.nextQuestion = this.nextQuestion.bind(this);
+    this.displayAnswers = this.displayAnswers.bind(this);
+    this.restart = this.restart.bind(this);
   }
 
   componentWillMount() {
     this.setState({
       question: this.generateNextQuestion(this.questions),
+      progress: this.cookies.get('progress') || [],
+      showAnswer: false,
+      selectedAnswer: null,
+      completed: false,
+      isOpen: false
     })
   }
 
@@ -45,28 +54,47 @@ class Quiz extends React.Component {
     }
   }
 
+  displayAnswers() {
+    this.setState(prevState => ({
+      showAnswer: true
+    }))
+  }
+
   componentDidUpdate(nextProps, nextState) {
     this.state.progress.sort(function (a, b){return a-b})
+    this.cookies.set('progress', this.state.progress)
+    if ((this.state.progress.length >= 300) && (this.state.progress !== nextState.progress)) {
+      this.setState({
+        completed: true
+      })
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
   }
 
   generateNextQuestion(questions) {
     let correctAnswers = this.state.progress
     let maxNumber = 300 - correctAnswers.length
     let minNumber = 1
-    if (maxNumber !== 0) {
-      let randNumber = Math.floor((Math.random() * maxNumber) + minNumber);
-      for (let i = 0; i < correctAnswers.length; i++) {
-        if (randNumber >= correctAnswers[i]) {
-          randNumber += 1
-        }
+    let randNumber = Math.floor((Math.random() * maxNumber) + minNumber);
+    for (let i = 0; i < correctAnswers.length; i++) {
+      if (randNumber >= correctAnswers[i]) {
+        randNumber += 1
       }
-      let randomNumbersIndex = randNumber - 1
-      return questions[randomNumbersIndex]
-    } else {
-      this.setState(prevState => ({
-          completed: true
-      }))
     }
+    let randomNumbersIndex = randNumber - 1
+    return questions[randomNumbersIndex]
+  }
+
+  restart() {
+    this.setState({
+        progress: [],
+        completed: false,
+        showAnswer: false,
+        selectedAnswer: null,
+        isOpen: false
+    })
   }
 
   nextQuestion() {
@@ -180,6 +208,9 @@ class Quiz extends React.Component {
               <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} >
                 <img src ={require("./../../static/images/next-qu-icon-01.png")} alt='next-question' />
               </button>
+              <button className={ this.state.showAnswer ===  false ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.displayAnswers} >
+                <p>Ich wei&szlig; nicht</p>
+              </button>
             </div>
           </div>
         </div>
@@ -189,15 +220,27 @@ class Quiz extends React.Component {
         <div className="Container">
           <div className="QuizContainer">
             <div className="QuizHeader">
-              Alle 300 richtig!
+              <div className="QuestionCategory">
+                Alle 300 richtig!
+              </div>
             </div>
             <div className="QuizBodyContainer">
-              Fur Ne&uuml;start Seite neu laden
+              <div className="QuizBody">
+                <div className="ResultBarBlack"></div>
+                <div className="ResultBarRed"></div>
+                <div className="ResultBarYellow"></div>
+              </div>
             </div>
             <div className='NextQuestion'>
               <div className="UserScore">
-                {userProgress} / 300
+                <div className='UserProgress' style={userProgressStyle}></div>
+                <div className='Score'>
+                  {userProgress} / 300
+                </div>
               </div>
+              <button className='NextQuestionButton' onClick={this.restart} >
+                <p>Ne&uuml;start?</p>
+              </button>
             </div>
           </div>
         </div>
