@@ -488,7 +488,7 @@ key: 0
     "question": "In Deutschland sind die meisten Erwerbst\u00e4tigen...",
     "answers": [
 {
-content: "bei einer Firma oder Beh\u00f6rde besch\u00e4ftigt.",
+content: "selbst\u00e4ndig mit einer eigenen Firma t\u00e4tig.",
 key: 0
 },
 {
@@ -500,7 +500,7 @@ content: "ehrenamtlich f\u00fcr ein Bundesland t\u00e4tig.",
 key: 0
 },
 {
-content: "selbst\u00e4ndig mit einer eigenen Firma t\u00e4tig.",
+content: "bei einer Firma oder Beh\u00f6rde besch\u00e4ftigt.",
 key: 1
 }
 ],
@@ -533,11 +533,11 @@ key: 0
     "answers": [
 {
 content: "Nordrhein-Westfalen",
-key: 1
+key: 0
 },
 {
 content: "Elsass-Lothringen",
-key: 0
+key: 1
 },
 {
 content: "Mecklenburg-Vorpommern",
@@ -1246,11 +1246,11 @@ key: 0
 },
 {
 content: "ein Abgeordneter / eine Abgeordnete der st\u00e4rksten Fraktion",
-key: 0
+key: 1
 },
 {
 content: "ein ehemaliger Bundeskanzler / eine ehemalige Bundeskanzlerin",
-key: 1
+key: 0
 }
 ],
     "category": "Verfassungsorgane",
@@ -3726,7 +3726,7 @@ key: 0
     "answers": [
 {
 content: "das Recht zur freien Entfaltung der Pers\u00f6nlichkeit",
-key: 1
+key: 0
 },
 {
 content: "Pressefreiheit",
@@ -3734,7 +3734,7 @@ key: 0
 },
 {
 content: "das Verbot von Parteien",
-key: 0
+key: 1
 },
 {
 content: "den Schutz der Menschenw\u00fcrde",
@@ -4772,11 +4772,11 @@ content: "1933 bis 1945",
 key: 0
 },
 {
-content: "1949 bis 1990",
+content: "1945 bis 1961",
 key: 0
 },
 {
-content: "1945 bis 1961",
+content: "1949 bis 1990",
 key: 1
 }
 ],
@@ -5299,11 +5299,11 @@ key: 0
 },
 {
 content: "Sie muss nichts tun, denn sie bekommt automatisch Elterngeld.",
-key: 1
+key: 0
 },
 {
 content: "Sie muss einen Antrag bei der Elterngeldstelle stellen.",
-key: 0
+key: 1
 },
 {
 content: "Sie muss das Arbeitsamt um Erlaubnis bitten.",
@@ -5848,7 +5848,7 @@ content: "wenn die Sonne untergeht",
 key: 0
 },
 {
-content: "um 22 Uhr",
+content: "um 0 Uhr, Mitternacht",
 key: 0
 },
 {
@@ -5856,7 +5856,7 @@ content: "wenn die Nachbarn schlafen gehen",
 key: 0
 },
 {
-content: "um 0 Uhr, Mitternacht",
+content: "um 22 Uhr",
 key: 1
 }
 ],
