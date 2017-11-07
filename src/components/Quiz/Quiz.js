@@ -62,7 +62,10 @@ class Quiz extends React.Component {
 
   componentDidUpdate(nextProps, nextState) {
     this.state.progress.sort(function (a, b){return a-b})
-    this.cookies.set('progress', this.state.progress)
+    const expires = new Date()
+    expires.setTime(expires.getTime()+(365*24*60*60*1000))
+    expires.toUTCString()
+    this.cookies.set('progress', this.state.progress, {expires: expires, path: '/' })
     if ((this.state.progress.length >= 300) && (this.state.progress !== nextState.progress)) {
       this.setState({
         completed: true
