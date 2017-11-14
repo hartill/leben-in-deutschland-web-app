@@ -3,6 +3,10 @@ import './quiz.css';
 import quizQuestions from './../../api/quizQuestions'
 import Lightbox from 'react-image-lightbox';
 import Cookies from 'universal-cookie';
+import Answers from './Answers'
+import GameOver from './GameOver'
+import QuestionOverview from './QuestionOverview'
+import UserProgressBar from './UserProgressBar'
 
 class Quiz extends React.Component {
   constructor(props){
@@ -12,31 +16,36 @@ class Quiz extends React.Component {
     this.state = {
       question: {},
       progress: [],
+      incorrect: [],
       showAnswer: false,
       selectedAnswer: null,
       completed: false,
-      isOpen: false
+      isOpen: false,
+      viewProgress: false
     }
     this.generateNextQuestion = this.generateNextQuestion.bind(this);
-    this.renderAnswerOptions = this.renderAnswerOptions.bind(this);
     this.onAnswerSelected = this.onAnswerSelected.bind(this);
     this.nextQuestion = this.nextQuestion.bind(this);
     this.displayAnswers = this.displayAnswers.bind(this);
     this.restart = this.restart.bind(this);
+    this.handleViewProgress = this.handleViewProgress.bind(this);
   }
 
   componentWillMount() {
     this.setState({
       question: this.generateNextQuestion(this.questions),
       progress: this.cookies.get('progress') || [],
+      incorrect: this.cookies.get('incorrect') || [],
       showAnswer: false,
       selectedAnswer: null,
       completed: false,
-      isOpen: false
+      isOpen: false,
+      viewProgress: false
     })
   }
 
   onAnswerSelected(event) {
+    event.preventDefault()
     const target = event.target
     let questionId = target.name
     this.setState((prevState, props) => {
@@ -46,11 +55,13 @@ class Quiz extends React.Component {
       }
     })
     if (target.value === '1') {
-      if (this.state.progress.includes(questionId) === false) {
-        this.setState(prevState => ({
-            progress: [...prevState.progress, questionId]
-        }))
-      }
+      this.setState(prevState => ({
+          progress: [...prevState.progress, questionId]
+      }))
+    } else {
+      this.setState(prevState => ({
+          incorrect: [...prevState.incorrect, questionId]
+      }))
     }
   }
 
@@ -60,20 +71,31 @@ class Quiz extends React.Component {
     }))
   }
 
+  handleViewProgress() {
+    if (this.state.viewProgress === true) {
+      this.setState(prevState => ({
+        viewProgress: false
+      }))
+    } else {
+      this.setState(prevState => ({
+        viewProgress: true
+      }))
+    }
+  }
+
   componentDidUpdate(nextProps, nextState) {
     this.state.progress.sort(function (a, b){return a-b})
+    this.state.incorrect.sort(function (a, b){return a-b})
     const expires = new Date()
     expires.setTime(expires.getTime()+(365*24*60*60*1000))
     expires.toUTCString()
     this.cookies.set('progress', this.state.progress, {expires: expires, path: '/' })
+    this.cookies.set('incorrect', this.state.incorrect, {expires: expires, path: '/' })
     if ((this.state.progress.length >= 300) && (this.state.progress !== nextState.progress)) {
       this.setState({
         completed: true
       })
     }
-  }
-
-  componentWillReceiveProps(nextProps) {
   }
 
   generateNextQuestion(questions) {
@@ -93,10 +115,12 @@ class Quiz extends React.Component {
   restart() {
     this.setState({
         progress: [],
+        incorrect: [],
         completed: false,
         showAnswer: false,
         selectedAnswer: null,
-        isOpen: false
+        isOpen: false,
+        viewProgress: false
     })
   }
 
@@ -108,49 +132,6 @@ class Quiz extends React.Component {
         showAnswer: false
       }
     })
-  }
-
-  renderAnswerOptions(question, showAnswer) {
-    let output = []
-    let answerHighlight = ''
-    let disabled = false
-    let checked = false
-    let active = ''
-    if (this.state.showAnswer === true) {
-      disabled = true
-      active = 'disabled'
-    }
-    for (let i=0; i<question.answers.length; i++) {
-      if (this.state.showAnswer === true) {
-        if (this.state.selectedAnswer === '' + i + '') {
-          answerHighlight = "incorrectAnswer"
-        }
-        if (question.answers[i].key === 1) {
-          answerHighlight = "correctAnswer"
-        }
-      }
-      output.push (
-            <label className={'AnswerOption ' + answerHighlight + ' ' + active} key={i}>
-              <div className='AnswerInput'>
-                <input
-                  type="radio"
-                  className="radioCustomButton"
-                  name={question.id}
-                  id={i}
-                  value={question.answers[i].key}
-                  onChange={this.onAnswerSelected}
-                  disabled={disabled}
-                  checked={checked}
-                />
-              </div>
-              <div className='AnswerText'>
-                {question.answers[i].content}
-              </div>
-            </label>
-      )
-      answerHighlight = ''
-    }
-    return output
   }
 
   renderImage(image) {
@@ -173,80 +154,66 @@ class Quiz extends React.Component {
   }
 
   render () {
-    let userProgress = this.state.progress.length
-    let userProgressPercent = 100 - (userProgress / 300 * 100)
-    let userProgressStyle = {
-      right: userProgressPercent + '%',
-    }
-    if (this.state.completed === false) {
-      let question = this.state.question
-      let image = this.state.question.image !== undefined ? require(`./../../static/images/${question.image}`) : null
-      return (
-        <div className="Container">
-          <div className="QuizContainer">
-            <div className="QuizHeader">
-              <div className="QuestionNumber">
-                {question.id}
-              </div>
-              <div className="QuestionCategory">
-                {question.category}
-              </div>
-            </div>
-            <div className="QuizBodyContainer">
-              <div className="QuizBody">
-                <div className="QuestionText">
-                  {question.question}
+    if (this.state.viewProgress === false) {
+      if (this.state.completed === false) {
+        let question = this.state.question
+        let questionCountStyle = 'yellowCount'
+        let incorrectCount  = this.state.incorrect.reduce(function(n, val) {
+            return n + (val === question.id)
+        }, 0)
+        let correctCount = this.state.progress.reduce(function(n, val) {
+            return n + (val === question.id)
+        }, 0)
+        let totalCount = correctCount - incorrectCount
+        if (totalCount < 0) {
+          questionCountStyle = 'redCount'
+        } else if (totalCount > 0) {
+          questionCountStyle = 'greenCount'
+        }
+        let image = this.state.question.image !== undefined ? require(`./../../static/images/${question.image}`) : null
+        return (
+          <div className="Container">
+            <div className="QuizContainer">
+              <div className="QuizHeader">
+                <div className="QuestionNumber">
+                  {question.id}
                 </div>
-                {question.image !== undefined ? this.renderImage(image) : null}
-                {this.renderAnswerOptions(question, this.showAnswer)}
-              </div>
-            </div>
-            <div className='NextQuestion'>
-              <div className="UserScore">
-                <div className='UserProgress' style={userProgressStyle}></div>
-                <div className='Score'>
-                  {userProgress} / 300
+                <div className='QuestionCategory'>
+                  {question.category}
+                </div>
+                <div className='QuestionCount' onClick={this.handleViewProgress}>
+                  <img src ={require("./../../static/icons/overview-icon-03.png")} alt='next-question' />
                 </div>
               </div>
-              <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} >
-                <img src ={require("./../../static/images/next-qu-icon-01.png")} alt='next-question' />
-              </button>
-              <button className={ this.state.showAnswer ===  false ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.displayAnswers} >
-                <p>Ich wei&szlig; nicht</p>
-              </button>
+              <div className="QuizBodyContainer">
+                <div className="QuizBody">
+                  <div className="QuestionText">
+                    {question.question}
+                  </div>
+                  {question.image !== undefined ? this.renderImage(image) : null}
+                  <Answers question={question} showAnswer={this.state.showAnswer} selectedAnswer={this.state.selectedAnswer} onAnswerSelected={this.onAnswerSelected} />
+                </div>
+              </div>
+              <div className='NextQuestion'>
+                <UserProgressBar progress={this.state.progress}/>
+                <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} >
+                  <img src ={require("./../../static/icons/next-qu-icon-01.png")} alt='next-question' />
+                </button>
+                <button className={ this.state.showAnswer ===  false ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.displayAnswers} >
+                  <p>Ich weiß nicht</p>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )
+        )
+      } else {
+        return (
+          <GameOver restart={this.restart}/>
+        )
+      }
     } else {
       return (
-        <div className="Container">
-          <div className="QuizContainer">
-            <div className="QuizHeader">
-              <div className="QuestionCategory">
-                Alle 300 richtig!
-              </div>
-            </div>
-            <div className="QuizBodyContainer">
-              <div className="QuizBody">
-                <div className="ResultBarBlack"></div>
-                <div className="ResultBarRed"></div>
-                <div className="ResultBarYellow"></div>
-              </div>
-            </div>
-            <div className='NextQuestion'>
-              <div className="UserScore">
-                <div className='UserProgress' style={userProgressStyle}></div>
-                <div className='Score'>
-                  {userProgress} / 300
-                </div>
-              </div>
-              <button className='NextQuestionButton' onClick={this.restart} >
-                <p>Ne&uuml;start?</p>
-              </button>
-            </div>
-          </div>
-        </div>
+        <QuestionOverview progress={this.state.progress} incorrect={this.state.incorrect} handleViewProgress={this.handleViewProgress}/>
       )
     }
   }

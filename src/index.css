@@ -9,11 +9,12 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: #eee;
+  background: #3E4651;
   font-family: 'Montserrat', sans-serif;
   height: 100%;
   font-size: 1rem;
   color: #333;
+  line-height: 1.5rem;
 }
 
 #root {
@@ -29,7 +30,6 @@ body {
 
 .Footer {
   height: 3.75rem;
-  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,9 +40,13 @@ h1 {
   font-weight: 300;
 }
 
+.site-logo {
+  margin-right: 0.5rem;
+}
+
 .headerContainer {
+  color: #fff;
   height: 3.75rem;
-  background: #fff;
   overflow: hidden;
   display: flex;
   flex-shrink: 0;
@@ -89,7 +93,7 @@ h1 {
   }
 
   .headerCenterSection {
-    justify-content: flex-start;
+    //justify-content: flex-start;
     padding: 0 0.5rem;
     flex: 0 0 100%;
   }
@@ -109,7 +113,7 @@ h1 {
   }
 
   body {
-    background: #fff;
+    //background: #fff;
   }
 
   .Footer {
@@ -117,6 +121,6 @@ h1 {
   }
 
   .headerContainer {
-    display: none;
+    //display: none;
   }
 }
