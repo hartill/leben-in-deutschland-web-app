@@ -2,6 +2,8 @@
   min-width: 15rem;
   width: 100%;
   background-color: #fff;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .QuizBodyContainer {
@@ -14,7 +16,8 @@
 .QuizHeader {
   display: flex;
   flex-shrink: 0;
-  background-color: #22212B;
+  flex-grow: 0;
+  background-color: #2D2634;
   height: 3.75rem;
   justify-content: space-between;
   color: #fff;
@@ -43,7 +46,7 @@
 }
 
 .redCount {
-  background-color: #E74C3C;
+  background-color: #DD5152;
 }
 
 .greenCount {
@@ -130,7 +133,7 @@
 
 .incorrectAnswer {
   //background-color: #EF4836;
-  background-color: #E74C3C;
+  background-color: #DD5152;
   color: #fff;
 }
 
@@ -145,9 +148,26 @@
 
 .NextQuestion {
   display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
   width: 100%;
   height: 3.75rem;
-  background-color: #22212B;
+  background-color: #2D2634;
+}
+
+.NextQuestionButton {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  height: 100%;
+  background-color: #2D2634;
+  cursor: pointer;
+  border: none;
+  padding: 0px;
+  transition: background-color 0.3s;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
 }
 
 .UserScore {
@@ -166,36 +186,12 @@
   top:0;
   bottom: 0;
   left:0;
-  background-color: #2ECC71;
+  background-color: #2CC990;
   height: 100%;
 }
 
 .Score {
   z-index: 1;
-}
-
-.NextQuestionButton {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-  height: 100%;
-  background-color: #22212B;
-  cursor: pointer;
-  border: none;
-  padding: 0px;
-  transition: background-color 0.3s;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-}
-
-@media screen and (max-width: 48.75rem) {
-  .QuizContainer {
-    display: flex;
-    flex-flow: column nowrap;
-    height: 100%;
-    justify-content: space-between;
-  }
 }
 
 .Hidden {
@@ -211,7 +207,6 @@
   width: 100%;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  //padding: 1rem;
 }
 
 .UserProgressBar {
@@ -238,7 +233,6 @@
   display: flex;
   flex-flow: column nowrap;
   width: 2rem;
-  //justify-content: flex-start;
 }
 
 .UserProgressArrow {
@@ -275,4 +269,11 @@
   align-items: center;
   justify-content: center;
   color: #fff;
+}
+
+@media screen and (max-width: 40rem) {
+  .QuizContainer {
+    height: 100%;
+    justify-content: space-between;
+  }
 }

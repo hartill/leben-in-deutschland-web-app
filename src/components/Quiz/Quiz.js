@@ -1,8 +1,8 @@
 import React from 'react';
 import './quiz.css';
 import quizQuestions from './../../api/quizQuestions'
-import Lightbox from 'react-image-lightbox';
-import Cookies from 'universal-cookie';
+import Lightbox from 'react-image-lightbox'
+import Cookies from 'universal-cookie'
 import Answers from './Answers'
 import GameOver from './GameOver'
 import QuestionOverview from './QuestionOverview'
