@@ -11,6 +11,7 @@ class QuestionOverview extends React.Component {
   renderUserProgress() {
     let output = []
     for (let i = 1; i < 301; i++) {
+      let answerOverview = []
       let questionId = i.toString()
       let correctCount = this.props.progress.reduce(function(n, val) {
           return n + (val === questionId)
@@ -18,18 +19,32 @@ class QuestionOverview extends React.Component {
       let incorrectCount  = this.props.incorrect.reduce(function(n, val) {
           return n + (val === questionId)
       }, 0)
-      let totalCount = correctCount - incorrectCount
 
-      let questionCountStyle = 'yellowCount'
-      if (totalCount < 0) {
-        questionCountStyle = 'redCount'
-      } else if (totalCount > 0) {
-        questionCountStyle = 'greenCount'
+      if (incorrectCount > 0) {
+        answerOverview.push(
+          <div className='incorrectAnswerCount' key='1'>
+            {incorrectCount > 1 ? incorrectCount + ' x' : null}
+          </div>
+        )
       }
+
+      if (correctCount > 0) {
+        answerOverview.push(
+          <div className='correctAnswerCount' key='2'>
+            <span>{correctCount > 1 ? correctCount + ' x' : null}</span>
+          </div>
+        )
+      }
+
       output.push(
         <div className='QuestionOverviewBox' key={`${i}`}>
-          <div className={'QuestionOverviewBoxInner ' + questionCountStyle}>
-            {i}
+          <div className='QuestionOverviewBoxInner'>
+            <div className='QuestionOverviewBoxHeader'>
+              {i}
+            </div>
+            <div className='QuestionOverviewBoxContent'>
+              {answerOverview}
+            </div>
           </div>
         </div>
       )
@@ -50,13 +65,13 @@ class QuestionOverview extends React.Component {
             </div>
           </div>
           <div className="QuizBodyContainer">
-            <div className="QuizBody">
+            <div className="QuizBody QuestionOverview">
               <div className="QuestionOverviewContainer">
                 {this.renderUserProgress()}
               </div>
             </div>
           </div>
-          <div className='NextQuestion'>
+          <div className='QuizFooter'>
             <UserProgressBar progress={this.props.progress}/>
           </div>
         </div>
