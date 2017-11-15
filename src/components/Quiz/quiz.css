@@ -274,7 +274,7 @@
   position: relative;
   width: 10%;
   padding-top: 10%;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
   overflow: hidden;
 }
 
@@ -342,5 +342,9 @@
 
   .QuestionOverview {
     padding: 0;
+  }
+
+  .QuestionOverviewBox {
+    font-size: 0.5rem;
   }
 }
