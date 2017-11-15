@@ -27,6 +27,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  overflow-y: auto;
 }
 
 .Footer {
@@ -107,6 +108,7 @@ h1 {
 
   .App {
     justify-content: flex-start;
+    overflow-y: hidden;
   }
 
   .Footer {

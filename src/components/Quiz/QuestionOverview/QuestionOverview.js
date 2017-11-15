@@ -1,6 +1,6 @@
 import React from 'react';
-import './quiz.css';
-import UserProgressBar from './UserProgressBar'
+import './QuestionOverview.css';
+import UserProgressBar from './../UserProgressBar'
 
 class QuestionOverview extends React.Component {
   constructor(props){
@@ -61,7 +61,7 @@ class QuestionOverview extends React.Component {
               Fragenübersicht
             </div>
             <div className='QuestionCount' onClick={this.props.handleViewProgress}>
-              <img src ={require("./../../static/icons/close-icon-02.png")} alt='next-question' />
+              <img src ={require("./../../../static/icons/close-icon-02.png")} alt='next-question' />
             </div>
           </div>
           <div className="QuizBodyContainer">
@@ -73,6 +73,9 @@ class QuestionOverview extends React.Component {
           </div>
           <div className='QuizFooter'>
             <UserProgressBar progress={this.props.progress}/>
+            <button className='ResetButton' onClick={this.props.restart} >
+              Fortschritt zurücksetzen
+            </button>
           </div>
         </div>
       </div>

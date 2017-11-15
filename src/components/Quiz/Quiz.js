@@ -5,7 +5,7 @@ import Lightbox from 'react-image-lightbox'
 import Cookies from 'universal-cookie'
 import Answers from './Answers'
 import GameOver from './GameOver'
-import QuestionOverview from './QuestionOverview'
+import QuestionOverview from './QuestionOverview/'
 import UserProgressBar from './UserProgressBar'
 
 class Quiz extends React.Component {
@@ -157,19 +157,6 @@ class Quiz extends React.Component {
     if (this.state.viewProgress === false) {
       if (this.state.completed === false) {
         let question = this.state.question
-        let questionCountStyle = 'yellowCount'
-        let incorrectCount  = this.state.incorrect.reduce(function(n, val) {
-            return n + (val === question.id)
-        }, 0)
-        let correctCount = this.state.progress.reduce(function(n, val) {
-            return n + (val === question.id)
-        }, 0)
-        let totalCount = correctCount - incorrectCount
-        if (totalCount < 0) {
-          questionCountStyle = 'redCount'
-        } else if (totalCount > 0) {
-          questionCountStyle = 'greenCount'
-        }
         let image = this.state.question.image !== undefined ? require(`./../../static/images/${question.image}`) : null
         return (
           <div className="Container">
@@ -213,7 +200,12 @@ class Quiz extends React.Component {
       }
     } else {
       return (
-        <QuestionOverview progress={this.state.progress} incorrect={this.state.incorrect} handleViewProgress={this.handleViewProgress}/>
+        <QuestionOverview
+          progress={this.state.progress}
+          incorrect={this.state.incorrect}
+          handleViewProgress={this.handleViewProgress}
+          restart={this.restart}
+        />
       )
     }
   }

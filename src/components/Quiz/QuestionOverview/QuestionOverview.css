@@ -1,0 +1,96 @@
+.QuestionOverview {
+  background-color: #3E4651;
+  padding: 2%;
+}
+
+.QuestionOverviewContainer {
+  display: flex;
+  flex-basis: 100%;
+  flex-flow: row wrap;
+}
+
+.QuestionOverviewBox {
+  position: relative;
+  width: 10%;
+  padding-top: 10%;
+  font-size: 0.75rem;
+  overflow: hidden;
+}
+
+.QuestionOverviewBoxInner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-right: 7%;
+  padding-bottom: 7%;
+  color: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.QuestionOverviewBox:nth-of-type(10n) .QuestionOverviewBoxInner {
+  padding-right: 0;
+}
+
+.QuestionOverviewBoxHeader {
+  flex: 1 0 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #37B1E3;
+}
+
+.QuestionOverviewBoxContent {
+  display: flex;
+  height: 50%;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #37B1E3;
+}
+
+.correctAnswerCount{
+  flex: 1 0 50%;
+  background-color: #2CC990;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.incorrectAnswerCount{
+  flex: 1 0 50%;
+  background-color: #DD5152;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ResetButton {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  height: 100%;
+  background-color: #DD5152;
+  cursor: pointer;
+  border: none;
+  padding: 0px;
+  transition: background-color 0.3s;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 48.75rem) {
+  .QuestionOverview {
+    padding: 0.5rem 0;
+  }
+
+  .QuestionOverviewBox {
+    font-size: 0.5rem;
+  }
+}

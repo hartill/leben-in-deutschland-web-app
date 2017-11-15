@@ -11,15 +11,15 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-  overflow-y: auto;
+  flex-shrink: 0;
+  flex-grow: 1;
 }
 
 .QuizHeader {
   display: flex;
   flex-shrink: 0;
   flex-grow: 0;
-  background-color: #2D2634;
+  background-color: #23212B;
   height: 3.75rem;
   justify-content: space-between;
   color: #fff;
@@ -38,7 +38,6 @@
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  //background-color: #339DE5;
   background-color: #11A6CE;
   width: 3.75rem;
 }
@@ -49,18 +48,6 @@
   justify-content: center;
   align-items: center;
   width: 3.75rem;
-}
-
-.yellowCount {
-  background-color: #686868;
-}
-
-.redCount {
-  background-color: #DD5152;
-}
-
-.greenCount {
-  background-color: #2CC990;
 }
 
 .QuestionCategory {
@@ -143,7 +130,6 @@
 }
 
 .incorrectAnswer {
-  //background-color: #EF4836;
   background-color: #DD5152;
   color: #fff;
 }
@@ -157,21 +143,12 @@
   color: #fff;
 }
 
-.NextQuestion {
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 100%;
-  height: 3.75rem;
-  background-color: #2D2634;
-}
-
 .NextQuestionButton {
   display: flex;
   justify-content: center;
   flex-grow: 1;
   height: 100%;
-  background-color: #2D2634;
+  background-color: #DD5152;
   cursor: pointer;
   border: none;
   padding: 0px;
@@ -186,7 +163,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #686868;
+  background-color: #23212B;
   color: #fff;
   flex-basis: 50%;
   flex-shrink: 0;
@@ -240,120 +217,15 @@
   background-color: #2ECC71;
 }
 
-.UserProgressLabelContainer {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 2rem;
-}
-
-.UserProgressArrow {
-  width: 0;
-  height: 0;
-  border-left: 0.5rem solid transparent;
-  border-right: 0.5rem solid transparent;
-  border-bottom: 1rem solid #222;
-  margin-left: -0.5rem;
-}
-
-.UserProgressLabel {
-  width: 100%;
-  text-align: center;
-  margin-left: -1rem;
-}
-
-.QuestionOverview {
-  background-color: #22212B;
-  padding: 2%;
-}
-
-.QuestionOverviewContainer {
-  display: flex;
-  flex-basis: 100%;
-  flex-flow: row wrap;
-}
-
-.QuestionOverviewBox {
-  position: relative;
-  width: 10%;
-  padding-top: 10%;
-  font-size: 0.75rem;
-  overflow: hidden;
-}
-
-.QuestionOverviewBoxInner {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding-right: 7%;
-  padding-bottom: 7%;
-  color: #fff;
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.QuestionOverviewBox:nth-of-type(10n) .QuestionOverviewBoxInner {
-  padding-right: 0;
-}
-
-.QuestionOverviewBoxHeader {
-  flex: 1 0 50%;
-  //color: #11A6CE;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #686868;
-}
-
-.QuestionOverviewBoxContent {
-  flex: 1 0 50%;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  background-color: #686868;
-}
-
-.correctAnswerCount{
-  flex: 1 0 50%;
-  background-color: #2CC990;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.incorrectAnswerCount{
-  flex: 1 0 50%;
-  background-color: #E74C3C;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @media screen and (max-width: 48.75rem) {
   .QuizContainer {
-    display: flex;
-    flex-flow: column nowrap;
     height: 100%;
     justify-content: space-between;
   }
 
-  .QuestionOverview {
-    padding: 0;
-  }
-
-  .QuestionOverviewBox {
-    font-size: 0.5rem;
-  }
-}
-
-@media screen and (max-width: 40rem) {
-  .QuizContainer {
+  .QuizBodyContainer {
     height: 100%;
-    justify-content: space-between;
+    overflow-y: auto;
+    flex-shrink: 1;
   }
 }
