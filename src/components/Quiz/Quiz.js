@@ -194,7 +194,7 @@ class Quiz extends React.Component {
                   <Answers question={question} showAnswer={this.state.showAnswer} selectedAnswer={this.state.selectedAnswer} onAnswerSelected={this.onAnswerSelected} />
                 </div>
               </div>
-              <div className='NextQuestion'>
+              <div className='QuizFooter'>
                 <UserProgressBar progress={this.state.progress}/>
                 <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} >
                   <img src ={require("./../../static/icons/next-qu-icon-01.png")} alt='next-question' />

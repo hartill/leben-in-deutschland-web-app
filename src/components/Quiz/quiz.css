@@ -11,6 +11,8 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .QuizHeader {
@@ -21,6 +23,14 @@
   height: 3.75rem;
   justify-content: space-between;
   color: #fff;
+}
+
+.QuizFooter {
+  display: flex;
+  width: 100%;
+  height: 3.75rem;
+  flex: 0 0 3.75rem;
+  background-color: #22212B;
 }
 
 .QuestionNumber {
@@ -73,6 +83,7 @@
 .QuizBody {
   padding: 1rem;
   width: 100%;
+  margin: auto;
 }
 
 .QuizCheckbox {
@@ -250,6 +261,11 @@
   margin-left: -1rem;
 }
 
+.QuestionOverview {
+  background-color: #22212B;
+  padding: 2%;
+}
+
 .QuestionOverviewContainer {
   display: flex;
   flex-basis: 100%;
@@ -257,18 +273,82 @@
 }
 
 .QuestionOverviewBox {
-  width: 2rem;
-  height: 2rem;
-  padding: 0.1rem;
-  font-size: 0.5rem;
+  position: relative;
+  width: 10%;
+  padding-top: 10%;
+  font-size: 0.75rem;
+  overflow: hidden;
 }
+
 .QuestionOverviewBoxInner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-right: 7%;
+  padding-bottom: 7%;
+  color: #fff;
   display: flex;
+  flex-flow: column nowrap;
+}
+
+.QuestionOverviewBox:nth-of-type(10n) .QuestionOverviewBoxInner {
+  padding-right: 0;
+}
+
+.QuestionOverviewBoxHeader {
+  flex: 1 0 50%;
+  //color: #11A6CE;
   width: 100%;
-  height: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  background-color: #686868;
+}
+
+.QuestionOverviewBoxContent {
+  flex: 1 0 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #686868;
+}
+
+.correctAnswerCount{
+  flex: 1 0 50%;
+  background-color: #2CC990;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.incorrectAnswerCount{
+  flex: 1 0 50%;
+  background-color: #E74C3C;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 48.75rem) {
+  .QuizContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .QuestionOverview {
+    padding: 0;
+  }
+
+  .QuestionOverviewBox {
+    font-size: 0.5rem;
+  }
 }
 
 @media screen and (max-width: 40rem) {
