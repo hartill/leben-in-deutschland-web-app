@@ -79,7 +79,7 @@ class QuestionOverview extends React.Component {
           <div className='QuizFooter'>
             <UserProgressBar progress={this.props.progress}/>
             <button className='ResetButton' onClick={this.props.restart} >
-              Ne&uuml;start?
+              Neustart?
             </button>
           </div>
         </div>

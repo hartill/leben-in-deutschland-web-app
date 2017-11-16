@@ -22,7 +22,7 @@ class GameOver extends React.Component {
           <div className='NextQuestion'>
             <UserProgressBar progress={this.state.progress}/>
             <button className='NextQuestionButton' onClick={this.props.restart} >
-              <p>Ne&uuml;start?</p>
+              <p>Neustart?</p>
             </button>
           </div>
         </div>
