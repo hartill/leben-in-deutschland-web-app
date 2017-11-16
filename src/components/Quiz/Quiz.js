@@ -168,8 +168,8 @@ class Quiz extends React.Component {
                 <div className='QuestionCategory'>
                   {question.category}
                 </div>
-                <div className='QuestionCount' onClick={this.handleViewProgress}>
-                  <img src ={require("./../../static/icons/overview-icon-03.png")} alt='next-question' />
+                <div className='OverviewIcon' onClick={this.handleViewProgress}>
+                  <img src ={require("./../../static/icons/qu-overview-icon.svg")} alt='next-question' />
                 </div>
               </div>
               <div className="QuizBodyContainer">
@@ -184,7 +184,7 @@ class Quiz extends React.Component {
               <div className='QuizFooter'>
                 <UserProgressBar progress={this.state.progress}/>
                 <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} >
-                  <img src ={require("./../../static/icons/next-qu-icon-01.png")} alt='next-question' />
+                  <img src ={require("./../../static/icons/next-qu-icon.svg")} alt='next-question' />
                 </button>
                 <button className={ this.state.showAnswer ===  false ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.displayAnswers} >
                   <p>Ich weiß nicht</p>

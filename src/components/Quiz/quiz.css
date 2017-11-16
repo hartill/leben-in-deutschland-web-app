@@ -42,12 +42,13 @@
   width: 3.75rem;
 }
 
-.QuestionCount {
+.OverviewIcon {
   display: flex;
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
   width: 3.75rem;
+  cursor: pointer;
 }
 
 .QuestionCategory {

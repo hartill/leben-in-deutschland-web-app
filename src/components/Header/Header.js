@@ -7,7 +7,7 @@ class Header extends React.Component {
       <div className="headerContainer">
         <div className= "headerLeftSection">
           {
-            // <MenuContainer/>
+            //<MenuContainer/>
           }
         </div>
         <div className="headerCenterSection">

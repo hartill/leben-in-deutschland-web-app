@@ -4,7 +4,7 @@ import './Menu.css'
 class MenuButton extends Component {
   render() {
     return (
-      <img src ={require("./../../static/icons/menu-icon-04.png")} alt='menu-toggle'
+      <img src ={require("./../../static/icons/menu-icon.svg")} alt='menu-toggle'
       onMouseDown={this.props.handleMouseDown}
       className='toggle'
       />

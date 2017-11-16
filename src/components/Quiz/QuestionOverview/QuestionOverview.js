@@ -65,8 +65,8 @@ class QuestionOverview extends React.Component {
             <div className="QuestionCategory">
               Fragenübersicht
             </div>
-            <div className='QuestionCount' onClick={this.props.handleViewProgress}>
-              <img src ={require("./../../../static/icons/close-icon-02.png")} alt='next-question' />
+            <div className='OverviewIcon' onClick={this.props.handleViewProgress}>
+              <img src ={require("./../../../static/icons/close-icon.svg")} alt='next-question' />
             </div>
           </div>
           <div className="QuizBodyContainer">

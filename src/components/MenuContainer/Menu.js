@@ -14,7 +14,7 @@ class Menu extends Component {
       <div id="flyoutMenu" className={visibility}>
         <div className='menu-header'>
           <img
-            src ={require("./../../static/icons/close-icon-02.png")}
+            src ={require("./../../static/icons/close-icon.svg")}
             alt='next-question'
             onMouseDown={this.props.handleMouseDown}
             className='close-menu'
