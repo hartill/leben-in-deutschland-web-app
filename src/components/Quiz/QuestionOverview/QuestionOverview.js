@@ -19,31 +19,36 @@ class QuestionOverview extends React.Component {
       let incorrectCount  = this.props.incorrect.reduce(function(n, val) {
           return n + (val === questionId)
       }, 0)
+      let boxStyle = ''
 
       if (incorrectCount > 0) {
+        boxStyle = 'incorrect'
         answerOverview.push(
           <div className='incorrectAnswerCount' key='1'>
-            {incorrectCount > 1 ? incorrectCount + ' x' : null}
+            {incorrectCount > 1 ? incorrectCount + 'x' : null}
           </div>
         )
       }
 
       if (correctCount > 0) {
-        answerOverview.push(
+        boxStyle = 'correct'
+        /* answerOverview.push(
           <div className='correctAnswerCount' key='2'>
             <span>{correctCount > 1 ? correctCount + ' x' : null}</span>
           </div>
-        )
+        ) */
       }
 
       output.push(
         <div className='QuestionOverviewBox' key={`${i}`}>
           <div className='QuestionOverviewBoxInner'>
-            <div className='QuestionOverviewBoxHeader'>
-              {i}
-            </div>
-            <div className='QuestionOverviewBoxContent'>
-              {answerOverview}
+            <div className={'QuestionOverviewBoxInnerInner ' + boxStyle}>
+              <div className='QuestionOverviewBoxHeader'>
+                {i}
+              </div>
+              <div className='QuestionOverviewBoxContent'>
+                {answerOverview}
+              </div>
             </div>
           </div>
         </div>
@@ -74,7 +79,7 @@ class QuestionOverview extends React.Component {
           <div className='QuizFooter'>
             <UserProgressBar progress={this.props.progress}/>
             <button className='ResetButton' onClick={this.props.restart} >
-              Fortschritt zurücksetzen
+              Ne&uuml;start?
             </button>
           </div>
         </div>

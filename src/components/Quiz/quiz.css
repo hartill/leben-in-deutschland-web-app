@@ -129,18 +129,24 @@
   color: #555;
 }
 
-.incorrectAnswer {
-  background-color: #DD5152;
+.incorrectAnswer:hover, .correctAnswer:hover, .showCorrectAnswer:hover {
   color: #fff;
 }
 
-.incorrectAnswer:hover, .correctAnswer:hover {
+.incorrectAnswer, .correctAnswer, .showCorrectAnswer {
   color: #fff;
+}
+
+.incorrectAnswer {
+  background-color: #DD5152;
 }
 
 .correctAnswer {
   background-color: #2CC990;
-  color: #fff;
+}
+
+.showCorrectAnswer {
+  background-color: #11A6CE;
 }
 
 .NextQuestionButton {

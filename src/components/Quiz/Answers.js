@@ -19,11 +19,17 @@ class Answers extends React.Component {
     }
     for (let i=0; i<question.answers.length; i++) {
       if (showAnswer === true) {
-        if (selectedAnswer === '' + i + '') {
-          answerHighlight = "incorrectAnswer"
-        }
-        if (question.answers[i].key === 1) {
-          answerHighlight = "correctAnswer"
+        if (selectedAnswer !== null) {
+          if (selectedAnswer === '' + i + '') {
+            answerHighlight = "incorrectAnswer"
+          }
+          if (question.answers[i].key === 1) {
+            answerHighlight = "correctAnswer"
+          }
+        } else {
+          if (question.answers[i].key === 1) {
+            answerHighlight = "showCorrectAnswer"
+          }
         }
       }
       output.push (
