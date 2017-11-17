@@ -13,12 +13,17 @@ class QuestionOverview extends React.Component {
     for (let i = 1; i < 301; i++) {
       let answerOverview = []
       let questionId = i.toString()
-      let correctCount = this.props.progress.includes(questionId)
+      let correctCount = false
+      if (this.props.progress) {
+        correctCount = this.props.progress.indexOf(questionId) < 0 ? false : true
+      }
       let incorrectCount = 0
-      if (this.props.incorrect.includes(questionId)) {
-        incorrectCount  = this.props.incorrect.reduce(function(n, val) {
-            return n + (val === questionId)
-        }, 0)
+      if (this.props.incorrect) {
+        if (this.props.incorrect.indexOf(questionId) > 0) {
+          incorrectCount  = this.props.incorrect.reduce(function(n, val) {
+              return n + (val === questionId)
+          }, 0)
+        }
       }
       let boxStyle = ''
 
