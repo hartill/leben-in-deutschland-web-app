@@ -19,7 +19,7 @@ class QuestionOverview extends React.Component {
       }
       let incorrectCount = 0
       if (this.props.incorrect) {
-        if (this.props.incorrect.indexOf(questionId) > 0) {
+        if (this.props.incorrect.indexOf(questionId) >= 0) {
           incorrectCount  = this.props.incorrect.reduce(function(n, val) {
               return n + (val === questionId)
           }, 0)
@@ -41,7 +41,7 @@ class QuestionOverview extends React.Component {
       }
 
       output.push(
-        <div className='QuestionOverviewBox' key={`${i}`}>
+        <div className='QuestionOverviewBox' key={i}>
           <div className='QuestionOverviewBoxInner'>
             <div className={'QuestionOverviewBoxInnerInner ' + boxStyle}>
               <div className='QuestionOverviewBoxHeader'>
@@ -72,9 +72,7 @@ class QuestionOverview extends React.Component {
           </div>
           <div className="QuizBodyContainer">
             <div className="QuizBody QuestionOverview">
-              <div className="QuestionOverviewContainer">
-                {this.renderUserProgress()}
-              </div>
+              {this.renderUserProgress()}
             </div>
           </div>
           <div className='QuizFooter'>
