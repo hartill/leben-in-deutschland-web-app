@@ -11,16 +11,19 @@ class GameOver extends React.Component {
             <div className="QuestionCategory">
               Alle 300 richtig!
             </div>
+            <div className='OverviewIcon' onClick={this.props.handleViewProgress}>
+              <img src ={require("./../../static/icons/qu-overview-icon.svg")} alt='next-question' />
+            </div>
           </div>
           <div className="QuizBodyContainer">
             <div className="QuizBody">
-              <div className="ResultBarBlack"></div>
-              <div className="ResultBarRed"></div>
-              <div className="ResultBarYellow"></div>
+              <div className="ResultBar Black"></div>
+              <div className="ResultBar Red"></div>
+              <div className="ResultBar Yellow"></div>
             </div>
           </div>
-          <div className='NextQuestion'>
-            <UserProgressBar progress={this.state.progress}/>
+          <div className='QuizFooter'>
+            <UserProgressBar progress={this.props.progress}/>
             <button className='NextQuestionButton' onClick={this.props.restart} >
               <p>Neustart?</p>
             </button>

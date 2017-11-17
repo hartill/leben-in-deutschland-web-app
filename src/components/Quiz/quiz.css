@@ -224,6 +224,22 @@
   background-color: #2ECC71;
 }
 
+.ResultBar {
+  height: 5rem;
+}
+
+.Black {
+  background-color: #222;
+}
+
+.Yellow {
+  background-color: #FFC107;
+}
+
+.Red {
+  background-color: #DD5152;
+}
+
 @media screen and (max-width: 48.75rem) {
   .QuizContainer {
     height: 100%;
