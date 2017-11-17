@@ -13,12 +13,13 @@ class QuestionOverview extends React.Component {
     for (let i = 1; i < 301; i++) {
       let answerOverview = []
       let questionId = i.toString()
-      let correctCount = this.props.progress.reduce(function(n, val) {
-          return n + (val === questionId)
-      }, 0)
-      let incorrectCount  = this.props.incorrect.reduce(function(n, val) {
-          return n + (val === questionId)
-      }, 0)
+      let correctCount = this.props.progress.includes(questionId)
+      let incorrectCount = 0
+      if (this.props.incorrect.includes(questionId)) {
+        incorrectCount  = this.props.incorrect.reduce(function(n, val) {
+            return n + (val === questionId)
+        }, 0)
+      }
       let boxStyle = ''
 
       if (incorrectCount > 0) {
@@ -30,13 +31,8 @@ class QuestionOverview extends React.Component {
         )
       }
 
-      if (correctCount > 0) {
+      if (correctCount) {
         boxStyle = 'correct'
-        /* answerOverview.push(
-          <div className='correctAnswerCount' key='2'>
-            <span>{correctCount > 1 ? correctCount + ' x' : null}</span>
-          </div>
-        ) */
       }
 
       output.push(
