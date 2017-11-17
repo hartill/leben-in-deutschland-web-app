@@ -91,7 +91,6 @@ class Quiz extends React.Component {
     expires.toUTCString()
     this.cookies.set('progress', this.state.progress, {expires: expires, path: '/' })
     this.cookies.set('incorrect', this.state.incorrect, {expires: expires, path: '/' })
-    console.log(this.state)
     if ((this.state.progress.length >= 300) && (this.state.progress !== nextState.progress)) {
       this.setState({
         completed: true
