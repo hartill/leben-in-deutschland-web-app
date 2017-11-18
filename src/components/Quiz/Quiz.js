@@ -91,11 +91,7 @@ class Quiz extends React.Component {
     expires.toUTCString()
     this.cookies.set('progress', this.state.progress, {expires: expires, path: '/' })
     this.cookies.set('incorrect', this.state.incorrect, {expires: expires, path: '/' })
-    if ((this.state.progress.length >= 300) && (this.state.progress !== nextState.progress)) {
-      this.setState({
-        completed: true
-      })
-    }
+    // maybe move below to next question so that it isn't triggerd before correct answer is shown
   }
 
   generateNextQuestion(questions) {
@@ -125,13 +121,19 @@ class Quiz extends React.Component {
   }
 
   nextQuestion() {
-    this.setState((prevState, props) => {
-      return {
-        question: this.generateNextQuestion(this.questions),
-        selectedAnswer: null,
-        showAnswer: false
-      }
-    })
+    if (this.state.progress.length >= 300) {
+      this.setState({
+        completed: true
+      })
+    } else {
+      this.setState((prevState, props) => {
+        return {
+          question: this.generateNextQuestion(this.questions),
+          selectedAnswer: null,
+          showAnswer: false
+        }
+      })
+    }
   }
 
   renderImage(image) {

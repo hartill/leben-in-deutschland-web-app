@@ -4272,7 +4272,7 @@ content: "St\u00e4dte.",
 key: 0
 }
 ],
-    "category_id": "0",
+    "category": "Wiedervereinigung",
 }, {
     "id": "195",
     "question": "Welches heutige deutsche Bundesland geh\u00f6rte fr\u00fcher zum Gebiet der DDR?",
