@@ -20,7 +20,7 @@ class Quiz extends React.Component {
       showAnswer: false,
       selectedAnswer: null,
       completed: false,
-      isOpen: false,
+      lightBoxIsOpen: false,
       viewProgress: false
     }
     this.generateNextQuestion = this.generateNextQuestion.bind(this);
@@ -29,6 +29,7 @@ class Quiz extends React.Component {
     this.displayAnswers = this.displayAnswers.bind(this);
     this.restart = this.restart.bind(this);
     this.handleViewProgress = this.handleViewProgress.bind(this);
+    this.renderImage = this.renderImage.bind(this);
   }
 
   componentWillMount() {
@@ -39,7 +40,7 @@ class Quiz extends React.Component {
       showAnswer: false,
       selectedAnswer: null,
       completed: false,
-      isOpen: false,
+      lightBoxIsOpen: false,
       viewProgress: false
     })
   }
@@ -114,7 +115,7 @@ class Quiz extends React.Component {
         completed: false,
         showAnswer: false,
         selectedAnswer: null,
-        isOpen: false,
+        lightBoxIsOpen: false,
         viewProgress: false
     })
   }
@@ -136,16 +137,16 @@ class Quiz extends React.Component {
   }
 
   renderImage(image) {
-    let isOpen = this.state.isOpen
+    let lightBoxIsOpen = this.state.lightBoxIsOpen
     return (
-      <div className="QuestionImage" onClick={() => this.setState({ isOpen: true })}>
+      <div className="QuestionImage" onClick={() => this.setState({ lightBoxIsOpen: true })}>
         <p>
           Bild ansehen
         </p>
-      {isOpen &&
+      {lightBoxIsOpen &&
       <Lightbox
           mainSrc={image}
-          onCloseRequest={() => this.setState({ isOpen: false })}
+          onCloseRequest={() => this.setState({ lightBoxIsOpen: false })}
           onMovePrevRequest={() => {}}
           onMoveNextRequest={() => {}}
       />
@@ -155,8 +156,24 @@ class Quiz extends React.Component {
   }
 
   render () {
-    if (this.state.viewProgress === false) {
-      if (this.state.completed === false) {
+    if (this.state.viewProgress === true) {
+      return (
+        <QuestionOverview
+          progress={this.state.progress}
+          incorrect={this.state.incorrect}
+          handleViewProgress={this.handleViewProgress}
+          restart={this.restart}
+        />
+      )
+    } else if (this.state.completed === true) {
+        return (
+          <GameOver
+            restart={this.restart}
+            progress={this.state.progress}
+            handleViewProgress={this.handleViewProgress}
+          />
+        )
+      } else {
         return (
           <Questions
             question={this.state.question}
@@ -167,21 +184,8 @@ class Quiz extends React.Component {
             progress={this.state.progress}
             nextQuestion={this.nextQuestion}
             displayAnswers={this.displayAnswers}
+            renderImage={this.renderImage}
           />
-        )
-      } else {
-        return (
-          <GameOver restart={this.restart} progress={this.state.progress} handleViewProgress={this.handleViewProgress}/>
-        )
-      }
-    } else {
-      return (
-        <QuestionOverview
-          progress={this.state.progress}
-          incorrect={this.state.incorrect}
-          handleViewProgress={this.handleViewProgress}
-          restart={this.restart}
-        />
       )
     }
   }

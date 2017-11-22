@@ -26,7 +26,7 @@ class Questions extends React.Component {
               <div className="QuestionText">
                 {question.question}
               </div>
-              {question.image !== undefined ? this.renderImage(image) : null}
+              {question.image !== undefined ? this.props.renderImage(image) : null}
               <Answers question={question}
                 showAnswer={this.props.showAnswer}
                 selectedAnswer={this.props.selectedAnswer}
