@@ -3,10 +3,10 @@ import './quiz.css';
 import quizQuestions from './../../api/quizQuestions'
 import Lightbox from 'react-image-lightbox'
 import Cookies from 'universal-cookie'
-import Answers from './Answers'
 import GameOver from './GameOver'
 import QuestionOverview from './QuestionOverview/'
 import UserProgressBar from './UserProgressBar'
+import Questions from './Questions'
 
 class Quiz extends React.Component {
   constructor(props){
@@ -91,7 +91,6 @@ class Quiz extends React.Component {
     expires.toUTCString()
     this.cookies.set('progress', this.state.progress, {expires: expires, path: '/' })
     this.cookies.set('incorrect', this.state.incorrect, {expires: expires, path: '/' })
-    // maybe move below to next question so that it isn't triggerd before correct answer is shown
   }
 
   generateNextQuestion(questions) {
@@ -158,42 +157,17 @@ class Quiz extends React.Component {
   render () {
     if (this.state.viewProgress === false) {
       if (this.state.completed === false) {
-        let question = this.state.question
-        let image = this.state.question.image !== undefined ? require(`./../../static/images/${question.image}`) : null
         return (
-          <div className="Container">
-            <div className="QuizContainer">
-              <div className="QuizHeader">
-                <div className="QuestionNumber">
-                  {question.id}
-                </div>
-                <div className='QuestionCategory'>
-                  {question.category}
-                </div>
-                <div className='OverviewIcon' onClick={this.handleViewProgress}>
-                  <img src ={require("./../../static/icons/qu-overview-icon.svg")} alt='next-question' />
-                </div>
-              </div>
-              <div className="QuizBodyContainer">
-                <div className="QuizBody">
-                  <div className="QuestionText">
-                    {question.question}
-                  </div>
-                  {question.image !== undefined ? this.renderImage(image) : null}
-                  <Answers question={question} showAnswer={this.state.showAnswer} selectedAnswer={this.state.selectedAnswer} onAnswerSelected={this.onAnswerSelected} />
-                </div>
-              </div>
-              <div className='QuizFooter'>
-                <UserProgressBar progress={this.state.progress}/>
-                <button className={ this.state.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.nextQuestion} >
-                  <img src ={require("./../../static/icons/next-qu-icon.svg")} alt='next-question' />
-                </button>
-                <button className={ this.state.showAnswer ===  false ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.displayAnswers} >
-                  <p>Ich weiß nicht</p>
-                </button>
-              </div>
-            </div>
-          </div>
+          <Questions
+            question={this.state.question}
+            handleViewProgress={this.handleViewProgress}
+            showAnswer={this.state.showAnswer}
+            selectedAnswer={this.state.selectedAnswer}
+            onAnswerSelected={this.onAnswerSelected}
+            progress={this.state.progress}
+            nextQuestion={this.nextQuestion}
+            displayAnswers={this.displayAnswers}
+          />
         )
       } else {
         return (
