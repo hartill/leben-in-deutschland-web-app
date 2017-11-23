@@ -9,13 +9,15 @@ class ExamUserProgress extends React.Component {
       this.props.examProgress[i].userScore === 1 ? correctAnswers += 1 : incorrectAnswers += 1
     }
     let percentageCorrect = correctAnswers / 30 * 100
+    let inversePercentageCorrect = 100 - percentageCorrect
     let percentageIncorrect = incorrectAnswers / 30 * 100
+    let inversePercentageIncorrect = 100 - percentageIncorrect
     let userProgress = this.props.examProgress.length
     let userProgressStyleCorrect = {
-      right: percentageCorrect + '%',
+      right: inversePercentageCorrect + '%',
     }
     let userProgressStyleIncorrect = {
-      left: percentageIncorrect + '%',
+      left: inversePercentageIncorrect + '%',
     }
     return (
       <div className="ExamUserProgressContainer">

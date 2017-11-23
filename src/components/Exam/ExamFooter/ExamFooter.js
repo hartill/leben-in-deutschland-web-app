@@ -18,13 +18,13 @@ class Footer extends React.Component {
       )
     } else if (this.props.showAnswer) {
       output.push(
-        <button className='NextButton' onClick={this.props.nextQuestion} key='2'>
+        <button className='ExamNextButton' onClick={this.props.nextQuestion} key='2'>
           <img src ={require("./../../../static/icons/next-qu-icon.svg")} alt='next-question' />
         </button>
       )
     } else {
       output.push(
-        <button className='NextButton Deactive' key='3'>
+        <button className='ExamNextButton Deactive' key='3'>
           <img src ={require("./../../../static/icons/next-qu-icon.svg")} alt='next-question' />
         </button>
       )
