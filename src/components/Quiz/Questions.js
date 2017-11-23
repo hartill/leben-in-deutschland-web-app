@@ -1,7 +1,6 @@
 import React from 'react';
 import './quiz.css';
 import Answers from './Answers'
-import UserProgressBar from './UserProgressBar'
 
 class Questions extends React.Component {
   render () {
@@ -17,9 +16,6 @@ class Questions extends React.Component {
             <div className='QuestionCategory'>
               {question.category}
             </div>
-            <div className='OverviewIcon' onClick={this.props.handleViewProgress}>
-              <img src ={require("./../../static/icons/qu-overview-icon.svg")} alt='next-question' />
-            </div>
           </div>
           <div className="QuizBodyContainer">
             <div className="QuizBody">
@@ -32,15 +28,6 @@ class Questions extends React.Component {
                 selectedAnswer={this.props.selectedAnswer}
                 onAnswerSelected={this.props.onAnswerSelected} />
             </div>
-          </div>
-          <div className='QuizFooter'>
-            <UserProgressBar progress={this.props.progress}/>
-            <button className={ this.props.showAnswer ===  true ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.props.nextQuestion} >
-              <img src ={require("./../../static/icons/next-qu-icon.svg")} alt='next-question' />
-            </button>
-            <button className={ this.props.showAnswer ===  false ? 'NextQuestionButton Visible' : 'NextQuestionButton Hidden'} onClick={this.props.displayAnswers} >
-              <p>Ich weiß nicht</p>
-            </button>
           </div>
         </div>
       </div>

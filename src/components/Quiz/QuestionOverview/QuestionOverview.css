@@ -1,5 +1,4 @@
 .QuestionOverview {
-  background-color: #3E4651;
   padding: 0.5rem 0;
 }
 
@@ -30,7 +29,7 @@
   color: #fff;
   display: flex;
   flex-flow: column nowrap;
-  background-color: #11A6CE;
+  background-color: #454F5F;
 }
 
 .QuestionOverviewBox:nth-of-type(10n) .QuestionOverviewBoxInner {
@@ -68,21 +67,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.ResetButton {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-  height: 100%;
-  background-color: #DD5152;
-  cursor: pointer;
-  border: none;
-  padding: 0px;
-  transition: background-color 0.3s;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
 }
 
 @media screen and (max-width: 48.75rem) {

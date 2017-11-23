@@ -66,20 +66,11 @@ class QuestionOverview extends React.Component {
             <div className="QuestionCategory">
               Fragenübersicht
             </div>
-            <div className='OverviewIcon' onClick={this.props.handleViewProgress}>
-              <img src ={require("./../../../static/icons/close-icon.svg")} alt='next-question' />
-            </div>
           </div>
           <div className="QuizBodyContainer">
             <div className="QuizBody QuestionOverview">
               {this.renderUserProgress()}
             </div>
-          </div>
-          <div className='QuizFooter'>
-            <UserProgressBar progress={this.props.progress}/>
-            <button className='ResetButton' onClick={this.props.restart} >
-              Neustart?
-            </button>
           </div>
         </div>
       </div>

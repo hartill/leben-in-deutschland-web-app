@@ -1,0 +1,72 @@
+.QuestionOverview {
+  padding: 0.5rem 0;
+}
+
+.ExamQuestionOverviewBox {
+  position: relative;
+  float: left;
+  width: 20%;
+  padding-top: 20%;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.ExamQuestionOverviewBoxInner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-right: 7%;
+  padding-bottom: 7%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.ExamQuestionOverviewBoxInnerInner {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #454F5F;
+}
+
+.ExamQuestionOverviewBox:nth-of-type(5n) .ExamQuestionOverviewBoxInner {
+  padding-right: 0;
+}
+
+.correct {
+  background-color: #2CC990;
+}
+
+.incorrect {
+  background-color: #DD5152;
+}
+
+.ResetButton {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  height: 100%;
+  background-color: #DD5152;
+  cursor: pointer;
+  border: none;
+  padding: 0px;
+  transition: background-color 0.3s;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 48.75rem) {
+  .ExamQuestionOverview {
+    //padding: 0.5rem 0;
+  }
+
+  .ExamQuestionOverviewBox {
+    //font-size: 0.65rem;
+  }
+}

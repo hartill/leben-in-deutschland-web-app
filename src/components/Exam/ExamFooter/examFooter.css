@@ -1,0 +1,13 @@
+.Deactive {
+  background: #000;
+  opacity: 0.3;
+  cursor: default;
+}
+
+@media screen and (max-width: 48rem) {
+  .Deactive {
+    background: transparent;
+    opacity: 0.3;
+    cursor: default;
+  }
+}

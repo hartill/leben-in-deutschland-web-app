@@ -1,11 +1,11 @@
 import React from 'react';
-import './quiz.css';
+import './exam.css';
 import Lightbox from 'react-image-lightbox'
-import GameOver from './GameOver'
-import QuestionOverview from './QuestionOverview/'
-import Questions from './Questions'
+import Results from './Results/'
+import Review from './Review/'
+import Questions from './../Quiz/Questions'
 
-class Quiz extends React.Component {
+class Exam extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -41,25 +41,18 @@ class Quiz extends React.Component {
 
   render () {
     if (this.props.viewProgress === true) {
+      return (
+        <Review
+          examProgress={this.props.examProgress}
+          maxNumberQuestions={this.props.numberOfQuestions}
+        />
+      )
+    } else if (this.props.examCompleted === true) {
         return (
-          <QuestionOverview
-            restart={this.props.restart}
-            progress={this.props.progress}
-            incorrect={this.props.incorrect}
-            numberOfQuestions={this.props.numberOfQuestions}
+          <Results
+            examProgress={this.props.examProgress}
+            maxNumberQuestions={this.numberOfQuestions}
           />
-        )
-      } else if (this.props.completed === true) {
-        return (
-          <div className="Container">
-            <div className="QuizContainer">
-              <GameOver
-                restart={this.props.restart}
-                progress={this.props.progress}
-                numberOfQuestions={this.props.numberOfQuestions}
-              />
-            </div>
-          </div>
         )
       } else {
         return (
@@ -68,14 +61,13 @@ class Quiz extends React.Component {
             showAnswer={this.props.showAnswer}
             selectedAnswer={this.props.selectedAnswer}
             onAnswerSelected={this.props.onAnswerSelected}
-            progress={this.props.progress}
             displayAnswers={this.props.displayAnswers}
             renderImage={this.renderImage}
             maxNumberQuestions={this.props.numberOfQuestions}
           />
-      )
-    }
+        )
+      }
   }
 }
 
-export default Quiz
+export default Exam

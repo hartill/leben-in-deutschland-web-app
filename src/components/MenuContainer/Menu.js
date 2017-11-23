@@ -20,14 +20,14 @@ class Menu extends Component {
             className='close-menu'
           />
         </div>
-        <div className='Container'>
-          <Link to='/ubung' className='menu-item ubung'>
-            Ubung
+        <div className='MenuContainer'>
+          <Link to='/ubung' className='menu-item ubung' onClick={this.props.handleMouseDown}>
+            Ubüng
           </Link>
-          <Link to='/prufung' className='menu-item prufung'>
-            Prufung
+          <Link to='/prufung' className='menu-item prufung' onClick={this.props.handleMouseDown}>
+            Prüfung
           </Link>
-          <Link to='/alle-fragen' className='menu-item alleFragen'>
+          <Link to='/alle-fragen' className='menu-item alleFragen' onClick={this.props.handleMouseDown}>
             Alle Fragen
           </Link>
         </div>

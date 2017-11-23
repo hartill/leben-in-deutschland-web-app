@@ -27,14 +27,15 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .Footer {
-  height: 3.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 0 0 3.75rem;
+  height: 3.75rem;
 }
 
 h1 {
@@ -54,11 +55,13 @@ h1 {
   overflow: hidden;
   display: flex;
   flex-shrink: 0;
+  background-color: #23212B;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
 }
 
 .headerLeftSection {
   box-sizing: border-box;
-  flex: 0 0 3rem;
+  flex: 0 0 3.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,20 +78,19 @@ h1 {
 
 .headerRightSection {
   box-sizing: border-box;
-  flex: 0 0 3rem;
+  flex: 0 0 3.75rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 1rem;
 }
 
 .Container {
-  max-width: 40rem;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-flow: column;
   align-items: center;
+  overflow-y: auto;
 }
 
 @media screen and (max-width: 48rem) {
@@ -105,18 +107,10 @@ h1 {
     height: 100%;
     max-width: 100%;
     align-self: flex-start;
+    background-color: #fff;
   }
 
   .App {
     justify-content: flex-start;
-    overflow-y: hidden;
-  }
-
-  .Footer {
-    display: none;
-  }
-
-  .headerContainer {
-    display: none;
   }
 }

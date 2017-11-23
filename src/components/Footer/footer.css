@@ -1,0 +1,55 @@
+.UserProgressContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+  background-color: #23212B;
+  color: #fff;
+  height: 100%;
+}
+
+.UserProgress {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left:0;
+  background-color: #2CC990;
+  height: 100%;
+}
+
+.Score {
+  z-index: 1;
+}
+
+.NextButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DD5152;
+  cursor: pointer;
+  border: none;
+  padding: 0px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  flex-shrink: 0;
+  flex-basis: 50%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.ResetButton {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  height: 100%;
+  background-color: #DD5152;
+  cursor: pointer;
+  border: none;
+  padding: 0px;
+  transition: background-color 0.3s;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}

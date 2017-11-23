@@ -16,7 +16,7 @@
   left: 0;
   transition: transform .3s
               cubic-bezier(0, .52, 0, 1);
-  overflow: scroll;
+  overflow-y: auto;
   z-index: 1000;
 }
 
@@ -33,6 +33,14 @@ a {
   color: #fff;
   margin-left: 1rem;
   text-decoration: none;
+}
+
+.MenuContainer {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 @media screen and (max-width: 40rem) {
