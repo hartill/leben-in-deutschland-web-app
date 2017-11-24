@@ -119,7 +119,7 @@ class MockExam extends Component {
     let minNumber = 1
     let randNumber = Math.floor((Math.random() * maxNumber) + minNumber);
     for (let i = 0; i < examProgress.length; i++) {
-      if (randNumber >= examProgress[i].questionId) {
+      if (randNumber >= parseFloat(examProgress[i].questionId)) {
         randNumber += 1
       }
     }

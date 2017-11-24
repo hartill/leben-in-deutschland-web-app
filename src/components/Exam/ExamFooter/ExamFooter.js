@@ -12,19 +12,19 @@ class Footer extends React.Component {
     let output=[]
     if ((this.props.viewProgress) || (this.props.examCompleted)) {
       output.push(
-        <button className='ExamResetButton' onClick={this.props.restart} key='1'>
+        <button className='ExamResetButton' onClick={this.props.restart} key='100'>
           Neustart?
         </button>
       )
     } else if (this.props.showAnswer) {
       output.push(
-        <button className='ExamNextButton' onClick={this.props.nextQuestion} key='2'>
+        <button className='ExamNextButton' onClick={this.props.nextQuestion} key='200'>
           <img src ={require("./../../../static/icons/next-qu-icon.svg")} alt='next-question' />
         </button>
       )
     } else {
       output.push(
-        <div className ='Deactive'>
+        <div className ='Deactive' key='300'>
           <img src ={require("./../../../static/icons/next-qu-icon.svg")} alt='next-question' />
         </div>
       )

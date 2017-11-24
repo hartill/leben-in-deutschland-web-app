@@ -18,7 +18,7 @@ class Results extends React.Component {
     let testPassed = percentageCorrect >= 50 ? true : false
     let accentStyle = testPassed ? 'green' : 'red'
     output.push(
-      <div className='ResultBox'>
+      <div className='ResultBox' key={1}>
         <div className={'ResultFinalPercentage ' + accentStyle}>
           {percentageCorrect.toFixed(0)}%
         </div>
