@@ -26,6 +26,14 @@
   color: #fff;
 }
 
+.greenHeader {
+  background-color: #2CC990;
+}
+
+.redHeader {
+  background-color: #DD5152;
+}
+
 .QuizFooter {
   display: flex;
   width: 100%;
@@ -40,17 +48,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0,0,0,.4);;
-  //border-right: 2px solid rgba(0,0,0,.2);
   width: 3.75rem;
-}
-
-.OverviewIcon {
-  display: flex;
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  width: 3.75rem;
-  cursor: pointer;
 }
 
 .QuestionCategory {
@@ -186,5 +184,18 @@
   .QuizBodyContainer {
     height: 100%;
     flex-shrink: 1;
+  }
+
+  .QuizBody {
+    padding: 0.75rem;
+  }
+
+  .QuestionText {
+    padding: 0.75rem 0;
+  }
+
+  .AnswerOption {
+    padding: 0.75rem 0;
+    margin-bottom: 0.4rem;
   }
 }

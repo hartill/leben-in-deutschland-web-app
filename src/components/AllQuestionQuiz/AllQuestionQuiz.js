@@ -1,11 +1,9 @@
 import React from 'react';
-import './exam.css';
 import Lightbox from 'react-image-lightbox'
-import Results from './Results/'
-import Review from './Review/'
+import AQOverview from './AQOverview'
 import Questions from './../Quiz/Questions'
 
-class Exam extends React.Component {
+class AllQuestions extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -41,17 +39,14 @@ class Exam extends React.Component {
 
   render () {
     if (this.props.viewProgress === true) {
-      return (
-        <Review
-          examProgress={this.props.examProgress}
-          maxNumberQuestions={this.props.numberOfQuestions}
-        />
-      )
-    } else if (this.props.examCompleted === true) {
         return (
-          <Results
-            examProgress={this.props.examProgress}
-            maxNumberQuestions={this.numberOfQuestions}
+          <AQOverview
+            restart={this.props.restart}
+            progress={this.props.progress}
+            incorrect={this.props.incorrect}
+            numberOfQuestions={this.props.numberOfQuestions}
+            handleQuestionSelected={this.props.handleQuestionSelected}
+            question={this.props.question}
           />
         )
       } else {
@@ -61,14 +56,15 @@ class Exam extends React.Component {
             showAnswer={this.props.showAnswer}
             selectedAnswer={this.props.selectedAnswer}
             onAnswerSelected={this.props.onAnswerSelected}
+            progress={this.props.progress}
             displayAnswers={this.props.displayAnswers}
             renderImage={this.renderImage}
             maxNumberQuestions={this.props.numberOfQuestions}
-            headerColor={'redHeader'}
+            headerColor={'greenHeader'}
           />
-        )
-      }
+      )
+    }
   }
 }
 
-export default Exam
+export default AllQuestions

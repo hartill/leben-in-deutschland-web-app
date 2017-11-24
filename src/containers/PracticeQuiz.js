@@ -21,11 +21,11 @@ class PracticeQuiz extends Component {
       showAnswer: false,
     }
     this.handleViewProgress = this.handleViewProgress.bind(this)
-    this.onAnswerSelected = this.onAnswerSelected.bind(this);
-    this.displayAnswers = this.displayAnswers.bind(this);
-    this.generateNextQuestion = this.generateNextQuestion.bind(this);
-    this.nextQuestion = this.nextQuestion.bind(this);
-    this.restart = this.restart.bind(this);
+    this.onAnswerSelected = this.onAnswerSelected.bind(this)
+    this.displayAnswers = this.displayAnswers.bind(this)
+    this.generateNextQuestion = this.generateNextQuestion.bind(this)
+    this.nextQuestion = this.nextQuestion.bind(this)
+    this.restart = this.restart.bind(this)
   }
 
   componentWillMount() {
@@ -131,10 +131,11 @@ class PracticeQuiz extends Component {
   }
 
   render() {
+    let title = this.state.viewProgress ? 'Fragenübersicht' : 'Übung'
     return (
       <div className="App">
         <Header
-          title='Übung'
+          title={title}
           viewProgress={this.state.viewProgress}
           handleViewProgress={this.handleViewProgress}
         />

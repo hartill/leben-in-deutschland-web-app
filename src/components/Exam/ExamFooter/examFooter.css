@@ -1,33 +1,38 @@
-.Deactive {
-  background: #000;
-  opacity: 0.3;
-  cursor: default;
-}
-
 .ExamNextButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #23212B;
-  border-right: 5px solid #000;
+  background-color: #DD5152;
   cursor: pointer;
   border: none;
   padding: 0px;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
   flex-shrink: 0;
   flex-basis: 50%;
   height: 100%;
   cursor: pointer;
 }
 
+.Deactive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DD5152;
+  cursor: pointer;
+  border: none;
+  padding: 0px;
+  flex-shrink: 0;
+  flex-basis: 50%;
+  height: 100%;
+  opacity: 0.5;
+  cursor: default;
+}
+
 .ExamResetButton {
   display: flex;
   justify-content: center;
-  flex-grow: 1;
+  flex-basis: 50%;
   height: 100%;
-  background-color: #23212B;
+  background-color: #DD5152;
   cursor: pointer;
   border: none;
   padding: 0px;

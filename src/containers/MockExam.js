@@ -139,10 +139,11 @@ class MockExam extends Component {
   }
 
   render() {
+    let title = this.state.viewProgress ? 'Fragenübersicht' : 'Prüfung'
     return (
       <div className="App">
         <Header
-          title='Prüfung'
+          title={title}
           viewProgress={this.state.viewProgress}
           handleViewProgress={this.handleViewProgress}
         />

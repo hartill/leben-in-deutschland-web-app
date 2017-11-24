@@ -4,13 +4,14 @@
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
+  padding: 1rem 0;
 }
 
 .ExOvHeader {
   display: flex;
   flex-shrink: 0;
   flex-grow: 0;
-  background-color: #11A6CE;
+  background-color: #DD5152;
   height: 3.75rem;
   justify-content: space-between;
   color: #fff;
@@ -22,6 +23,16 @@
   flex-grow: 1;
   text-align: left;
   padding: 0 1rem;
+}
+
+.ExOvTitleLeft {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.4);;
+  width: 3.75rem;
+  height: 100%;
 }
 
 .ExOvBodyContainer {
@@ -69,7 +80,7 @@
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  background-color: #454F5F;
+  background-color: rgba(0,0,0,0.3);
 }
 
 .ExamQuestionOverviewBox:nth-of-type(5n) .ExamQuestionOverviewBoxInner {
@@ -100,6 +111,10 @@
 }
 
 @media screen and (max-width: 48.75rem) {
+  .ExOvContainer {
+    padding: 0;
+  }
+
   .ExOvBody {
     padding: 0.5rem 0;
   }

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import Header from './components/Header'
-import Footer from './components/Footer'
 import PracticeQuiz from './containers/PracticeQuiz'
 import MockExam from './containers/MockExam'
+import AllQuestions from './containers/AllQuestions'
 import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
@@ -14,6 +13,7 @@ class App extends Component {
           <Route exact path='/' component={PracticeQuiz}/>
           <Route path='/ubung' component={PracticeQuiz}/>
           <Route path='/prufung' component={MockExam}/>
+          <Route path='/alle-fragen' component={AllQuestions}/>
         </Switch>
       </div>
     );

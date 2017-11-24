@@ -1,8 +1,7 @@
 import React from 'react'
-import ExamUserProgress from './../ExamUserProgress'
-import './examFooter.css';
+import './aQFooter.css';
 
-class Footer extends React.Component {
+class AQFooter extends React.Component {
   constructor(props){
     super(props)
     this.renderButton = this.renderButton.bind(this);
@@ -10,21 +9,21 @@ class Footer extends React.Component {
 
   renderButton() {
     let output=[]
-    if ((this.props.viewProgress) || (this.props.examCompleted)) {
+    if (this.props.viewProgress) {
       output.push(
-        <button className='ExamResetButton' onClick={this.props.restart} key='1'>
-          Neustart?
+        <button className='AQNextButton' onClick={this.props.nextQuestion} key='2'>
+          <img src ={require("./../../../static/icons/next-qu-icon.svg")} alt='next-question' />
         </button>
       )
     } else if (this.props.showAnswer) {
       output.push(
-        <button className='ExamNextButton' onClick={this.props.nextQuestion} key='2'>
+        <button className='AQNextButton' onClick={this.props.nextQuestion} key='2'>
           <img src ={require("./../../../static/icons/next-qu-icon.svg")} alt='next-question' />
         </button>
       )
     } else {
       output.push(
-        <div className ='Deactive'>
+        <div className='AQNextButton AQDeactive' key='2'>
           <img src ={require("./../../../static/icons/next-qu-icon.svg")} alt='next-question' />
         </div>
       )
@@ -35,11 +34,10 @@ class Footer extends React.Component {
   render () {
     return (
       <div className="Footer">
-        <ExamUserProgress examProgress={this.props.examProgress} numberOfQuestions={this.props.numberOfQuestions} />
         {this.renderButton()}
       </div>
     )
   }
 }
 
-export default Footer
+export default AQFooter

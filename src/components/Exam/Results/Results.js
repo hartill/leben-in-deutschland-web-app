@@ -24,12 +24,8 @@ class Results extends React.Component {
         </div>
         {testPassed ? <p>du hast bestanden</p> : <p>du hast nicht bestanden</p>}
         <div className='ResultValue'>
-          <div className='correctAnswerIcon'/>
-          <p>{correctAnswers} / 30</p>
-        </div>
-        <div className='ResultValue'>
-          <div className='incorrectAnswerIcon'/>
-          <p>{incorrectAnswers} / 30</p>
+          <div className='correctAnswerIcon'>x {correctAnswers}</div>
+          <div className='incorrectAnswerIcon'>x {incorrectAnswers}</div>
         </div>
       </div>
     )

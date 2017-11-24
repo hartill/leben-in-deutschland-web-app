@@ -5,26 +5,16 @@
   align-items: center;
   flex-basis: 50%;
   background-color: #23212B;
-  border-right: 2px solid #3E4651;
   color: #fff;
   height: 100%;
 }
 
-.ExamUserProgressCorrect {
+.ExamUserProgress {
   position: absolute;
   top:0;
   bottom: 0;
   left:0;
-  background-color: #2CC990;
-  height: 100%;
-}
-
-.ExamUserProgressIncorrect {
-  position: absolute;
-  top:0;
-  bottom: 0;
-  right:0;
-  background-color: #DD5152;
+  background-color: #11A6CE;
   height: 100%;
 }
 

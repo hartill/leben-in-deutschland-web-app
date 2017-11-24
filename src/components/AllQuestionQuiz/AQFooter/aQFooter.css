@@ -1,0 +1,26 @@
+.AQNextButton {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #23212B;
+  border-right: 5px solid #000;
+  cursor: pointer;
+  border: none;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.AQDeactive {
+  opacity: 0.3;
+  cursor: default;
+}
+
+@media screen and (max-width: 48rem) {
+  .AQDeactive {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
