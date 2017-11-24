@@ -28,7 +28,7 @@ class Menu extends Component {
         </div>
         <div className='MenuContainer'>
           <Link to='/ubung' className='menu-item ubung' onClick={this.props.handleMouseDown}>
-            Ubüng
+            Übung
           </Link>
           <Link to='/prufung' className='menu-item prufung' onClick={this.props.handleMouseDown}>
             Prüfung
