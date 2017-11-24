@@ -12,13 +12,19 @@ class Menu extends Component {
 
     return (
       <div id="flyoutMenu" className={visibility}>
-        <div className='menu-header'>
-          <img
-            src ={require("./../../static/icons/close-icon.svg")}
-            alt='next-question'
-            onMouseDown={this.props.handleMouseDown}
-            className='close-menu'
-          />
+        <div className='menuHeaderContainer'>
+          <div className='menuHeaderLeftSection'>
+            <img
+              src ={require("./../../static/icons/close-icon.svg")}
+              alt='next-question'
+              onMouseDown={this.props.handleMouseDown}
+              className='close-menu'
+            />
+          </div>
+          <div className='menuHeaderCenterSection'>
+            Leben in Deutschland Test
+          </div>
+          <div className='menuHeaderRightSection' />
         </div>
         <div className='MenuContainer'>
           <Link to='/ubung' className='menu-item ubung' onClick={this.props.handleMouseDown}>
