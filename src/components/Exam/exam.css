@@ -5,6 +5,7 @@
   align-items: center;
   flex-basis: 50%;
   background-color: #23212B;
+  border-right: 2px solid #3E4651;
   color: #fff;
   height: 100%;
 }

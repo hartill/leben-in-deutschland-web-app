@@ -12,7 +12,7 @@ class Footer extends React.Component {
     let output=[]
     if ((this.props.viewProgress) || (this.props.examCompleted)) {
       output.push(
-        <button className='ResetButton' onClick={this.props.restart} key='1'>
+        <button className='ExamResetButton' onClick={this.props.restart} key='1'>
           Neustart?
         </button>
       )

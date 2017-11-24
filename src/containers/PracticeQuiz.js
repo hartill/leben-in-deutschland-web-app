@@ -15,8 +15,8 @@ class PracticeQuiz extends Component {
       question: {},
       completed: false,
       viewProgress: false,
-      progress: [],
-      incorrect: [],
+      progress: this.cookies.get('progress') || [],
+      incorrect: this.cookies.get('incorrect') || [],
       selectedAnswer: null,
       showAnswer: false,
     }

@@ -1,4 +1,42 @@
-.QuestionOverview {
+.ExOvContainer {
+  min-width: 15rem;
+  max-width: 40rem;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.ExOvHeader {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background-color: #11A6CE;
+  height: 3.75rem;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.ExOvTitle {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.ExOvBodyContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.ExOvBody {
+  padding: 1rem;
+  width: 100%;
+  margin: auto;
   padding: 0.5rem 0;
 }
 
@@ -62,11 +100,7 @@
 }
 
 @media screen and (max-width: 48.75rem) {
-  .ExamQuestionOverview {
-    //padding: 0.5rem 0;
-  }
-
-  .ExamQuestionOverviewBox {
-    //font-size: 0.65rem;
+  .ExOvBody {
+    padding: 0.5rem 0;
   }
 }

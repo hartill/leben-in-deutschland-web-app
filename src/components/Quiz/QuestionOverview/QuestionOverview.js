@@ -61,14 +61,14 @@ class QuestionOverview extends React.Component {
   render () {
     return (
       <div className="Container">
-        <div className="QuizContainer">
-          <div className="QuizHeader">
-            <div className="QuestionCategory">
+        <div className="QuOvContainer">
+          <div className="QuOvHeader">
+            <div className="QuOvTitle">
               Fragenübersicht
             </div>
           </div>
-          <div className="QuizBodyContainer">
-            <div className="QuizBody QuestionOverview">
+          <div className="QuOvBodyContainer">
+            <div className="QuOvBody">
               {this.renderUserProgress()}
             </div>
           </div>

@@ -47,14 +47,14 @@ class Review extends React.Component {
   render () {
     return (
       <div className="Container">
-        <div className="QuizContainer">
-          <div className="QuizHeader">
-            <div className="QuestionCategory">
+        <div className="ExOvContainer">
+          <div className="ExOvHeader">
+            <div className="ExOvTitle">
               Fragenübersicht
             </div>
           </div>
-          <div className="QuizBodyContainer">
-            <div className="QuizBody QuestionOverview">
+          <div className="ExOvBodyContainer">
+            <div className="ExOvBody">
               {this.renderUserProgress()}
             </div>
           </div>

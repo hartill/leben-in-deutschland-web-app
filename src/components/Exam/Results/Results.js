@@ -15,10 +15,22 @@ class Results extends React.Component {
       this.props.examProgress[i].userScore === 1 ? correctAnswers += 1 : incorrectAnswers += 1
     }
     let percentageCorrect = correctAnswers / 30 * 100
+    let testPassed = percentageCorrect >= 50 ? true : false
+    let accentStyle = testPassed ? 'green' : 'red'
     output.push(
-      <div key='1'>
-        <p>{correctAnswers} / 30</p>
-        <p>{percentageCorrect.toFixed(0)}%</p>
+      <div className='ResultBox'>
+        <div className={'ResultFinalPercentage ' + accentStyle}>
+          {percentageCorrect.toFixed(0)}%
+        </div>
+        {testPassed ? <p>du hast bestanden</p> : <p>du hast nicht bestanden</p>}
+        <div className='ResultValue'>
+          <div className='correctAnswerIcon'/>
+          <p>{correctAnswers} / 30</p>
+        </div>
+        <div className='ResultValue'>
+          <div className='incorrectAnswerIcon'/>
+          <p>{incorrectAnswers} / 30</p>
+        </div>
       </div>
     )
     return output

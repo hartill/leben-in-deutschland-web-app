@@ -13,7 +13,7 @@ class MockExam extends Component {
     this.cookies = new Cookies()
     this.state = {
       question: {},
-      examProgress: [],
+      examProgress: this.cookies.get('examProgress') || [],
       showAnswer: false,
       selectedAnswer: null,
       examCompleted: false,
@@ -34,8 +34,13 @@ class MockExam extends Component {
       selectedAnswer: null,
       showAnswer: false,
       question: this.generateNextQuestion(this.questions),
-      completed: false,
+      examCompleted: false,
     })
+    if(this.state.examProgress.length >= this.numberOfQuestions) {
+      this.setState({
+        examCompleted: true
+      })
+    }
   }
 
   componentDidUpdate(nextProps, nextState) {
