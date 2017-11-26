@@ -28,11 +28,11 @@ class Header extends React.Component {
   componentWillUpdate(nextProps) {
     if (nextProps.viewProgress !== this.props.viewProgress) {
       if(nextProps.viewProgress) {
-        this.anim.setDirection(-1)
-        this.anim.goToAndPlay(10, true)
-      } else {
         this.anim.setDirection(1)
         this.anim.goToAndPlay(0, true)
+      } else {
+        this.anim.setDirection(-1)
+        this.anim.goToAndPlay(10, true)
       }
     }
   }
