@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import quizQuestions from './../api/quizQuestions'
 import AllQuestionQuiz from './../components/AllQuestionQuiz'
 import AQFooter from './../components/AllQuestionQuiz/AQFooter'
-import AQHeader from './../components/AllQuestionQuiz/AQHeader'
+import Header from './../components/Header'
 
 class AllQuestions extends Component {
   constructor(props){
@@ -88,7 +88,7 @@ class AllQuestions extends Component {
     let title = this.state.viewProgress ? 'Frage auswählen' : 'Alle Fragen'
     return (
       <div className="App">
-        <AQHeader
+        <Header
           title={title}
           viewProgress={this.state.viewProgress}
           handleViewProgress={this.handleViewProgress}
