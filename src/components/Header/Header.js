@@ -23,13 +23,17 @@ class Header extends React.Component {
     this.anim = bodymovin.loadAnimation(animationProperties)
   }
 
-  componentDidUpdate () {
-    if(this.props.viewProgress) {
-      this.anim.setDirection(1)
-      this.anim.goToAndPlay(0, true)
-    } else {
-      this.anim.setDirection(-1)
-      this.anim.goToAndPlay(10, true)
+
+
+  componentWillUpdate(nextProps) {
+    if (nextProps.viewProgress !== this.props.viewProgress) {
+      if(nextProps.viewProgress) {
+        this.anim.setDirection(-1)
+        this.anim.goToAndPlay(10, true)
+      } else {
+        this.anim.setDirection(1)
+        this.anim.goToAndPlay(0, true)
+      }
     }
   }
 

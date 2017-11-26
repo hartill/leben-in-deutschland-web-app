@@ -13,11 +13,10 @@ class Menu extends Component {
     return (
       <div id="flyoutMenu" className={visibility}>
         <div className='menuHeaderContainer'>
-          <div className='menuHeaderLeftSection'>
+          <div className='menuHeaderLeftSection' onClick={this.props.handleMouseDown}>
             <img
               src ={require("./../../static/icons/close-icon.svg")}
               alt='next-question'
-              onMouseDown={this.props.handleMouseDown}
               className='close-menu'
             />
           </div>
