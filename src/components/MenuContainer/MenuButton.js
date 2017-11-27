@@ -5,7 +5,6 @@ class MenuButton extends Component {
   render() {
     return (
       <img src ={require("./../../static/icons/menu-icon.svg")} alt='menu-toggle'
-      onMouseDown={this.props.handleMouseDown}
       className='toggle'
       />
     )

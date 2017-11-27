@@ -9,7 +9,7 @@ class AQOverview extends React.Component {
 
   renderQuestions() {
     let output = []
-    for (let i = 1; i < 301; i++) {
+    for (let i = 1; i < (this.props.numberOfQuestions + 1); i++) {
       let questionId = i
       let questionActive = parseFloat(this.props.question.id) === questionId ? ' QuestionActive' : ''
       output.push(

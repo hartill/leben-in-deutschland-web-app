@@ -59,7 +59,6 @@ class AllQuestions extends React.Component {
             progress={this.props.progress}
             displayAnswers={this.props.displayAnswers}
             renderImage={this.renderImage}
-            maxNumberQuestions={this.props.numberOfQuestions}
             headerColor={'greenHeader'}
           />
       )

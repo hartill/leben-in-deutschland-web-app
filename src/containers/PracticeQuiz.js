@@ -4,6 +4,7 @@ import Footer from './../components/Footer'
 import Quiz from './../components/Quiz/Quiz'
 import Cookies from 'universal-cookie'
 import quizQuestions from './../api/quizQuestions'
+import badenWurttembergQuestions from './../api/badenWurttembergQuestions'
 
 class PracticeQuiz extends Component {
   constructor(props){
@@ -17,8 +18,13 @@ class PracticeQuiz extends Component {
       viewProgress: false,
       progress: this.cookies.get('progress') || [],
       incorrect: this.cookies.get('incorrect') || [],
+      userLocation: this.cookies.get('userLocation') || 'none',
       selectedAnswer: null,
       showAnswer: false,
+    }
+    if (this.state.userLocation !== 'none') {
+      this.numberOfQuestions = 310
+      this.questions = this.questions.concat(badenWurttembergQuestions);
     }
     this.handleViewProgress = this.handleViewProgress.bind(this)
     this.onAnswerSelected = this.onAnswerSelected.bind(this)
@@ -30,13 +36,7 @@ class PracticeQuiz extends Component {
 
   componentWillMount() {
     this.setState({
-      progress: this.cookies.get('progress') || [],
-      incorrect: this.cookies.get('incorrect') || [],
-      viewProgress: false,
-      selectedAnswer: null,
-      showAnswer: false,
       question: this.generateNextQuestion(this.questions),
-      completed: false,
     })
   }
 
@@ -107,7 +107,7 @@ class PracticeQuiz extends Component {
 
   generateNextQuestion(questions) {
     let correctAnswers = this.state.progress
-    let maxNumber = 300 - correctAnswers.length
+    let maxNumber = this.numberOfQuestions - correctAnswers.length
     let minNumber = 1
     let randNumber = Math.floor((Math.random() * maxNumber) + minNumber);
     for (let i = 0; i < correctAnswers.length; i++) {
@@ -150,7 +150,6 @@ class PracticeQuiz extends Component {
           selectedAnswer={this.state.selectedAnswer}
           question={this.state.question}
           questions={this.questions}
-          restart={this.restart}
           completed={this.state.completed}
         />
         <Footer

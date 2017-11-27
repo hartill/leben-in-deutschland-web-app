@@ -6,7 +6,7 @@ import animationData from './../../api/grid-to-cross-animation.json'
 class Header extends React.Component {
   constructor(props){
     super(props)
-    this.anim
+    this.anim = null
   }
 
   //animationIsAttached = false;
