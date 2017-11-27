@@ -6,7 +6,7 @@ class Questions extends React.Component {
   render () {
     let question = this.props.question
     let image = this.props.question.image !== undefined ? require(`./../../static/images/${question.image}`) : null
-    let customStyle = this.props.headerColor !== undefined ? this.props.headerColor : null
+    let customStyle = this.props.headerColor !== undefined ? this.props.headerColor : ''
     return (
       <div className="Container">
         <div className="QuizContainer">

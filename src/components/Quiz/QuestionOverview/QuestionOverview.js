@@ -1,11 +1,20 @@
-import React from 'react';
-import './QuestionOverview.css';
+import React from 'react'
+import './QuestionOverview.css'
 import UserProgressBar from './../UserProgressBar'
 
 class QuestionOverview extends React.Component {
   constructor(props){
-    super(props);
-    this.renderUserProgress = this.renderUserProgress.bind(this);
+    super(props)
+    this.state = {
+      loading: true
+    }
+    this.renderUserProgress = this.renderUserProgress.bind(this)
+  }
+
+  componentDidMount(){
+      this.setState({
+        loading: false
+      })
   }
 
   renderUserProgress() {
@@ -59,12 +68,17 @@ class QuestionOverview extends React.Component {
   }
 
   render () {
+    let content = this.state.loading ?
+      <div className='loading'>
+        <img className='loadingSVG' src ={require("./../../../static/icons/loading.svg")} alt='loading' />
+      </div>
+      : this.renderUserProgress()
     return (
       <div className="OverviewContainer">
         <div className="QuOvContainer">
           <div className="QuOvBodyContainer">
             <div className="QuOvBody">
-              {this.renderUserProgress()}
+              {content}
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ class Header extends React.Component {
     this.anim
   }
 
-  animationIsAttached = false;
+  //animationIsAttached = false;
 
   componentDidMount () {
     const animationProperties = {
@@ -46,7 +46,7 @@ class Header extends React.Component {
         </div>
         <div className= "headerRightSection">
           <div className='OverviewIcon' onClick={this.props.handleViewProgress}>
-            <div style={{width: 16, height: 16}} ref={(animationDiv) => { this.animationContainer = animationDiv; }}/>
+            <div className='animatedIcon' ref={(animationDiv) => { this.animationContainer = animationDiv; }}/>
             {/*
               this.props.viewProgress === true ?
               <img src ={require("./../../static/icons/close-icon.svg")} alt='close' /> :
