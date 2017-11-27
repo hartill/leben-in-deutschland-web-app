@@ -1,6 +1,5 @@
 import React from 'react';
 import './QuestionOverview.css';
-import UserProgressBar from './../UserProgressBar'
 
 class QuestionOverview extends React.Component {
   constructor(props){
