@@ -1,0 +1,28 @@
+.selectLocation {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 50%;
+}
+
+.selectLocation label {
+  margin-bottom: 1rem;
+}
+
+.selectLocation select {
+  border-radius: 0;
+  background: #23212B;
+  color: #fff;
+  width: 100%;
+  padding: 0.5rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.selectLocation option:checked, .selectLocation option:hover {
+  background: #37B1E3;
+}

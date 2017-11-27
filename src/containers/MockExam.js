@@ -4,6 +4,7 @@ import ExamFooter from './../components/Exam/ExamFooter/'
 import Exam from './../components/Exam/'
 import Cookies from 'universal-cookie'
 import quizQuestions from './../api/quizQuestions'
+import badenWurttembergQuestions from './../api/badenWurttembergQuestions'
 
 class MockExam extends Component {
   constructor(props){
@@ -14,10 +15,15 @@ class MockExam extends Component {
     this.state = {
       question: {},
       examProgress: this.cookies.get('examProgress') || [],
+      userLocation: this.cookies.get('userLocation') || 'none',
       showAnswer: false,
       selectedAnswer: null,
       examCompleted: false,
       viewProgress: false
+    }
+    if (this.state.userLocation !== 'none') {
+      this.numberOfQuestions = 33
+      this.questions = this.questions.concat(badenWurttembergQuestions);
     }
     this.handleViewProgress = this.handleViewProgress.bind(this)
     this.onAnswerSelected = this.onAnswerSelected.bind(this);
@@ -29,12 +35,7 @@ class MockExam extends Component {
 
   componentWillMount() {
     this.setState({
-      examProgress: this.cookies.get('examProgress') || [],
-      viewProgress: false,
-      selectedAnswer: null,
-      showAnswer: false,
       question: this.generateNextQuestion(this.questions),
-      examCompleted: false,
     })
     if(this.state.examProgress.length >= this.numberOfQuestions) {
       this.setState({
@@ -118,7 +119,8 @@ class MockExam extends Component {
     examProgress.sort(function(a, b) {
         return parseFloat(a.questionId) - parseFloat(b.questionId)
     })
-    let maxNumber = 300 - examProgress.length
+    let maxNumber = this.numberOfQuestions > 31 ? 310 : 300
+    maxNumber = maxNumber - examProgress.length
     let minNumber = 1
     let randNumber = Math.floor((Math.random() * maxNumber) + minNumber)
     for (let i = 0; i < examProgress.length; i++) {
@@ -127,6 +129,7 @@ class MockExam extends Component {
       }
     }
     let randomNumbersIndex = randNumber - 1
+    console.log(randomNumbersIndex)
     return questions[randomNumbersIndex]
   }
 
@@ -160,6 +163,7 @@ class MockExam extends Component {
           question={this.state.question}
           questions={this.questions}
           restart={this.restart}
+          numberOfQuestions={this.numberOfQuestions}
           examCompleted={this.state.examCompleted}
         />
         <ExamFooter

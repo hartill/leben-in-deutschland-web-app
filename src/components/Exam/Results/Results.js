@@ -14,7 +14,7 @@ class Results extends React.Component {
     for (let i = 0; i < this.props.examProgress.length; i++) {
       this.props.examProgress[i].userScore === 1 ? correctAnswers += 1 : incorrectAnswers += 1
     }
-    let percentageCorrect = correctAnswers / 30 * 100
+    let percentageCorrect = correctAnswers / this.props.numberOfQuestions * 100
     let testPassed = percentageCorrect >= 50 ? true : false
     let accentStyle = testPassed ? 'green' : 'red'
     output.push(

@@ -1,7 +1,7 @@
 var badenWurttembergQuestions = [{
     "id": "301",
     "question": "Welches Wappen gehört zum Bundesland Baden-Württemberg?",
-	"image": "301.png",
+	  "image": "badenWurttemberg/301.png",
     "answers": [
 		{
 			content: "1",
@@ -156,7 +156,7 @@ var badenWurttembergQuestions = [{
 	},{
     "id": "308",
     "question": "Welches Bundesland ist Baden-Württemberg?",
-	"image": "308.png",
+	  "image": "badenWurttemberg/308.png",
     "answers": [
 		{
 			content: "1",
@@ -199,7 +199,7 @@ var badenWurttembergQuestions = [{
 	],
 	"category": "Baden-Württemberg",
 	},{
-    "id": "309",
+    "id": "310",
     "question": "Welchen Minister / welche Ministerin hat Baden-Württemberg nicht?",
     "answers": [
 		{

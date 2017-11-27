@@ -9,7 +9,7 @@ class QuestionOverview extends React.Component {
 
   renderUserProgress() {
     let output = []
-    for (let i = 1; i < 301; i++) {
+    for (let i = 1; i < (this.props.numberOfQuestions + 1); i++) {
       let answerOverview = []
       let questionId = i.toString()
       let correctCount = false

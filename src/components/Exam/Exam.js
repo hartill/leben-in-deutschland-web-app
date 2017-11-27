@@ -44,14 +44,14 @@ class Exam extends React.Component {
       return (
         <Review
           examProgress={this.props.examProgress}
-          maxNumberQuestions={this.props.numberOfQuestions}
+          numberOfQuestions={this.props.numberOfQuestions}
         />
       )
     } else if (this.props.examCompleted === true) {
         return (
           <Results
             examProgress={this.props.examProgress}
-            maxNumberQuestions={this.numberOfQuestions}
+            numberOfQuestions={this.props.numberOfQuestions}
           />
         )
       } else {
@@ -63,7 +63,6 @@ class Exam extends React.Component {
             onAnswerSelected={this.props.onAnswerSelected}
             displayAnswers={this.props.displayAnswers}
             renderImage={this.renderImage}
-            maxNumberQuestions={this.props.numberOfQuestions}
             headerColor={'redHeader'}
           />
         )

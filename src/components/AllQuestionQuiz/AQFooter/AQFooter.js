@@ -1,5 +1,5 @@
 import React from 'react'
-import './aQFooter.css';
+import './aQFooter.css'
 
 class AQFooter extends React.Component {
   constructor(props){
