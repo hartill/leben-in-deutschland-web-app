@@ -114,10 +114,13 @@ class MockExam extends Component {
   }
 
   generateNextQuestion(questions) {
-    let examProgress = this.state.examProgress
+    let examProgress = [...this.state.examProgress]
+    examProgress.sort(function(a, b) {
+        return parseFloat(a.questionId) - parseFloat(b.questionId)
+    })
     let maxNumber = 300 - examProgress.length
     let minNumber = 1
-    let randNumber = Math.floor((Math.random() * maxNumber) + minNumber);
+    let randNumber = Math.floor((Math.random() * maxNumber) + minNumber)
     for (let i = 0; i < examProgress.length; i++) {
       if (randNumber >= parseFloat(examProgress[i].questionId)) {
         randNumber += 1
