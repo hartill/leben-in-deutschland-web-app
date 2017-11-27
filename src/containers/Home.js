@@ -38,10 +38,10 @@ class Home extends Component {
           title={title}
         />
         <div className='MenuContainer'>
-          <SelectLocation
+          {/*<SelectLocation
             userLocation={this.state.userLocation}
             handleChange={this.handleChange}
-          />
+          />*/}
           <Link to='/ubung' className='menu-item ubung'>
             Übung
           </Link>
