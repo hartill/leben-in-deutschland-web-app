@@ -7,12 +7,12 @@ class Home extends Component {
   render() {
     let title = 'Leben in Deutschland Test'
     return (
-      <div id="flyoutMenu">
+      <div id="homePage">
         <Header
           title={title}
-          disabled={true}
+          buttonsDisabled={true}
         />
-        <div className='MenuContainer'>
+        <div className='HomeContainer'>
           <SelectLocation
             userLocation={this.props.userLocation}
             handleChange={this.props.handleLocationChange}

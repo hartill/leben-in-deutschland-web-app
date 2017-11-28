@@ -89,6 +89,7 @@ class AllQuestions extends Component {
           title={title}
           viewProgress={this.state.viewProgress}
           handleViewProgress={this.handleViewProgress}
+          buttonsDisabled={false}
         />
         <AllQuestionQuiz
           viewProgress={this.state.viewProgress}

@@ -149,6 +149,7 @@ class MockExam extends Component {
           title={title}
           viewProgress={this.state.viewProgress}
           handleViewProgress={this.handleViewProgress}
+          buttonsDisabled={false}
         />
         <Exam
           viewProgress={this.state.viewProgress}
