@@ -2,6 +2,7 @@ import React from 'react';
 import MenuContainer from "../MenuContainer";
 import bodymovin from 'bodymovin'
 import animationData from './../../api/grid-to-cross-animation.json'
+import './header.css'
 
 class Header extends React.Component {
   constructor(props){
@@ -53,10 +54,8 @@ class Header extends React.Component {
           <div className="headerCenterSection">
             <h1>{this.props.title}</h1>
           </div>
-          <div className= "headerRightSection">
-            <div className='OverviewIcon' onClick={this.props.handleViewProgress}>
-              <div className='animatedIcon' ref={(animationDiv) => { this.animationContainer = animationDiv; }}/>
-            </div>
+          <div className= "headerRightSection pointer" onClick={this.props.handleViewProgress}>
+            <div className='animatedIcon' ref={(animationDiv) => { this.animationContainer = animationDiv; }}/>
           </div>
         </div>
       )
