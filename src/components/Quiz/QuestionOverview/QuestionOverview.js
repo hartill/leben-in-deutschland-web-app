@@ -4,16 +4,11 @@ import './QuestionOverview.css';
 class QuestionOverview extends React.Component {
   constructor(props){
     super(props)
-    this.state = {
-      loading: true
-    }
     this.renderUserProgress = this.renderUserProgress.bind(this)
   }
 
   componentDidMount(){
-      this.setState({
-        loading: false
-      })
+    this.props.handleLoaded()
   }
 
   renderUserProgress() {
@@ -67,21 +62,8 @@ class QuestionOverview extends React.Component {
   }
 
   render () {
-    let content = this.state.loading ?
-      <div className='loading'>
-        <img className='loadingSVG' src ={require("./../../../static/icons/loading.svg")} alt='loading' />
-      </div>
-      : this.renderUserProgress()
     return (
-      <div className="OverviewContainer">
-        <div className="QuOvContainer">
-          <div className="QuOvBodyContainer">
-            <div className="QuOvBody">
-              {content}
-            </div>
-          </div>
-        </div>
-      </div>
+      this.renderUserProgress(this.props.loading)
     )
   }
 }

@@ -1,3 +1,3 @@
-import QuestionOverview from './QuestionOverview'
+import QuestionOverviewContainer from './QuestionOverviewContainer'
 
-export default QuestionOverview
+export default QuestionOverviewContainer

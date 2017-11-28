@@ -2,7 +2,7 @@ import React from 'react';
 import './quiz.css';
 import Lightbox from 'react-image-lightbox'
 import GameOver from './GameOver'
-import QuestionOverview from './QuestionOverview/'
+import QuestionOverviewContainer from './QuestionOverview/QuestionOverviewContainer'
 import Questions from './Questions'
 
 class Quiz extends React.Component {
@@ -42,7 +42,7 @@ class Quiz extends React.Component {
   render () {
     if (this.props.viewProgress === true) {
         return (
-          <QuestionOverview
+          <QuestionOverviewContainer
             restart={this.props.restart}
             progress={this.props.progress}
             incorrect={this.props.incorrect}
