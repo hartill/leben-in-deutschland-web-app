@@ -32,7 +32,7 @@ class Review extends React.Component {
     }
     for (let i=0; i < (this.props.numberOfQuestions - this.props.examProgress.length); i++ ) {
       output.push(
-        <div className='ExamQuestionOverviewBox' key={i}>
+        <div className='ExamQuestionOverviewBox' key={500 + i}>
           <div className='ExamQuestionOverviewBoxInner'>
             <div className='ExamQuestionOverviewBoxInnerInner'>
               ?

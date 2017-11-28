@@ -20,10 +20,8 @@ class Header extends React.Component {
       animationData: animationData
     }
 
-    this.props.disabled ? null : this.anim = bodymovin.loadAnimation(animationProperties)
+    this.anim = !this.props.disabled ? bodymovin.loadAnimation(animationProperties) : null
   }
-
-
 
   componentWillUpdate(nextProps) {
     if (nextProps.viewProgress !== this.props.viewProgress) {

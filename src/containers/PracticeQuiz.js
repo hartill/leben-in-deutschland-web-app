@@ -3,29 +3,23 @@ import Header from './../components/Header'
 import Footer from './../components/Footer'
 import Quiz from './../components/Quiz/Quiz'
 import Cookies from 'universal-cookie'
-import quizQuestions from './../api/quizQuestions'
-import badenWurttembergQuestions from './../api/badenWurttembergQuestions'
 
 class PracticeQuiz extends Component {
   constructor(props){
     super(props)
-    this.questions = quizQuestions
-    this.numberOfQuestions = 300
     this.cookies = new Cookies()
+    this.questions = this.props.questions
+    this.numberOfQuestions = this.props.numberOfQuestions
     this.state = {
       question: {},
       completed: false,
       viewProgress: false,
       progress: this.cookies.get('progress') || [],
       incorrect: this.cookies.get('incorrect') || [],
-      userLocation: this.cookies.get('userLocation') || 'none',
       selectedAnswer: null,
       showAnswer: false,
     }
-    if (this.state.userLocation !== 'none') {
-      this.numberOfQuestions = 310
-      this.questions = this.questions.concat(badenWurttembergQuestions);
-    }
+
     this.handleViewProgress = this.handleViewProgress.bind(this)
     this.onAnswerSelected = this.onAnswerSelected.bind(this)
     this.displayAnswers = this.displayAnswers.bind(this)

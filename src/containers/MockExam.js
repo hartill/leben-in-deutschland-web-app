@@ -3,27 +3,25 @@ import Header from './../components/Header'
 import ExamFooter from './../components/Exam/ExamFooter/'
 import Exam from './../components/Exam/'
 import Cookies from 'universal-cookie'
-import quizQuestions from './../api/quizQuestions'
-import badenWurttembergQuestions from './../api/badenWurttembergQuestions'
 
 class MockExam extends Component {
   constructor(props){
     super(props)
-    this.questions = quizQuestions
-    this.numberOfQuestions = 30
     this.cookies = new Cookies()
+    this.questions = this.props.questions
     this.state = {
       question: {},
       examProgress: this.cookies.get('examProgress') || [],
-      userLocation: this.cookies.get('userLocation') || 'none',
       showAnswer: false,
       selectedAnswer: null,
       examCompleted: false,
       viewProgress: false
     }
-    if (this.state.userLocation !== 'none') {
+    this.numberOfQuestions = this.props.numberOfQuestions
+    if (this.props.numberOfQuestions > 300) {
       this.numberOfQuestions = 33
-      this.questions = this.questions.concat(badenWurttembergQuestions);
+    } else {
+      this.numberOfQuestions = 30
     }
     this.handleViewProgress = this.handleViewProgress.bind(this)
     this.onAnswerSelected = this.onAnswerSelected.bind(this);
@@ -129,7 +127,6 @@ class MockExam extends Component {
       }
     }
     let randomNumbersIndex = randNumber - 1
-    console.log(randomNumbersIndex)
     return questions[randomNumbersIndex]
   }
 

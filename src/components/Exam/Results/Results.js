@@ -22,7 +22,7 @@ class Results extends React.Component {
         <div className={'ResultFinalPercentage ' + accentStyle}>
           {percentageCorrect.toFixed(0)}%
         </div>
-        {testPassed ? <p>du hast bestanden</p> : <p>du hast nicht bestanden</p>}
+        {testPassed ? <p>Du hast bestanden</p> : <p>Du hast nicht bestanden</p>}
         <div className='ResultValue'>
           <div className='correctAnswerIcon'>x {correctAnswers}</div>
           <div className='incorrectAnswerIcon'>x {incorrectAnswers}</div>

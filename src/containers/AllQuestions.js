@@ -2,27 +2,19 @@ import React, { Component } from 'react'
 import AllQuestionQuiz from './../components/AllQuestionQuiz'
 import AQFooter from './../components/AllQuestionQuiz/AQFooter'
 import Header from './../components/Header'
-import quizQuestions from './../api/quizQuestions'
-import badenWurttembergQuestions from './../api/badenWurttembergQuestions'
-import Cookies from 'universal-cookie'
 
 class AllQuestions extends Component {
   constructor(props){
     super(props)
-    this.questions = quizQuestions
-    this.numberOfQuestions = 300
-    this.cookies = new Cookies()
+    this.questions = this.props.questions
+    this.numberOfQuestions = this.props.numberOfQuestions
     this.state = {
       question: {},
       viewProgress: false,
       selectedAnswer: null,
       showAnswer: false,
-      userLocation: this.cookies.get('userLocation') || 'none',
     }
-    if (this.state.userLocation !== 'none') {
-      this.numberOfQuestions = 310
-      this.questions = this.questions.concat(badenWurttembergQuestions);
-    }
+
     this.onAnswerSelected = this.onAnswerSelected.bind(this)
     this.displayAnswers = this.displayAnswers.bind(this)
     this.handleViewProgress = this.handleViewProgress.bind(this)

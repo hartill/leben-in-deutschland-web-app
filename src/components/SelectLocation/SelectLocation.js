@@ -11,6 +11,8 @@ class SelectLocation extends React.Component {
         <select value={this.props.userLocation} onChange={this.props.handleChange}>
           <option value="none">Nicht ausgewählt</option>
           <option value="badenWurttemberg">Baden-Württemberg</option>
+          <option value="bayern">Bayern</option>
+          <option value="berlin">Berlin</option>
         </select>
       </form>
     )

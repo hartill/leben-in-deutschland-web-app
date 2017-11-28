@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  width: 50%;
+  width: 15rem;
+  margin-bottom: 1rem;
 }
 
 .selectLocation label {
