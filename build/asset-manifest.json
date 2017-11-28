@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.aac23e90.css",
-  "main.css.map": "static/css/main.aac23e90.css.map",
-  "main.js": "static/js/main.1ecd4b15.js",
-  "main.js.map": "static/js/main.1ecd4b15.js.map",
+  "main.css": "static/css/main.e0fe3720.css",
+  "main.css.map": "static/css/main.e0fe3720.css.map",
+  "main.js": "static/js/main.d954a23d.js",
+  "main.js.map": "static/js/main.d954a23d.js.map",
   "static\\media\\021.png": "static/media/021.eab871bd.png",
   "static\\media\\055.png": "static/media/055.238a63ff.png",
   "static\\media\\070.png": "static/media/070.d03237cd.png",
@@ -18,7 +18,7 @@
   "static\\media\\308.png": "static/media/308.ada84261.png",
   "static\\media\\berlin-01.png": "static/media/berlin-01.3762546f.png",
   "static\\media\\close-icon.svg": "static/media/close-icon.0872459f.svg",
-  "static\\media\\loading.svg": "static/media/loading.758fa4f2.svg",
+  "static\\media\\loadingIcon.svg": "static/media/loadingIcon.b84f925d.svg",
   "static\\media\\menu-icon.svg": "static/media/menu-icon.e2575d3b.svg",
   "static\\media\\next-qu-icon.svg": "static/media/next-qu-icon.a2496918.svg"
 }
