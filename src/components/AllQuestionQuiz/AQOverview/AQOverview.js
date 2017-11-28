@@ -3,8 +3,22 @@ import './AQOverview.css';
 
 class AQOverview extends React.Component {
   constructor(props){
-    super(props);
-    this.renderQuestions = this.renderQuestions.bind(this);
+    super(props)
+    this.content = null
+    this.renderQuestions = this.renderQuestions.bind(this)
+  }
+
+  componentWillMount(){
+    this.content = (
+      <div className='loading'>
+        <img className='loadingSVG' src ={require("./../../../static/icons/loadingIcon.svg")} alt='loading' />
+      </div>
+    )
+  }
+
+  componentDidMount(){
+    this.content = this.renderQuestions()
+    setTimeout(() => this.forceUpdate(), 800)
   }
 
   renderQuestions() {
@@ -31,7 +45,7 @@ class AQOverview extends React.Component {
         <div className="AQOvContainer">
           <div className="AQOvBodyContainer">
             <div className="AQOvBody">
-              {this.renderQuestions()}
+              {this.content}
             </div>
           </div>
         </div>

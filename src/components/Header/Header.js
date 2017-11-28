@@ -20,7 +20,7 @@ class Header extends React.Component {
       animationData: animationData
     }
 
-    this.anim = bodymovin.loadAnimation(animationProperties)
+    this.props.disabled ? null : this.anim = bodymovin.loadAnimation(animationProperties)
   }
 
 
@@ -38,24 +38,31 @@ class Header extends React.Component {
   }
 
   render () {
-    return (
-      <div className="headerContainer">
-        <MenuContainer/>
-        <div className="headerCenterSection">
-          <h1>{this.props.title}</h1>
+    if (this.props.disabled) {
+      return (
+        <div className="headerContainer">
+          <div className= "headerLeftSection" />
+          <div className="headerCenterSection">
+            <h1>{this.props.title}</h1>
+          </div>
+          <div className= "headerRightSection" />
         </div>
-        <div className= "headerRightSection">
-          <div className='OverviewIcon' onClick={this.props.handleViewProgress}>
-            <div className='animatedIcon' ref={(animationDiv) => { this.animationContainer = animationDiv; }}/>
-            {/*
-              this.props.viewProgress === true ?
-              <img src ={require("./../../static/icons/close-icon.svg")} alt='close' /> :
-              <img src ={require("./../../static/icons/qu-overview-icon.svg")} alt='overview' />
-            */}
+      )
+    } else {
+      return (
+        <div className="headerContainer">
+          <MenuContainer/>
+          <div className="headerCenterSection">
+            <h1>{this.props.title}</h1>
+          </div>
+          <div className= "headerRightSection">
+            <div className='OverviewIcon' onClick={this.props.handleViewProgress}>
+              <div className='animatedIcon' ref={(animationDiv) => { this.animationContainer = animationDiv; }}/>
+            </div>
           </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
 }
 

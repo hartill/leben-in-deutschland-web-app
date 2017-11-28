@@ -1,41 +1,42 @@
 import React from 'react'
 import './QuestionOverview.css'
-import QuestionOverview from './QuestionOverview'
+import QuestionOverviewBox from './QuestionOverviewBox'
 
 class QuestionOverviewContainer extends React.Component {
   constructor(props){
     super(props)
-    this.handleLoaded = this.handleLoaded.bind(this)
-    this.state = {
-      loading: true
-    }
+    this.content = null
+    this.renderUserProgress = this.renderUserProgress.bind(this)
   }
 
-  handleLoaded(){
-    this.setState({
-      loading: false
-    })
+  componentWillMount(){
+    this.content = (
+      <div className='loading'>
+        <img className='loadingSVG' src ={require("./../../../static/icons/loadingIcon.svg")} alt='loading' />
+      </div>
+    )
+  }
+
+  componentDidMount(){
+    this.content = this.renderUserProgress()
+    setTimeout(() => this.forceUpdate(), 1000)
+  }
+
+  renderUserProgress() {
+    let output = []
+    for (let i = 1; i < (this.props.numberOfQuestions + 1); i++) {
+      output.push(<QuestionOverviewBox i={i} progress={this.props.progress} incorrect={this.props.incorrect} key={i} />)
+    }
+    return output
   }
 
   render () {
-    let loading = (
-      <div className='loading'>
-        <img className='loadingSVG' src ={require("./../../../static/icons/loading.svg")} alt='loading' />
-      </div>
-    )
     return (
       <div className="OverviewContainer">
         <div className="QuOvContainer">
           <div className="QuOvBodyContainer">
             <div className="QuOvBody">
-              {this.state.loading ? loading : null}
-              <QuestionOverview
-                loading={this.state.loading}
-                handleLoaded={this.handleLoaded}
-                progress={this.props.progress}
-                incorrect={this.props.incorrect}
-                numberOfQuestions={this.props.numberOfQuestions}
-              />
+              {this.content}
             </div>
           </div>
         </div>

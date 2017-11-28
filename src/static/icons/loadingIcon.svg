@@ -1,0 +1,17 @@
+<svg class="lds-blocks" width="64px"  height="64px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;"><rect x="1.1666704999999986" y="1.1666704999999986" width="30.333333" height="30.333333" fill="#ffffff" class="">
+  <animate attributeName="fill" values="rgba(100%,100%,100%,0.308);#ffffff;#ffffff" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0s" calcMode="discrete" class=""></animate>
+</rect><rect x="34.833333499999995" y="1.1666704999999986" width="30.333333" height="30.333333" fill="#ffffff" class="">
+  <animate attributeName="fill" values="rgba(100%,100%,100%,0.308);#ffffff;#ffffff" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.125s" calcMode="discrete" class=""></animate>
+</rect><rect x="68.4999965" y="1.1666704999999986" width="30.333333" height="30.333333" fill="#ffffff" class="">
+  <animate attributeName="fill" values="rgba(100%,100%,100%,0.308);#ffffff;#ffffff" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.25s" calcMode="discrete" class=""></animate>
+</rect><rect x="1.1666704999999986" y="34.833333499999995" width="30.333333" height="30.333333" fill="#ffffff" class="">
+  <animate attributeName="fill" values="rgba(100%,100%,100%,0.308);#ffffff;#ffffff" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.875s" calcMode="discrete" class=""></animate>
+</rect><rect x="68.4999965" y="34.833333499999995" width="30.333333" height="30.333333" fill="#ffffff" class="">
+  <animate attributeName="fill" values="rgba(100%,100%,100%,0.308);#ffffff;#ffffff" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.375s" calcMode="discrete" class=""></animate>
+</rect><rect x="1.1666704999999986" y="68.4999965" width="30.333333" height="30.333333" fill="#ffffff" class="">
+  <animate attributeName="fill" values="rgba(100%,100%,100%,0.308);#ffffff;#ffffff" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.75s" calcMode="discrete" class=""></animate>
+</rect><rect x="34.833333499999995" y="68.4999965" width="30.333333" height="30.333333" fill="#ffffff" class="">
+  <animate attributeName="fill" values="rgba(100%,100%,100%,0.308);#ffffff;#ffffff" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.625s" calcMode="discrete" class=""></animate>
+</rect><rect x="68.4999965" y="68.4999965" width="30.333333" height="30.333333" fill="#ffffff" class="">
+  <animate attributeName="fill" values="rgba(100%,100%,100%,0.308);#ffffff;#ffffff" keyTimes="0;0.125;1" dur="1s" repeatCount="indefinite" begin="0.5s" calcMode="discrete" class=""></animate>
+</rect></svg>

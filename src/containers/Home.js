@@ -36,6 +36,7 @@ class Home extends Component {
       <div id="flyoutMenu">
         <Header
           title={title}
+          disabled={true}
         />
         <div className='MenuContainer'>
           {/*<SelectLocation
