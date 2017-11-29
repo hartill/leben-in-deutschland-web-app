@@ -6,6 +6,7 @@
   color: #fff;
   width: 15rem;
   margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .selectLocation label {
@@ -14,14 +15,15 @@
 
 .selectLocation select {
   border-radius: 0;
-  background: #23212B;
+  background: #3E4651;
   color: #fff;
   width: 100%;
-  padding: 0.5rem;
+  padding: 1rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   outline: none;
+  border: none;
 }
 
 .selectLocation option:checked, .selectLocation option:hover {

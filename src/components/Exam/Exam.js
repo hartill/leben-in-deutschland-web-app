@@ -1,5 +1,4 @@
-import React from 'react';
-import './exam.css';
+import React from 'react'
 import Lightbox from 'react-image-lightbox'
 import Results from './Results/'
 import Review from './Review/'

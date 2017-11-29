@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Lightbox from 'react-image-lightbox'
 import AQOverview from './AQOverview'
 import Questions from './../Quiz/Questions'

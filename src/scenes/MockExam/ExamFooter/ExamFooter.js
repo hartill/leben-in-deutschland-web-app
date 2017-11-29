@@ -1,5 +1,5 @@
 import React from 'react'
-import ExamUserProgress from './../ExamUserProgress'
+import ExamUserProgress from './../ExamUserProgress/'
 import './examFooter.css';
 
 class Footer extends React.Component {

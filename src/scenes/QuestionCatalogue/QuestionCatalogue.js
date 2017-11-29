@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import AllQuestionQuiz from './../components/AllQuestionQuiz'
-import AQFooter from './../components/AllQuestionQuiz/AQFooter'
-import Header from './../components/Header'
+import AllQuestionQuiz from './../../components/AllQuestionQuiz'
+import AQFooter from './../../components/AllQuestionQuiz/AQFooter'
+import Header from './../../components/Header'
 
-class AllQuestions extends Component {
+class QuestionCatalogue extends Component {
   constructor(props){
     super(props)
     this.questions = this.props.questions
@@ -115,4 +115,4 @@ class AllQuestions extends Component {
   }
 }
 
-export default AllQuestions
+export default QuestionCatalogue

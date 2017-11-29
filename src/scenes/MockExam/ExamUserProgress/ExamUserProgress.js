@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import './examUserProgress.css'
 
 class ExamUserProgress extends React.Component {
   render () {

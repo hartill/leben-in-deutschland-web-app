@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import SelectLocation from './../components/SelectLocation'
-import Header from './../components/Header'
+import SelectLocation from './SelectLocation'
+import Header from './../../components/Header'
 import { Link } from 'react-router-dom'
 
 class Home extends Component {
@@ -21,8 +21,8 @@ class Home extends Component {
           <Link to='/ubung' className='menu-item ubung'>
             Übung
           </Link>
-          <Link to='/prufung' className='menu-item prufung'>
-            Prüfung
+          <Link to='/probeprufung' className='menu-item prufung'>
+            Probeprüfung
           </Link>
           <Link to='/alle-fragen' className='menu-item alleFragen'>
             Alle Fragen

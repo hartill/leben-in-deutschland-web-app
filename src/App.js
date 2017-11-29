@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import PracticeQuiz from './containers/PracticeQuiz'
-import MockExam from './containers/MockExam'
-import AllQuestions from './containers/AllQuestions'
-import Home from './containers/Home'
+import PracticeQuiz from './scenes/PracticeQuiz/'
+import MockExam from './scenes/MockExam/'
+import QuestionCatalogue from './scenes/QuestionCatalogue/'
+import Home from './scenes/Home/'
 import { Switch, Route } from 'react-router-dom'
 import Cookies from 'universal-cookie'
 import quizQuestions from './api/quizQuestions'
@@ -91,7 +91,7 @@ class App extends Component {
             userLastPage={this.state.userLastPage}
           />
         )}/>
-        <Route exact path='/prufung' render={(props) => (
+        <Route exact path='/probeprufung' render={(props) => (
           <MockExam {...props}
             questions={this.questions}
             numberOfQuestions={this.numberOfQuestions}
@@ -99,7 +99,7 @@ class App extends Component {
           />
         )}/>
         <Route exact path='/alle-fragen' render={(props) => (
-          <AllQuestions {...props}
+          <QuestionCatalogue {...props}
             questions={this.questions}
             numberOfQuestions={this.numberOfQuestions}
             userLastPage={this.state.userLastPage}

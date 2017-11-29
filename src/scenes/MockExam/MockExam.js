@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Header from './../components/Header'
-import ExamFooter from './../components/Exam/ExamFooter/'
-import Exam from './../components/Exam/'
+import Header from './../../components/Header'
+import ExamFooter from './ExamFooter/'
+import Exam from './../../components/Exam/'
 import Cookies from 'universal-cookie'
 
 class MockExam extends Component {
@@ -142,7 +142,7 @@ class MockExam extends Component {
   }
 
   render() {
-    let title = this.state.viewProgress ? 'Fragenübersicht' : 'Prüfung'
+    let title = this.state.viewProgress ? 'Fragenübersicht' : 'Probeprüfung'
     return (
       <div className="App">
         <Header

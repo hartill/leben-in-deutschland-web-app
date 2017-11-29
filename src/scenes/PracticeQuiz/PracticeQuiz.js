@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Header from './../components/Header'
-import Footer from './../components/Footer'
-import Quiz from './../components/Quiz/Quiz'
+import Header from './../../components/Header'
+import Footer from './../../components/Footer'
+import Quiz from './../../components/Quiz/Quiz'
 import Cookies from 'universal-cookie'
 
 class PracticeQuiz extends Component {
