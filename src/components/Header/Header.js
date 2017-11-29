@@ -32,12 +32,15 @@ class Header extends React.Component {
     }
 
     this.anim2 = bodymovin.loadAnimation(animationProperties2)
+    this.anim2.goToAndStop(21, true)
 
-    if(this.props.buttonsDisabled) {
-      this.anim2.setDirection(1)
-      this.anim2.goToAndPlay(0, true)
-      this.anim.setDirection(-1)
-      this.anim.playSegments([10,0], true)
+    if (this.props.userLastPage !== '') {
+      if(this.props.buttonsDisabled) {
+        this.anim2.setDirection(1)
+        this.anim2.goToAndPlay(0, true)
+        this.anim.setDirection(-1)
+        this.anim.playSegments([10,0], true)
+      }
     }
 
     if(!this.props.buttonsDisabled) {
@@ -56,9 +59,13 @@ class Header extends React.Component {
       if(nextProps.viewProgress) {
         this.anim.setDirection(1)
         this.anim.playSegments([10,21], true)
+        this.anim2.setDirection(1)
+        this.anim2.goToAndPlay(0, true)
       } else {
         this.anim.setDirection(-1)
         this.anim.playSegments([21,10], true)
+        this.anim2.setDirection(-1)
+        this.anim2.goToAndPlay(10, true)
       }
     }
   }

@@ -90,6 +90,7 @@ class AllQuestions extends Component {
           viewProgress={this.state.viewProgress}
           handleViewProgress={this.handleViewProgress}
           buttonsDisabled={false}
+          userLastPage={this.props.userLastPage}
         />
         <AllQuestionQuiz
           viewProgress={this.state.viewProgress}

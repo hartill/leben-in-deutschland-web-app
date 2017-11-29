@@ -133,6 +133,7 @@ class PracticeQuiz extends Component {
           viewProgress={this.state.viewProgress}
           handleViewProgress={this.handleViewProgress}
           buttonsDisabled={false}
+          userLastPage={this.props.userLastPage}
         />
         <Quiz
           viewProgress={this.state.viewProgress}

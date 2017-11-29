@@ -16,7 +16,9 @@ class App extends Component {
     super(props)
     this.cookies = new Cookies()
     this.state = {
-      userLocation: this.cookies.get('userLocation') || 'none'
+      userLocation: this.cookies.get('userLocation') || 'none',
+      userCurrentPage: this.props.location.pathname,
+      userLastPage: ''
     }
     this.questions = quizQuestions
     this.numberOfQuestions = 300
@@ -29,11 +31,13 @@ class App extends Component {
   }
 
   componentDidUpdate(nextProps, nextState) {
-    const expires = new Date()
-    expires.setTime(expires.getTime()+(365*24*60*60*1000))
-    expires.toUTCString()
-    this.cookies.set('userLocation', this.state.userLocation, {expires: expires, path: '/' })
     this.loadQuestionOptions()
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      this.setState(prevState => ({
+          userLastPage: this.state.userCurrentPage,
+          userCurrentPage: this.props.location.pathname
+      }))
+    }
   }
 
   loadQuestionOptions() {
@@ -72,22 +76,36 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Switch>
-          <Route exact path='/' render={(props) => (
-            <Home {...props} userLocation={this.state.userLocation} handleLocationChange={this.handleLocationChange} />
-          )}/>
-          <Route exact path='/ubung' render={(props) => (
-            <PracticeQuiz {...props} questions={this.questions} numberOfQuestions={this.numberOfQuestions} />
-          )}/>
-          <Route exact path='/prufung' render={(props) => (
-            <MockExam {...props} questions={this.questions} numberOfQuestions={this.numberOfQuestions} />
-          )}/>
-          <Route exact path='/alle-fragen' render={(props) => (
-            <AllQuestions {...props} questions={this.questions} numberOfQuestions={this.numberOfQuestions} />
-          )}/>
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path='/' render={(props) => (
+          <Home {...props}
+            userLocation={this.state.userLocation}
+            handleLocationChange={this.handleLocationChange}
+            userLastPage={this.state.userLastPage}
+          />
+        )}/>
+        <Route exact path='/ubung' render={(props) => (
+          <PracticeQuiz {...props}
+            questions={this.questions}
+            numberOfQuestions={this.numberOfQuestions}
+            userLastPage={this.state.userLastPage}
+          />
+        )}/>
+        <Route exact path='/prufung' render={(props) => (
+          <MockExam {...props}
+            questions={this.questions}
+            numberOfQuestions={this.numberOfQuestions}
+            userLastPage={this.state.userLastPage}
+          />
+        )}/>
+        <Route exact path='/alle-fragen' render={(props) => (
+          <AllQuestions {...props}
+            questions={this.questions}
+            numberOfQuestions={this.numberOfQuestions}
+            userLastPage={this.state.userLastPage}
+          />
+        )}/>
+      </Switch>
     );
   }
 

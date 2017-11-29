@@ -11,6 +11,7 @@ class Home extends Component {
         <Header
           title={title}
           buttonsDisabled={true}
+          userLastPage={this.props.userLastPage}
         />
         <div className='HomeContainer'>
           <SelectLocation
