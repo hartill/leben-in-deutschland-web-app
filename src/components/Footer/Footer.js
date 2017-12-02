@@ -1,30 +1,57 @@
 import React from 'react'
 import UserProgressBar from './../Quiz/UserProgressBar'
 import './footer.css'
+import Modal from './../Modal'
 
 class Footer extends React.Component {
   constructor(props){
     super(props)
-    this.renderButton = this.renderButton.bind(this);
+    this.state = {
+      isModalOpen: false
+    }
+    this.renderButton = this.renderButton.bind(this)
+    this.handleCloseAndRestart = this.handleCloseAndRestart.bind(this)
+  }
+
+  handleCloseAndRestart() {
+    this.closeModal()
+    this.props.restart()
+  }
+
+  openModal() {
+    this.setState({ isModalOpen: true })
+  }
+
+  closeModal() {
+    this.setState({ isModalOpen: false })
   }
 
   renderButton() {
     let output=[]
     if ((this.props.viewProgress) || (this.props.completed)) {
       output.push(
-        <button className='ResetButton' onClick={this.props.restart} key='13'>
-          Neustart?
-        </button>
+        <div className='ExamResetButton' key='1113'>
+          <button className='ResetButton' onClick={() => this.openModal()}>
+            Neustart?
+          </button>
+          <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+            <p>Neustart?</p>
+            <div className='confirmationButtons'>
+              <button onClick={() => this.handleCloseAndRestart()}>Ja</button>
+              <button onClick={() => this.closeModal()}>Nein</button>
+            </div>
+          </Modal>
+        </div>
       )
     } else if (this.props.showAnswer) {
       output.push(
-        <button className='NextButton' onClick={this.props.nextQuestion} key='23'>
+        <button className='NextButton' onClick={this.props.nextQuestion} key='2113'>
           <img src ={require("./../../static/icons/next-qu-icon.svg")} alt='next-question' />
         </button>
       )
     } else {
       output.push(
-        <button className='NextButton' onClick={this.props.displayAnswers} key='33'>
+        <button className='NextButton' onClick={this.props.displayAnswers} key='3113'>
           <p>Ich weiß nicht</p>
         </button>
       )

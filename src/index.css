@@ -38,17 +38,6 @@ body {
   height: 3.75rem;
 }
 
-h1 {
-  font-size: 1.2rem;
-  font-weight: 300;
-}
-
-.site-logo {
-  margin-right: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-}
-
 .Container {
   width: 100%;
   margin: 0 auto;

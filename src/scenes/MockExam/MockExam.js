@@ -53,6 +53,7 @@ class MockExam extends Component {
     event.preventDefault()
     const target = event.target
     let questionId = target.name
+    let questionCategory = this.questions[(questionId - 1)].category
     this.setState((prevState, props) => {
       return {
         selectedAnswer: target.id,
@@ -62,7 +63,8 @@ class MockExam extends Component {
     if (target.value === '1') {
       let data = {
         questionId: questionId,
-        userScore: 1
+        userScore: 1,
+        category: questionCategory
       }
       this.setState(prevState => ({
           examProgress: [...prevState.examProgress, data]
@@ -70,7 +72,8 @@ class MockExam extends Component {
     } else {
       let data = {
         questionId: questionId,
-        userScore: 0
+        userScore: 0,
+        category: questionCategory
       }
       this.setState(prevState => ({
           examProgress: [...prevState.examProgress, data]
@@ -114,10 +117,20 @@ class MockExam extends Component {
 
   generateNextQuestion(questions) {
     let examProgress = [...this.state.examProgress]
+
+    /* let stateCategoryCount = 0
+
+    for (let i = 0; i < examProgress.length; i++) {
+      if (examProgress[i].category === this.props.userLocation) {
+        stateCategoryCount += 1
+      }
+    } */
+
     examProgress.sort(function(a, b) {
         return parseFloat(a.questionId) - parseFloat(b.questionId)
     })
-    let maxNumber = this.numberOfQuestions > 31 ? 310 : 300
+
+    let maxNumber = this.numberOfQuestions > 30 ? 310 : 300
     maxNumber = maxNumber - examProgress.length
     let minNumber = 1
     let randNumber = Math.floor((Math.random() * maxNumber) + minNumber)

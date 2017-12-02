@@ -96,6 +96,7 @@ class App extends Component {
             questions={this.questions}
             numberOfQuestions={this.numberOfQuestions}
             userLastPage={this.state.userLastPage}
+            userLocation={this.state.userLocation}
           />
         )}/>
         <Route exact path='/fragenkatalog' render={(props) => (

@@ -121,6 +121,7 @@ class PracticeQuiz extends Component {
         showAnswer: false,
         selectedAnswer: null,
         lightBoxIsOpen: false,
+        viewProgress: false
     })
   }
 

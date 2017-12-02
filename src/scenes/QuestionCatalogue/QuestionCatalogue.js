@@ -12,7 +12,7 @@ class QuestionCatalogue extends Component {
       question: {},
       viewProgress: false,
       selectedAnswer: null,
-      showAnswer: false,
+      showAnswer: true,
     }
 
     this.onAnswerSelected = this.onAnswerSelected.bind(this)
@@ -32,7 +32,7 @@ class QuestionCatalogue extends Component {
     this.setState({
       viewProgress: false,
       selectedAnswer: null,
-      showAnswer: false,
+      showAnswer: true,
       question: this.questions[(questionId - 1)]
     })
   }
@@ -75,7 +75,7 @@ class QuestionCatalogue extends Component {
       return {
         question: this.questions[nextQuestion],
         selectedAnswer: null,
-        showAnswer: false,
+        showAnswer: true,
         viewProgress: false
       }
     })
