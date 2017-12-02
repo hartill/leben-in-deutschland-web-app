@@ -9,13 +9,10 @@
   font-size: 1rem;
 }
 
-.selectLocation label {
-  margin-bottom: 1rem;
-}
-
 .selectLocation select {
   border-radius: 0;
-  background: #3E4651;
+  background: #3E4651 url('./../../../svg/icon-chevron.svg') 95% 50% no-repeat;
+  cursor: pointer;
   color: #fff;
   width: 100%;
   padding: 1rem;
@@ -24,6 +21,10 @@
   appearance: none;
   outline: none;
   border: none;
+}
+
+.selectLocation option {
+
 }
 
 .selectLocation option:checked, .selectLocation option:hover {

@@ -46,7 +46,7 @@ class Footer extends React.Component {
     } else if (this.props.showAnswer) {
       output.push(
         <button className='NextButton' onClick={this.props.nextQuestion} key='2113'>
-          <img src ={require("./../../static/icons/next-qu-icon.svg")} alt='next-question' />
+          <img src ={require("./../../svg/forwards-arrow.svg")} alt='next-question' />
         </button>
       )
     } else {

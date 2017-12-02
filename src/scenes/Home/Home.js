@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import SelectLocation from './SelectLocation'
 import Header from './../../components/Header'
 import { Link } from 'react-router-dom'
+import './home.css'
 
 class Home extends Component {
   render() {
