@@ -82,7 +82,7 @@ class QuestionCatalogue extends Component {
   }
 
   render() {
-    let title = this.state.viewProgress ? 'Frage auswählen' : 'Alle Fragen'
+    let title = this.state.viewProgress ? 'Frage auswählen' : 'Fragenkatalog'
     return (
       <div className="App">
         <Header

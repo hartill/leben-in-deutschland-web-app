@@ -125,7 +125,7 @@ class PracticeQuiz extends Component {
   }
 
   render() {
-    let title = this.state.viewProgress ? 'Fragenübersicht' : 'Übung'
+    let title = this.state.viewProgress ? 'Fragenübersicht' : 'Trainieren'
     return (
       <div className="App">
         <Header

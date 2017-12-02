@@ -84,7 +84,7 @@ class App extends Component {
             userLastPage={this.state.userLastPage}
           />
         )}/>
-        <Route exact path='/ubung' render={(props) => (
+        <Route exact path='/trainieren' render={(props) => (
           <PracticeQuiz {...props}
             questions={this.questions}
             numberOfQuestions={this.numberOfQuestions}
@@ -98,7 +98,7 @@ class App extends Component {
             userLastPage={this.state.userLastPage}
           />
         )}/>
-        <Route exact path='/alle-fragen' render={(props) => (
+        <Route exact path='/fragenkatalog' render={(props) => (
           <QuestionCatalogue {...props}
             questions={this.questions}
             numberOfQuestions={this.numberOfQuestions}

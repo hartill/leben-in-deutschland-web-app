@@ -18,14 +18,14 @@ class Home extends Component {
             userLocation={this.props.userLocation}
             handleChange={this.props.handleLocationChange}
           />
-          <Link to='/ubung' className='menu-item ubung'>
-            Übung
+          <Link to='/trainieren' className='menu-item ubung'>
+            Trainieren
           </Link>
           <Link to='/probeprufung' className='menu-item prufung'>
             Probeprüfung
           </Link>
-          <Link to='/alle-fragen' className='menu-item alleFragen'>
-            Alle Fragen
+          <Link to='/fragenkatalog' className='menu-item alleFragen'>
+            Fragenkatalog
           </Link>
         </div>
         <div className='menu-footer' />
