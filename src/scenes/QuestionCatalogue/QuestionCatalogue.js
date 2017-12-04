@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AllQuestionQuiz from './../../components/AllQuestionQuiz'
-import AQFooter from './../../components/AllQuestionQuiz/AQFooter'
+import FooterQc from './FooterQc/'
 import Header from './../../components/Header'
 
 class QuestionCatalogue extends Component {
@@ -103,13 +103,7 @@ class QuestionCatalogue extends Component {
           questions={this.questions}
           handleQuestionSelected={this.handleQuestionSelected}
         />
-        <AQFooter
-          numberOfQuestions={this.numberOfQuestions}
-          nextQuestion={this.nextQuestion}
-          showAnswer={this.state.showAnswer}
-          displayAnswers={this.displayAnswers}
-          viewProgress={this.state.viewProgress}
-        />
+        <FooterQc nextQuestion={this.nextQuestion} />
       </div>
     )
   }

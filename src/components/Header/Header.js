@@ -51,9 +51,6 @@ class Header extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-  }
-
   componentWillUpdate(nextProps, nextState) {
     if (nextProps.viewProgress !== this.props.viewProgress) {
       if(nextProps.viewProgress) {

@@ -30,9 +30,9 @@ class App extends Component {
     this.loadQuestionOptions()
   }
 
-  componentDidUpdate(nextProps, nextState) {
+  componentDidUpdate(prevProps, prevState) {
     this.loadQuestionOptions()
-    if (this.props.location.pathname !== nextProps.location.pathname) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
       this.setState(prevState => ({
           userLastPage: this.state.userCurrentPage,
           userCurrentPage: this.props.location.pathname
@@ -71,7 +71,7 @@ class App extends Component {
     const expires = new Date()
     expires.setTime(expires.getTime()+(365*24*60*60*1000))
     expires.toUTCString()
-    this.cookies.set('userLocation', this.state.userLocation, {expires: expires, path: '/' })
+    this.cookies.set('userLocation', target.value, {expires: expires, path: '/' })
   }
 
   render() {

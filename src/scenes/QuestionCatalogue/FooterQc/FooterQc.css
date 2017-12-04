@@ -12,15 +12,3 @@
   padding: 0px;
   cursor: pointer;
 }
-
-.AQDeactive {
-  opacity: 0.3;
-  cursor: default;
-}
-
-@media screen and (max-width: 48rem) {
-  .AQDeactive {
-    opacity: 0.3;
-    cursor: default;
-  }
-}

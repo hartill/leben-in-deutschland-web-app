@@ -22,8 +22,8 @@ class Footer extends React.Component {
     let output=[]
     if ((this.props.viewProgress) || (this.props.examCompleted)) {
       output.push(
-        <div className='ExamResetButton'>
-          <button className='ExamResetButton' onClick={() => this.openModal()} key='100'>
+        <div className='ExamResetButton' key='100'>
+          <button className='ExamResetButton' onClick={() => this.openModal()}>
             Neustart?
           </button>
           <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
