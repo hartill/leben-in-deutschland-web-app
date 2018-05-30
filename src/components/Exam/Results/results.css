@@ -1,49 +1,30 @@
 .ResultBox {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }
 
-.ResultValue {
+.ResultBoxRow {
+  flex-basis: 60px;
   display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.correctAnswerIcon {
+.ResultBoxRow span{
   display: flex;
-  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ResultBoxResult {
+  flex-basis: 60px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
-  width: 3rem;
-  height: 3rem;
-  background-color: #2CC990;
   color: #fff;
-}
-
-.incorrectAnswerIcon {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  background-color: #DD5152;
-  color: #fff;
-}
-
-.ResultFinalPercentage {
-  border-radius: 50%;
-  color: #fff;
-  width: 6rem;
-  height: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
 }
 
 .green {

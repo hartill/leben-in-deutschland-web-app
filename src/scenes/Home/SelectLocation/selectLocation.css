@@ -1,6 +1,6 @@
 .selectLocation {
+  flex-basis: 100%;
   display: flex;
-  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   color: #fff;
@@ -10,11 +10,12 @@
 }
 
 .selectLocation select {
+  flex-basis: 100%;
   border-radius: 0;
   background: #3E4651 url('./../../../svg/icon-chevron.svg') 95% 50% no-repeat;
   cursor: pointer;
   color: #fff;
-  width: 100%;
+  font-size: 1rem;
   padding: 1rem;
   -webkit-appearance: none;
   -moz-appearance: none;

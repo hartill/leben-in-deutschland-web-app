@@ -8,12 +8,23 @@
   overflow-y: auto;
 }
 
-.HomeContainer{
+.HomeContainer {
   width: 100%;
+  max-width: 40rem;
   margin: 0 auto;
   display: flex;
   flex-flow: column;
   align-items: center;
+  padding: 0px 15px;
+}
+
+.SelectLocationContainer {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0px 15px;
 }
 
 .menu-item {

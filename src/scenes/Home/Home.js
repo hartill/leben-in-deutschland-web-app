@@ -14,11 +14,13 @@ class Home extends Component {
           buttonsDisabled={true}
           userLastPage={this.props.userLastPage}
         />
-        <div className='HomeContainer'>
+        <div className='SelectLocationContainer'>
           <SelectLocation
             userLocation={this.props.userLocation}
             handleChange={this.props.handleLocationChange}
           />
+        </div>
+        <div className='HomeContainer'>
           <Link to='/trainieren' className='menu-item ubung'>
             Trainieren
           </Link>

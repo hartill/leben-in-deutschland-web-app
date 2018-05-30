@@ -2,13 +2,9 @@ import React from 'react';
 import './results.css';
 
 class Results extends React.Component {
-  constructor(props){
-    super(props);
-    this.renderResults = this.renderResults.bind(this);
-  }
 
-  renderResults() {
-    let output = []
+  render () {
+
     let correctAnswers = 0
     let incorrectAnswers = 0
     for (let i = 0; i < this.props.examProgress.length; i++) {
@@ -17,33 +13,37 @@ class Results extends React.Component {
     let percentageCorrect = correctAnswers / this.props.numberOfQuestions * 100
     let testPassed = percentageCorrect >= 50 ? true : false
     let accentStyle = testPassed ? 'green' : 'red'
-    output.push(
-      <div className='ResultBox' key={1}>
-        <div className={'ResultFinalPercentage ' + accentStyle}>
-          {percentageCorrect.toFixed(0)}%
-        </div>
-        {testPassed ? <p>Du hast bestanden</p> : <p>Du hast nicht bestanden</p>}
-        <div className='ResultValue'>
-          <div className='correctAnswerIcon'>x {correctAnswers}</div>
-          <div className='incorrectAnswerIcon'>x {incorrectAnswers}</div>
-        </div>
-      </div>
-    )
-    return output
-  }
 
-  render () {
     return (
       <div className="Container">
         <div className="QuizContainer">
-          <div className="QuizHeader">
+          <div className={"QuizHeader " + accentStyle}>
             <div className="QuestionCategory">
-              Ergebnis
+              { testPassed ? 'Du hast bestanden' : 'Du hast nicht bestanden' }
             </div>
           </div>
           <div className="QuizBodyContainer">
             <div className="QuizBody">
-              {this.renderResults()}
+              <div className='ResultBox'>
+                <div className='ResultBoxRow' key={1}>
+                  <span>Ergebnis:</span>
+                  <div className={'ResultBoxResult ' + accentStyle}>
+                    { percentageCorrect.toFixed(0) }%
+                  </div>
+                </div>
+                <div className='ResultBoxRow' key={2}>
+                  <span>Korrekte Antworten:</span>
+                  <div className='ResultBoxResult green'>
+                    { correctAnswers }
+                  </div>
+                </div>
+                <div className='ResultBoxRow' key={3}>
+                  <span>Falsche Antworten:</span>
+                  <div className='ResultBoxResult red'>
+                    { incorrectAnswers }
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
