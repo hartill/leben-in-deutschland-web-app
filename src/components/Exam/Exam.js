@@ -1,5 +1,6 @@
 import React from 'react'
 import Lightbox from 'react-image-lightbox'
+import 'react-image-lightbox/style.css'
 import Results from './Results/'
 import Review from './Review/'
 import Questions from './../Quiz/Questions'
