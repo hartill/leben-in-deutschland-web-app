@@ -56,7 +56,7 @@ body {
   overflow-y: auto;
 }
 
-@media screen and (max-width: 48rem) {
+@media screen and (max-width: 42rem) {
 
   .Container {
     height: 100%;

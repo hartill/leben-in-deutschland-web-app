@@ -40,6 +40,7 @@ class App extends Component {
     this.numberOfQuestions = 300
     this.handleLocationChange = this.handleLocationChange.bind(this)
     this.loadQuestionOptions = this.loadQuestionOptions.bind(this)
+    this.restart = this.restart.bind(this)
   }
 
   componentWillMount() {
@@ -54,6 +55,13 @@ class App extends Component {
           userCurrentPage: this.props.location.pathname
       }))
     }
+  }
+
+  restart() {
+    this.cookies.remove('examQuestions')
+    this.cookies.remove('examProgress')
+    this.cookies.remove('progress')
+    this.cookies.remove('incorrect')
   }
 
   loadQuestionOptions() {
@@ -120,6 +128,16 @@ class App extends Component {
   handleLocationChange(event) {
     event.preventDefault()
     const target = event.target
+    /*if (window.confirm('Fortschritt wird verloren gehen')) {
+      this.restart()
+      this.setState(prevState => ({
+          userLocation: target.value
+      }))
+      const expires = new Date()
+      expires.setTime(expires.getTime()+(365*24*60*60*1000))
+      expires.toUTCString()
+      this.cookies.set('userLocation', target.value, {expires: expires, path: '/' })
+    }*/
     this.setState(prevState => ({
         userLocation: target.value
     }))
@@ -151,7 +169,6 @@ class App extends Component {
             questions={this.questions}
             numberOfQuestions={this.numberOfQuestions}
             userLastPage={this.state.userLastPage}
-            userLocation={this.state.userLocation}
           />
         )}/>
         <Route exact path='/fragenkatalog' render={(props) => (

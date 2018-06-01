@@ -17,7 +17,7 @@ class Home extends Component {
         <div className='SelectLocationContainer'>
           <SelectLocation
             userLocation={this.props.userLocation}
-            handleChange={this.props.handleLocationChange}
+            handleLocationChange={this.props.handleLocationChange}
           />
         </div>
         <div className='HomeContainer'>

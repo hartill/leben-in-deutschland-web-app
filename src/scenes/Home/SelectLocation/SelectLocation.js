@@ -5,7 +5,7 @@ class SelectLocation extends React.Component {
   render() {
     return (
       <form className='selectLocation'>
-        <select value={this.props.userLocation} onChange={this.props.handleChange}>
+        <select value={this.props.userLocation} onChange={this.props.handleLocationChange}>
           <option value="none">Standort wählen</option>
           <option value="badenWurttemberg">Baden-Württemberg</option>
           <option value="bayern">Bayern</option>
