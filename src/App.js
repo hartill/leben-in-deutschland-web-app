@@ -1,14 +1,30 @@
 import React, { Component } from 'react'
+
+import { Switch, Route } from 'react-router-dom'
+import Cookies from 'universal-cookie'
+
 import PracticeQuiz from './scenes/PracticeQuiz/'
 import MockExam from './scenes/MockExam/'
 import QuestionCatalogue from './scenes/QuestionCatalogue/'
 import Home from './scenes/Home/'
-import { Switch, Route } from 'react-router-dom'
-import Cookies from 'universal-cookie'
+
 import quizQuestions from './api/quizQuestions'
 import badenWurttembergQuestions from './api/badenWurttembergQuestions'
 import bayernQuestions from './api/bayernQuestions'
 import berlinQuestions from './api/berlinQuestions'
+import brandenburgQuestions from './api/brandenburgQuestions'
+import bremenQuestions from './api/bremenQuestions'
+import hamburgQuestions from './api/hamburgQuestions'
+import hessenQuestions from './api/hessenQuestions'
+import mecklenburgVorpommernQuestions from './api/mecklenburgVorpommernQuestions'
+import niedersachsenQuestions from './api/niedersachsenQuestions'
+import nordrheinWestfalenQuestions from './api/nordrheinWestfalenQuestions'
+import rheinlandPfalzQuestions from './api/rheinlandPfalzQuestions'
+import saarlandQuestions from './api/saarlandQuestions'
+import sachsenQuestions from './api/sachsenQuestions'
+import sachsenAnhaltQuestions from './api/sachsenAnhaltQuestions'
+import schleswigHolsteinQuestions from './api/schleswigHolsteinQuestions'
+import thuringenQuestions from './api/thuringenQuestions'
 
 
 class App extends Component {
@@ -56,8 +72,47 @@ class App extends Component {
         case 'berlin':
           this.questions = this.questions.concat(berlinQuestions)
           break
+        case 'brandenburg':
+          this.questions = this.questions.concat(brandenburgQuestions)
+          break
+        case 'bremen':
+          this.questions = this.questions.concat(bremenQuestions)
+          break
+        case 'hamburg':
+          this.questions = this.questions.concat(hamburgQuestions)
+          break
+        case 'hessen':
+          this.questions = this.questions.concat(hessenQuestions)
+          break
+        case 'mecklenburgVorpommern':
+          this.questions = this.questions.concat(mecklenburgVorpommernQuestions)
+          break
+        case 'niedersachsen':
+          this.questions = this.questions.concat(niedersachsenQuestions)
+          break
+        case 'nordrheinWestfalen':
+          this.questions = this.questions.concat(nordrheinWestfalenQuestions)
+          break
+        case 'rheinlandPfalz':
+          this.questions = this.questions.concat(rheinlandPfalzQuestions)
+          break
+        case 'saarland':
+          this.questions = this.questions.concat(saarlandQuestions)
+          break
+        case 'sachsen':
+          this.questions = this.questions.concat(sachsenQuestions)
+          break
+        case 'sachsenAnhalt':
+          this.questions = this.questions.concat(sachsenAnhaltQuestions)
+          break
+        case 'schleswigHolstein':
+          this.questions = this.questions.concat(schleswigHolsteinQuestions)
+          break
+        case 'thuringen':
+          this.questions = this.questions.concat(thuringenQuestions)
+          break
         default:
-          this.questions = this.questions.concat(badenWurttembergQuestions)
+          this.questions = this.questions.concat(sachsenQuestions)
       }
     }
   }
