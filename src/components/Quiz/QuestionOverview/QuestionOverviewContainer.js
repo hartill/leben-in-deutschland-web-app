@@ -11,8 +11,10 @@ class QuestionOverviewContainer extends React.Component {
 
   componentWillMount(){
     this.content = (
-      <div className='loading'>
-        <img className='loadingSVG' src ={require("./../../../static/icons/loadingIcon.svg")} alt='loading' />
+      <div className='loadingContainer'>
+        <div className='loading'>
+          <img className='loadingSVG' src ={require("./../../../static/icons/loadingIcon.svg")} alt='loading' />
+        </div>
       </div>
     )
   }
