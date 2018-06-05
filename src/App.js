@@ -138,6 +138,7 @@ class App extends Component {
       expires.toUTCString()
       this.cookies.set('userLocation', target.value, {expires: expires, path: '/' })
     }*/
+    this.restart()
     this.setState(prevState => ({
         userLocation: target.value
     }))
