@@ -1,6 +1,7 @@
 import React from 'react'
 import './QuestionOverview.css'
 import { ReactComponent as LoadingIcon } from './../../../static/icons/loadingIcon.svg'
+import { OverviewContainer } from '../../layout'
 
 class QuestionOverview extends React.Component {
   constructor(props) {
@@ -72,13 +73,13 @@ class QuestionOverview extends React.Component {
       this.renderUserProgress()
     )
     return (
-      <div className="OverviewContainer">
+      <OverviewContainer>
         <div className="QuOvContainer">
           <div className="QuOvBodyContainer">
             <div className="QuOvBody">{content}</div>
           </div>
         </div>
-      </div>
+      </OverviewContainer>
     )
   }
 }

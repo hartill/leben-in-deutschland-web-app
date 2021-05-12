@@ -1,10 +1,11 @@
-import React from 'react';
-import './review.css';
+import React from 'react'
+import './review.css'
+import { OverviewContainer } from '../../layout'
 
 class Review extends React.Component {
-  constructor(props){
-    super(props);
-    this.renderUserProgress = this.renderUserProgress.bind(this);
+  constructor(props) {
+    super(props)
+    this.renderUserProgress = this.renderUserProgress.bind(this)
   }
 
   renderUserProgress() {
@@ -21,22 +22,18 @@ class Review extends React.Component {
       }
 
       output.push(
-        <div className='ExamQuestionOverviewBox' key={questionId}>
-          <div className='ExamQuestionOverviewBoxInner'>
-            <div className={'ExamQuestionOverviewBoxInnerInner ' + boxStyle}>
-              {questionId}
-            </div>
+        <div className="ExamQuestionOverviewBox" key={questionId}>
+          <div className="ExamQuestionOverviewBoxInner">
+            <div className={'ExamQuestionOverviewBoxInnerInner ' + boxStyle}>{questionId}</div>
           </div>
         </div>
       )
     }
-    for (let i=0; i < (this.props.numberOfQuestions - this.props.examProgress.length); i++ ) {
+    for (let i = 0; i < this.props.numberOfQuestions - this.props.examProgress.length; i++) {
       output.push(
-        <div className='ExamQuestionOverviewBox' key={500 + i}>
-          <div className='ExamQuestionOverviewBoxInner'>
-            <div className='ExamQuestionOverviewBoxInnerInner'>
-              ?
-            </div>
+        <div className="ExamQuestionOverviewBox" key={500 + i}>
+          <div className="ExamQuestionOverviewBoxInner">
+            <div className="ExamQuestionOverviewBoxInnerInner">?</div>
           </div>
         </div>
       )
@@ -44,17 +41,15 @@ class Review extends React.Component {
     return output
   }
 
-  render () {
+  render() {
     return (
-      <div className="OverviewContainer">
+      <OverviewContainer>
         <div className="ExOvContainer">
           <div className="ExOvBodyContainer">
-            <div className="ExOvBody">
-              {this.renderUserProgress()}
-            </div>
+            <div className="ExOvBody">{this.renderUserProgress()}</div>
           </div>
         </div>
-      </div>
+      </OverviewContainer>
     )
   }
 }

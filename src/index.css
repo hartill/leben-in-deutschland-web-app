@@ -22,56 +22,7 @@ body {
   height: 100%;
 }
 
-.App {
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  overflow-y: hidden;
-}
-
-.Footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 0 0 3.75rem;
-  height: 3.75rem;
-}
-
-.Container {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  overflow-y: auto;
-}
-
-.OverviewContainer {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  overflow-y: auto;
-}
-
-@media screen and (max-width: 42rem) {
-
-  .Container {
-    height: 100%;
-    max-width: 100%;
-    align-self: flex-start;
-    background-color: #fff;
-  }
-
-  .OverviewContainer {
-    height: 100%;
-    max-width: 100%;
-    align-self: flex-start;
-  }
-
-  .App {
-    justify-content: flex-start;
-  }
+a {
+  color: #fff;
+  text-decoration: none;
 }

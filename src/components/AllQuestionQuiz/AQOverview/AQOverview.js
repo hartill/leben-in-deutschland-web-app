@@ -1,6 +1,7 @@
 import React from 'react'
 import './AQOverview.css'
 import { ReactComponent as LoadingIcon } from './../../../static/icons/loadingIcon.svg'
+import {OverviewContainer} from '../../layout'
 
 class AQOverview extends React.Component {
   constructor(props) {
@@ -48,13 +49,13 @@ class AQOverview extends React.Component {
 
   render() {
     return (
-      <div className="OverviewContainer">
+      <OverviewContainer>
         <div className="AQOvContainer">
           <div className="AQOvBodyContainer">
             <div className="AQOvBody">{this.content}</div>
           </div>
         </div>
-      </div>
+      </OverviewContainer>
     )
   }
 }

@@ -1,15 +1,16 @@
 import React from 'react'
 import './FooterQc.css'
 import { ReactComponent as ForwardArrowIcon } from './../../../svg/forwards-arrow.svg'
+import { FooterContainer } from '../../../components/layout'
 
 class FooterQc extends React.Component {
   render() {
     return (
-      <div className="Footer">
+      <FooterContainer>
         <button className="AQNextButton" onClick={this.props.nextQuestion} key="2">
           <ForwardArrowIcon />
         </button>
-      </div>
+      </FooterContainer>
     )
   }
 }

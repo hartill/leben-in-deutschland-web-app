@@ -3,6 +3,7 @@ import './quiz.css';
 import GameOver from './GameOver'
 import QuestionOverviewContainer from './QuestionOverview/QuestionOverviewContainer'
 import Questions from './Questions'
+import { Container } from '../layout'
 
 class Quiz extends React.Component {
   constructor(props){
@@ -51,7 +52,7 @@ class Quiz extends React.Component {
         )
       } else if (this.props.completed === true) {
         return (
-          <div className="Container">
+          <Container>
             <div className="QuizContainer">
               <GameOver
                 restart={this.props.restart}
@@ -59,7 +60,7 @@ class Quiz extends React.Component {
                 numberOfQuestions={this.props.numberOfQuestions}
               />
             </div>
-          </div>
+          </Container>
         )
       } else {
         return (

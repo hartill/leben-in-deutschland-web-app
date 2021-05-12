@@ -1,32 +1,10 @@
-.UserProgressContainer {
-  position: relative;
+import styled from '@emotion/styled'
+
+const NextButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-basis: 50%;
-  background-color: #23212B;
-  color: #fff;
-  height: 100%;
-}
-
-.UserProgress {
-  position: absolute;
-  top:0;
-  bottom: 0;
-  left:0;
-  background-color: #2CC990;
-  height: 100%;
-}
-
-.Score {
-  z-index: 1;
-}
-
-.NextButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #DD5152;
+  background-color: #dd5152;
   cursor: pointer;
   border: none;
   padding: 0px;
@@ -37,15 +15,15 @@
   flex-basis: 50%;
   height: 100%;
   cursor: pointer;
-}
+`
 
-.ResetButton {
+const ResetButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
   height: 100%;
-  background-color: #DD5152;
+  background-color: #dd5152;
   cursor: pointer;
   border: none;
   padding: 0px;
@@ -53,4 +31,6 @@
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
-}
+`
+
+export { NextButton, ResetButton }

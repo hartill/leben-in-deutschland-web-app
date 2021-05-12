@@ -1,11 +1,11 @@
 import React from 'react'
-import './selectLocation.css'
+import { SelectLocationContainer } from './styles'
 
-class SelectLocation extends React.Component {
-  render() {
-    return (
-      <form className='selectLocation'>
-        <select value={this.props.userLocation} onChange={this.props.handleLocationChange}>
+export function SelectLocation({ userLocation, handleLocationChange }) {
+  return (
+    <SelectLocationContainer>
+      <form className="selectLocation">
+        <select value={userLocation} onChange={handleLocationChange}>
           <option value="none">Standort wählen</option>
           <option value="badenWurttemberg">Baden-Württemberg</option>
           <option value="bayern">Bayern</option>
@@ -25,8 +25,8 @@ class SelectLocation extends React.Component {
           <option value="thuringen">Thüringen</option>
         </select>
       </form>
-    )
-  }
+    </SelectLocationContainer>
+  )
 }
 
 export default SelectLocation

@@ -1,37 +1,34 @@
-import React from 'react';
-import './quiz.css';
+import React from 'react'
+import './quiz.css'
 import Answers from './Answers'
+import { Container } from '../layout'
 
 class Questions extends React.Component {
-  render () {
+  render() {
     let question = this.props.question
     let image = this.props.question.image
     let customStyle = this.props.headerColor !== undefined ? this.props.headerColor : ''
     return (
-      <div className="Container">
+      <Container>
         <div className="QuizContainer">
           <div className={'QuizHeader ' + customStyle}>
-            <div className="QuestionNumber">
-              {question.id}
-            </div>
-            <div className='QuestionCategory'>
-              {question.category}
-            </div>
+            <div className="QuestionNumber">{question.id}</div>
+            <div className="QuestionCategory">{question.category}</div>
           </div>
           <div className="QuizBodyContainer">
             <div className="QuizBody">
-              <div className="QuestionText">
-                {question.question}
-              </div>
+              <div className="QuestionText">{question.question}</div>
               {question.image !== undefined ? this.props.renderImage(image) : null}
-              <Answers question={question}
+              <Answers
+                question={question}
                 showAnswer={this.props.showAnswer}
                 selectedAnswer={this.props.selectedAnswer}
-                onAnswerSelected={this.props.onAnswerSelected} />
+                onAnswerSelected={this.props.onAnswerSelected}
+              />
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     )
   }
 }

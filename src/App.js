@@ -26,7 +26,6 @@ import sachsenAnhaltQuestions from './api/sachsenAnhaltQuestions'
 import schleswigHolsteinQuestions from './api/schleswigHolsteinQuestions'
 import thuringenQuestions from './api/thuringenQuestions'
 
-// default images
 import image_021 from './static/images/021.png'
 import image_055 from './static/images/055.png'
 import image_070 from './static/images/070.png'
@@ -38,52 +37,36 @@ import image_209 from './static/images/209.png'
 import image_216 from './static/images/216.png'
 import image_226 from './static/images/226.png'
 import image_235 from './static/images/235.png'
-
 import image_301 from './static/images/badenWurttemberg/301.png'
 import image_308 from './static/images/badenWurttemberg/308.png'
-
 import image_311 from './static/images/bayern/311.png'
 import image_318 from './static/images/bayern/318.png'
-
 import image_321 from './static/images/berlin/321.png'
 import image_328 from './static/images/berlin/328.png'
-
 import image_331 from './static/images/brandenburg/331.png'
 import image_338 from './static/images/brandenburg/338.png'
-
 import image_341 from './static/images/bremen/341.png'
 import image_348 from './static/images/bremen/348.png'
-
 import image_351 from './static/images/hamburg/351.png'
 import image_358 from './static/images/hamburg/358.png'
-
 import image_361 from './static/images/hessen/361.png'
 import image_368 from './static/images/hessen/368.png'
-
 import image_371 from './static/images/mecklenburgVorpommern/371.png'
 import image_378 from './static/images/mecklenburgVorpommern/378.png'
-
 import image_381 from './static/images/niedersachsen/381.png'
 import image_388 from './static/images/niedersachsen/388.png'
-
 import image_391 from './static/images/nordrheinWestfalen/391.png'
 import image_398 from './static/images/nordrheinWestfalen/398.png'
-
 import image_401 from './static/images/rheinlandPfalz/401.png'
 import image_408 from './static/images/rheinlandPfalz/408.png'
-
 import image_411 from './static/images/saarland/411.png'
 import image_418 from './static/images/saarland/418.png'
-
 import image_421 from './static/images/sachsen/421.png'
 import image_428 from './static/images/sachsen/428.png'
-
 import image_431 from './static/images/sachsenAnhalt/431.png'
 import image_438 from './static/images/sachsenAnhalt/438.png'
-
 import image_441 from './static/images/schleswigHolstein/441.png'
 import image_448 from './static/images/schleswigHolstein/448.png'
-
 import image_451 from './static/images/thuringen/451.png'
 import image_458 from './static/images/thuringen/458.png'
 

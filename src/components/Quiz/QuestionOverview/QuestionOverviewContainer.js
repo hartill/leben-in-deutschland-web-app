@@ -2,6 +2,7 @@ import React from 'react'
 import './QuestionOverview.css'
 import QuestionOverviewBox from './QuestionOverviewBox'
 import { ReactComponent as LoadingIcon } from './../../../static/icons/loadingIcon.svg'
+import { OverviewContainer } from '../../layout'
 
 class QuestionOverviewContainer extends React.Component {
   constructor(props) {
@@ -35,13 +36,13 @@ class QuestionOverviewContainer extends React.Component {
 
   render() {
     return (
-      <div className="OverviewContainer">
+      <OverviewContainer>
         <div className="QuOvContainer">
           <div className="QuOvBodyContainer">
             <div className="QuOvBody">{this.content}</div>
           </div>
         </div>
-      </div>
+      </OverviewContainer>
     )
   }
 }
