@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Switch, Route } from 'react-router-dom'
 import Cookies from 'universal-cookie'
@@ -70,229 +70,166 @@ import image_448 from './static/images/schleswigHolstein/448.png'
 import image_451 from './static/images/thuringen/451.png'
 import image_458 from './static/images/thuringen/458.png'
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.cookies = new Cookies()
-    this.state = {
-      userLocation: this.cookies.get('userLocation') || 'none',
-      userCurrentPage: this.props.location.pathname,
-      userLastPage: '',
-    }
-    this.questions = quizQuestions
-    this.numberOfQuestions = 300
-    this.handleLocationChange = this.handleLocationChange.bind(this)
-    this.loadQuestionOptions = this.loadQuestionOptions.bind(this)
-    this.restart = this.restart.bind(this)
-    this.images = {
-      image_021: image_021,
-      image_055: image_055,
-      image_070: image_070,
-      image_130: image_130,
-      image_176: image_176,
-      image_181: image_181,
-      image_187: image_187,
-      image_209: image_209,
-      image_216: image_216,
-      image_226: image_226,
-      image_235: image_235,
-      image_301: image_301,
-      image_308: image_308,
-      image_311: image_311,
-      image_318: image_318,
-      image_321: image_321,
-      image_328: image_328,
-      image_331: image_331,
-      image_338: image_338,
-      image_341: image_341,
-      image_348: image_348,
-      image_351: image_351,
-      image_358: image_358,
-      image_361: image_361,
-      image_368: image_368,
-      image_371: image_371,
-      image_378: image_378,
-      image_381: image_381,
-      image_388: image_388,
-      image_391: image_391,
-      image_398: image_398,
-      image_401: image_401,
-      image_408: image_408,
-      image_411: image_411,
-      image_418: image_418,
-      image_421: image_421,
-      image_428: image_428,
-      image_431: image_431,
-      image_438: image_438,
-      image_441: image_441,
-      image_448: image_448,
-      image_451: image_451,
-      image_458: image_458,
-    }
+export function App() {
+  const cookies = new Cookies()
+  const [selectedLocation, setSelectedLocation] = useState(cookies.get('selectedLocation') || 'none')
+
+  let questions = quizQuestions
+  let numberOfQuestions = 300
+
+  const images = {
+    image_021: image_021,
+    image_055: image_055,
+    image_070: image_070,
+    image_130: image_130,
+    image_176: image_176,
+    image_181: image_181,
+    image_187: image_187,
+    image_209: image_209,
+    image_216: image_216,
+    image_226: image_226,
+    image_235: image_235,
+    image_301: image_301,
+    image_308: image_308,
+    image_311: image_311,
+    image_318: image_318,
+    image_321: image_321,
+    image_328: image_328,
+    image_331: image_331,
+    image_338: image_338,
+    image_341: image_341,
+    image_348: image_348,
+    image_351: image_351,
+    image_358: image_358,
+    image_361: image_361,
+    image_368: image_368,
+    image_371: image_371,
+    image_378: image_378,
+    image_381: image_381,
+    image_388: image_388,
+    image_391: image_391,
+    image_398: image_398,
+    image_401: image_401,
+    image_408: image_408,
+    image_411: image_411,
+    image_418: image_418,
+    image_421: image_421,
+    image_428: image_428,
+    image_431: image_431,
+    image_438: image_438,
+    image_441: image_441,
+    image_448: image_448,
+    image_451: image_451,
+    image_458: image_458,
   }
 
-  componentWillMount() {
-    this.loadQuestionOptions()
+  useEffect(() => {
+    loadQuestionOptions()
+  }, [])
+
+  const restart = () => {
+    cookies.remove('examQuestions')
+    cookies.remove('examProgress')
+    cookies.remove('progress')
+    cookies.remove('incorrect')
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    this.loadQuestionOptions()
-    if (this.props.location.pathname !== prevProps.location.pathname) {
-      this.setState((prevState) => ({
-        userLastPage: this.state.userCurrentPage,
-        userCurrentPage: this.props.location.pathname,
-      }))
-    }
-  }
-
-  restart() {
-    this.cookies.remove('examQuestions')
-    this.cookies.remove('examProgress')
-    this.cookies.remove('progress')
-    this.cookies.remove('incorrect')
-  }
-
-  loadQuestionOptions() {
-    this.questions = quizQuestions
-    this.numberOfQuestions = 300
-    if (this.state.userLocation !== 'none') {
-      this.numberOfQuestions = 310
-      let location = this.state.userLocation
+  const loadQuestionOptions = () => {
+    questions = quizQuestions
+    numberOfQuestions = 300
+    if (selectedLocation !== 'none') {
+      numberOfQuestions = 310
+      let location = selectedLocation
       switch (location) {
         case 'badenWurttemberg':
-          this.questions = this.questions.concat(badenWurttembergQuestions)
+          questions = questions.concat(badenWurttembergQuestions)
           break
         case 'bayern':
-          this.questions = this.questions.concat(bayernQuestions)
+          questions = questions.concat(bayernQuestions)
           break
         case 'berlin':
-          this.questions = this.questions.concat(berlinQuestions)
+          questions = questions.concat(berlinQuestions)
           break
         case 'brandenburg':
-          this.questions = this.questions.concat(brandenburgQuestions)
+          questions = questions.concat(brandenburgQuestions)
           break
         case 'bremen':
-          this.questions = this.questions.concat(bremenQuestions)
+          questions = questions.concat(bremenQuestions)
           break
         case 'hamburg':
-          this.questions = this.questions.concat(hamburgQuestions)
+          questions = questions.concat(hamburgQuestions)
           break
         case 'hessen':
-          this.questions = this.questions.concat(hessenQuestions)
+          questions = questions.concat(hessenQuestions)
           break
         case 'mecklenburgVorpommern':
-          this.questions = this.questions.concat(mecklenburgVorpommernQuestions)
+          questions = questions.concat(mecklenburgVorpommernQuestions)
           break
         case 'niedersachsen':
-          this.questions = this.questions.concat(niedersachsenQuestions)
+          questions = questions.concat(niedersachsenQuestions)
           break
         case 'nordrheinWestfalen':
-          this.questions = this.questions.concat(nordrheinWestfalenQuestions)
+          questions = questions.concat(nordrheinWestfalenQuestions)
           break
         case 'rheinlandPfalz':
-          this.questions = this.questions.concat(rheinlandPfalzQuestions)
+          questions = questions.concat(rheinlandPfalzQuestions)
           break
         case 'saarland':
-          this.questions = this.questions.concat(saarlandQuestions)
+          questions = questions.concat(saarlandQuestions)
           break
         case 'sachsen':
-          this.questions = this.questions.concat(sachsenQuestions)
+          questions = questions.concat(sachsenQuestions)
           break
         case 'sachsenAnhalt':
-          this.questions = this.questions.concat(sachsenAnhaltQuestions)
+          questions = questions.concat(sachsenAnhaltQuestions)
           break
         case 'schleswigHolstein':
-          this.questions = this.questions.concat(schleswigHolsteinQuestions)
+          questions = questions.concat(schleswigHolsteinQuestions)
           break
         case 'thuringen':
-          this.questions = this.questions.concat(thuringenQuestions)
+          questions = questions.concat(thuringenQuestions)
           break
         default:
-          this.questions = this.questions.concat(sachsenQuestions)
+          questions = questions.concat(sachsenQuestions)
       }
     }
   }
 
-  handleLocationChange(event) {
+  const handleLocationChange = (event) => {
     event.preventDefault()
     const target = event.target
-    /*if (window.confirm('Fortschritt wird verloren gehen')) {
-      this.restart()
-      this.setState(prevState => ({
-          userLocation: target.value
-      }))
-      const expires = new Date()
-      expires.setTime(expires.getTime()+(365*24*60*60*1000))
-      expires.toUTCString()
-      this.cookies.set('userLocation', target.value, {expires: expires, path: '/' })
-    }*/
-    this.restart()
-    this.setState((prevState) => ({
-      userLocation: target.value,
-    }))
+    restart()
+    setSelectedLocation(target.value)
     const expires = new Date()
     expires.setTime(expires.getTime() + 365 * 24 * 60 * 60 * 1000)
     expires.toUTCString()
-    this.cookies.set('userLocation', target.value, { expires: expires, path: '/' })
+    cookies.set('selectedLocation', target.value, { expires: expires, path: '/' })
   }
 
-  render() {
-    return (
-      <Switch>
-        <Route
-          exact
-          path="/"
-          render={(props) => (
-            <Home
-              {...props}
-              userLocation={this.state.userLocation}
-              handleLocationChange={this.handleLocationChange}
-              userLastPage={this.state.userLastPage}
-            />
-          )}
-        />
-        <Route
-          exact
-          path="/trainieren"
-          render={(props) => (
-            <PracticeQuiz
-              {...props}
-              questions={this.questions}
-              numberOfQuestions={this.numberOfQuestions}
-              userLastPage={this.state.userLastPage}
-              images={this.images}
-            />
-          )}
-        />
-        <Route
-          exact
-          path="/probeprufung"
-          render={(props) => (
-            <MockExam
-              {...props}
-              questions={this.questions}
-              numberOfQuestions={this.numberOfQuestions}
-              userLastPage={this.state.userLastPage}
-              images={this.images}
-            />
-          )}
-        />
-        <Route
-          exact
-          path="/fragenkatalog"
-          render={(props) => (
-            <QuestionCatalogue
-              {...props}
-              questions={this.questions}
-              numberOfQuestions={this.numberOfQuestions}
-              userLastPage={this.state.userLastPage}
-              images={this.images}
-            />
-          )}
-        />
-      </Switch>
-    )
-  }
+  return (
+    <Switch>
+      <Route
+        exact
+        path="/"
+        render={(props) => <Home {...props} selectedLocation={selectedLocation} handleLocationChange={handleLocationChange} />}
+      />
+      <Route
+        exact
+        path="/trainieren"
+        render={(props) => <PracticeQuiz {...props} questions={questions} numberOfQuestions={numberOfQuestions} images={images} />}
+      />
+      <Route
+        exact
+        path="/probeprufung"
+        render={(props) => <MockExam {...props} questions={questions} totalNumberOfQuestions={numberOfQuestions} images={images} />}
+      />
+      <Route
+        exact
+        path="/fragenkatalog"
+        render={(props) => <QuestionCatalogue {...props} questions={questions} numberOfQuestions={numberOfQuestions} images={images} />}
+      />
+    </Switch>
+  )
 }
 
 export default App

@@ -1,14 +1,14 @@
 import React from 'react'
-import SelectLocation from '../../components/home/SelectLocation'
+import SelectLocation from '../../components/SelectLocation'
 import Header from '../../components/Header'
 import { Link } from 'react-router-dom'
 import { HomePageDiv, HomeContainer, MenuItem } from './styles'
 
-export function Home({ userLocation, handleLocationChange }) {
+export function Home({ selectedLocation, handleLocationChange }) {
   return (
     <HomePageDiv>
       <Header title={'Leben in Deutschland Test'} />
-      <SelectLocation userLocation={userLocation} handleLocationChange={handleLocationChange} />
+      <SelectLocation selectedLocation={selectedLocation} handleLocationChange={handleLocationChange} />
       <HomeContainer>
         <Link to="/trainieren">
           <MenuItem className="ubung">Trainieren</MenuItem>

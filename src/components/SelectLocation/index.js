@@ -1,11 +1,11 @@
 import React from 'react'
 import { SelectLocationContainer } from './styles'
 
-export function SelectLocation({ userLocation, handleLocationChange }) {
+export function SelectLocation({ selectedLocation, handleLocationChange }) {
   return (
     <SelectLocationContainer>
       <form className="selectLocation">
-        <select value={userLocation} onChange={handleLocationChange}>
+        <select value={selectedLocation} onChange={handleLocationChange}>
           <option value="none">Standort wählen</option>
           <option value="badenWurttemberg">Baden-Württemberg</option>
           <option value="bayern">Bayern</option>
