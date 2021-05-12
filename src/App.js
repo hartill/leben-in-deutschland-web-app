@@ -70,7 +70,7 @@ import image_448 from './static/images/schleswigHolstein/448.png'
 import image_451 from './static/images/thuringen/451.png'
 import image_458 from './static/images/thuringen/458.png'
 
-export function App() {
+function App() {
   const cookies = new Cookies()
   const [selectedLocation, setSelectedLocation] = useState(cookies.get('selectedLocation') || 'none')
 

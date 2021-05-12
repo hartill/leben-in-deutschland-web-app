@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AllQuestionQuiz from '../../components/AllQuestionQuiz'
-import FooterQc from './FooterQc'
+import FooterQc from '../../components/FooterCatalogue'
 import Header from '../../components/Header'
 import { AppContainer } from '../../components/layout'
 
