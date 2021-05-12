@@ -10,6 +10,7 @@ class PracticeQuiz extends Component {
     this.cookies = new Cookies()
     this.questions = this.props.questions
     this.numberOfQuestions = this.props.numberOfQuestions
+    this.images = this.props.images
     this.state = {
       question: {},
       completed: false,
@@ -148,6 +149,7 @@ class PracticeQuiz extends Component {
           question={this.state.question}
           questions={this.questions}
           completed={this.state.completed}
+          images={this.images}
         />
         <Footer
           progress={this.state.progress}

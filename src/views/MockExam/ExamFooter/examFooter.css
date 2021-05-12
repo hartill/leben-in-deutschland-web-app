@@ -30,6 +30,7 @@
 .ExamResetButton {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-basis: 50%;
   height: 100%;
   background-color: #DD5152;

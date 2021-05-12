@@ -8,6 +8,7 @@ class QuestionCatalogue extends Component {
     super(props)
     this.questions = this.props.questions
     this.numberOfQuestions = this.props.numberOfQuestions
+    this.images = this.props.images
     this.state = {
       question: {},
       viewProgress: false,
@@ -102,6 +103,7 @@ class QuestionCatalogue extends Component {
           question={this.state.question}
           questions={this.questions}
           handleQuestionSelected={this.handleQuestionSelected}
+          images={this.images}
         />
         <FooterQc nextQuestion={this.nextQuestion} />
       </div>

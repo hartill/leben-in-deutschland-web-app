@@ -1,6 +1,5 @@
 import React from 'react';
 import './quiz.css';
-import Lightbox from 'react-image-lightbox'
 import GameOver from './GameOver'
 import QuestionOverviewContainer from './QuestionOverview/QuestionOverviewContainer'
 import Questions from './Questions'
@@ -8,6 +7,7 @@ import Questions from './Questions'
 class Quiz extends React.Component {
   constructor(props){
     super(props);
+    this.images = this.props.images
     this.state = {
       lightBoxIsOpen: false
     }
@@ -21,22 +21,22 @@ class Quiz extends React.Component {
   }
 
   renderImage(image) {
-    let lightBoxIsOpen = this.state.lightBoxIsOpen
-    return (
-      <div className="QuestionImage" onClick={() => this.setState({ lightBoxIsOpen: true })}>
-        <p>
+    const imageKey = 'image_' + image
+    const ImageComponent = this.images[imageKey]
+
+    if (!this.state.lightBoxIsOpen) {
+      return (
+        <div className="QuestionImage" onClick={() => this.setState({ lightBoxIsOpen: true })}>
           Bild ansehen
-        </p>
-      {lightBoxIsOpen &&
-      <Lightbox
-          mainSrc={image}
-          onCloseRequest={() => this.setState({ lightBoxIsOpen: false })}
-          onMovePrevRequest={() => {}}
-          onMoveNextRequest={() => {}}
-      />
-      }
-      </div>
-    )
+        </div>
+      )
+    } else {
+      return (
+        <div className="ImageOverlay" onClick={() => this.setState({ lightBoxIsOpen: false })}>
+          <img src={ImageComponent} className={'ImageOverlay-Image'} alt="imageKey" />
+        </div>
+      )
+    }
   }
 
   render () {

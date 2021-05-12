@@ -9,6 +9,7 @@ class MockExam extends Component {
     super(props)
     this.cookies = new Cookies()
     this.questions = this.props.questions
+    this.images = this.props.images
     this.state = {
       question: {},
       examProgress: this.cookies.get('examProgress') || [],
@@ -239,6 +240,7 @@ class MockExam extends Component {
           restart={this.restart}
           numberOfQuestions={this.numberOfQuestions}
           examCompleted={this.state.examCompleted}
+          images={this.images}
         />
         <ExamFooter
           examProgress={this.state.examProgress}
