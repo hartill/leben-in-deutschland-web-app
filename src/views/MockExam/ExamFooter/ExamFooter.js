@@ -2,6 +2,7 @@ import React from 'react'
 import ExamUserProgress from './../ExamUserProgress/'
 import './examFooter.css'
 import Modal from './../../../components/Modal'
+import { ReactComponent as ForwardArrowIcon } from './../../../svg/forwards-arrow.svg'
 
 class Footer extends React.Component {
   constructor(props){
@@ -38,13 +39,13 @@ class Footer extends React.Component {
     } else if (this.props.showAnswer) {
       output.push(
         <button className='ExamNextButton' onClick={this.props.nextQuestion} key='200'>
-          <img src ={require("./../../../svg/forwards-arrow.svg")} alt='next-question' />
+          <ForwardArrowIcon />
         </button>
       )
     } else {
       output.push(
         <div className ='Deactive' key='300'>
-          <img src ={require("./../../../svg/forwards-arrow.svg")} alt='next-question' />
+          <ForwardArrowIcon />
         </div>
       )
     }

@@ -1,39 +1,44 @@
-import React from 'react';
-import './AQOverview.css';
+import React from 'react'
+import './AQOverview.css'
+import { ReactComponent as LoadingIcon } from './../../../static/icons/loadingIcon.svg'
 
 class AQOverview extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.content = null
     this.renderQuestions = this.renderQuestions.bind(this)
   }
 
-  componentWillMount(){
+  componentWillMount() {
     this.content = (
-      <div className='loadingContainer'>
-        <div className='loading'>
-          <img className='loadingSVG' src ={require("./../../../static/icons/loadingIcon.svg")} alt='loading' />
+      <div className="loadingContainer">
+        <div className="loading">
+          <LoadingIcon width={38} />
         </div>
       </div>
     )
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.content = this.renderQuestions()
     setTimeout(() => this.forceUpdate(), 800)
   }
 
   renderQuestions() {
     let output = []
-    for (let i = 1; i < (this.props.numberOfQuestions + 1); i++) {
+    for (let i = 1; i < this.props.numberOfQuestions + 1; i++) {
       let questionId = i
       let questionActive = parseFloat(this.props.question.id) === questionId ? ' QuestionActive' : ''
       output.push(
-        <div className='AQOverviewBox' key={i} onClick={() => { this.props.handleQuestionSelected(questionId) }}>
-          <div className='AQOverviewBoxInner'>
-            <div className={'AQOverviewBoxInnerInner' + questionActive}>
-              {questionId}
-            </div>
+        <div
+          className="AQOverviewBox"
+          key={i}
+          onClick={() => {
+            this.props.handleQuestionSelected(questionId)
+          }}
+        >
+          <div className="AQOverviewBoxInner">
+            <div className={'AQOverviewBoxInnerInner' + questionActive}>{questionId}</div>
           </div>
         </div>
       )
@@ -41,14 +46,12 @@ class AQOverview extends React.Component {
     return output
   }
 
-  render () {
+  render() {
     return (
       <div className="OverviewContainer">
         <div className="AQOvContainer">
           <div className="AQOvBodyContainer">
-            <div className="AQOvBody">
-              {this.content}
-            </div>
+            <div className="AQOvBody">{this.content}</div>
           </div>
         </div>
       </div>

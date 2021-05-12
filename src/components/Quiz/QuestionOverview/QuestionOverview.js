@@ -1,24 +1,25 @@
 import React from 'react'
 import './QuestionOverview.css'
+import { ReactComponent as LoadingIcon } from './../../../static/icons/loadingIcon.svg'
 
 class QuestionOverview extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      loading: true
+      loading: true,
     }
     this.renderUserProgress = this.renderUserProgress.bind(this)
   }
 
-  componentDidMount(){
+  componentDidMount() {
     setTimeout(() => {
-      this.setState({loading: false})
-    },800)
+      this.setState({ loading: false })
+    }, 800)
   }
 
   renderUserProgress() {
     let output = []
-    for (let i = 1; i < (this.props.numberOfQuestions + 1); i++) {
+    for (let i = 1; i < this.props.numberOfQuestions + 1; i++) {
       let answerOverview = []
       let questionId = i.toString()
       let correctCount = false
@@ -28,8 +29,8 @@ class QuestionOverview extends React.Component {
       let incorrectCount = 0
       if (this.props.incorrect) {
         if (this.props.incorrect.indexOf(questionId) >= 0) {
-          incorrectCount  = this.props.incorrect.reduce(function(n, val) {
-              return n + (val === questionId)
+          incorrectCount = this.props.incorrect.reduce(function (n, val) {
+            return n + (val === questionId)
           }, 0)
         }
       }
@@ -38,7 +39,7 @@ class QuestionOverview extends React.Component {
       if (incorrectCount > 0) {
         boxStyle = 'incorrect'
         answerOverview.push(
-          <div className='incorrectAnswerCount' key='1'>
+          <div className="incorrectAnswerCount" key="1">
             {incorrectCount > 1 ? incorrectCount + 'x' : null}
           </div>
         )
@@ -49,15 +50,11 @@ class QuestionOverview extends React.Component {
       }
 
       output.push(
-        <div className='QuestionOverviewBox' key={i}>
-          <div className='QuestionOverviewBoxInner'>
+        <div className="QuestionOverviewBox" key={i}>
+          <div className="QuestionOverviewBoxInner">
             <div className={'QuestionOverviewBoxInnerInner ' + boxStyle}>
-              <div className='QuestionOverviewBoxHeader'>
-                {i}
-              </div>
-              <div className='QuestionOverviewBoxContent'>
-                {answerOverview}
-              </div>
+              <div className="QuestionOverviewBoxHeader">{i}</div>
+              <div className="QuestionOverviewBoxContent">{answerOverview}</div>
             </div>
           </div>
         </div>
@@ -66,19 +63,19 @@ class QuestionOverview extends React.Component {
     return output
   }
 
-  render () {
-    let content = this.state.loading ?
-      <div className='loading'>
-        <img className='loadingSVG' src ={require("./../../../static/icons/loading.svg")} alt='loading' />
+  render() {
+    let content = this.state.loading ? (
+      <div className="loading">
+        <LoadingIcon width={38} />
       </div>
-      : this.renderUserProgress()
+    ) : (
+      this.renderUserProgress()
+    )
     return (
       <div className="OverviewContainer">
         <div className="QuOvContainer">
           <div className="QuOvBodyContainer">
-            <div className="QuOvBody">
-              {content}
-            </div>
+            <div className="QuOvBody">{content}</div>
           </div>
         </div>
       </div>

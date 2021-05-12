@@ -1,45 +1,44 @@
 import React from 'react'
 import './QuestionOverview.css'
 import QuestionOverviewBox from './QuestionOverviewBox'
+import { ReactComponent as LoadingIcon } from './../../../static/icons/loadingIcon.svg'
 
 class QuestionOverviewContainer extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.content = null
     this.renderUserProgress = this.renderUserProgress.bind(this)
   }
 
-  componentWillMount(){
+  componentWillMount() {
     this.content = (
-      <div className='loadingContainer'>
-        <div className='loading'>
-          <img className='loadingSVG' src ={require("./../../../static/icons/loadingIcon.svg")} alt='loading' />
+      <div className="loadingContainer">
+        <div className="loading">
+          <LoadingIcon width={38} />
         </div>
       </div>
     )
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.content = this.renderUserProgress()
     setTimeout(() => this.forceUpdate(), 1000)
   }
 
   renderUserProgress() {
     let output = []
-    for (let i = 1; i < (this.props.numberOfQuestions + 1); i++) {
+    for (let i = 1; i < this.props.numberOfQuestions + 1; i++) {
       output.push(<QuestionOverviewBox i={i} progress={this.props.progress} incorrect={this.props.incorrect} key={i} />)
     }
     return output
   }
 
-  render () {
+  render() {
     return (
       <div className="OverviewContainer">
         <div className="QuOvContainer">
           <div className="QuOvBodyContainer">
-            <div className="QuOvBody">
-              {this.content}
-            </div>
+            <div className="QuOvBody">{this.content}</div>
           </div>
         </div>
       </div>
