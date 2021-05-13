@@ -1,8 +1,10 @@
-.ExamNextButton {
+import styled from '@emotion/styled'
+
+const ExamNextButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #DD5152;
+  background-color: #dd5152;
   cursor: pointer;
   border: none;
   padding: 0px;
@@ -10,30 +12,22 @@
   flex-basis: 50%;
   height: 100%;
   cursor: pointer;
-}
 
-.Deactive {
+  &.innactive {
+    background-color: #23212b;
+    cursor: default;
+    opacity: 0.4;
+  }
+`
+
+const ExamResetButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #23212B;
-  cursor: pointer;
-  border: none;
-  padding: 0px;
+  flex-basis: 50%;
   flex-shrink: 0;
-  flex-basis: 50%;
   height: 100%;
-  opacity: 0.5;
-  cursor: default;
-}
-
-.ExamResetButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 50%;
-  height: 100%;
-  background-color: #DD5152;
+  background-color: #dd5152;
   cursor: pointer;
   border: none;
   padding: 0px;
@@ -41,11 +35,6 @@
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
-}
+`
 
-@media screen and (max-width: 48rem) {
-  .Deactive {
-    opacity: 0.3;
-    cursor: default;
-  }
-}
+export { ExamNextButton, ExamResetButton }

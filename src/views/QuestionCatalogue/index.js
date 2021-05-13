@@ -1,115 +1,66 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import AllQuestionQuiz from '../../components/AllQuestionQuiz'
-import FooterQc from '../../components/FooterCatalogue'
+import FooterCatalogue from '../../components/Footer/FooterCatalogue'
 import Header from '../../components/Header'
 import { AppContainer } from '../../components/layout'
 
-class QuestionCatalogue extends Component {
-  constructor(props) {
-    super(props)
-    this.questions = this.props.questions
-    this.numberOfQuestions = this.props.numberOfQuestions
-    this.images = this.props.images
-    this.state = {
-      question: {},
-      viewProgress: false,
-      selectedAnswer: null,
-      showAnswer: true,
+function QuestionCatalogue({ questions, numberOfQuestions, images }) {
+  const [question, setQuestion] = useState(null)
+  const [viewProgress, setViewProgress] = useState(false)
+  const showAnswer = true
+  const displayAnswers = true
+
+  useEffect(() => {
+    setQuestion(questions[0])
+  }, [])
+
+  const handleQuestionSelected = (questionId) => {
+    setQuestion(questions[questionId - 1])
+    setViewProgress(false)
+  }
+
+  const handleViewProgress = () => {
+    setViewProgress(!viewProgress)
+  }
+
+  const nextQuestion = () => {
+    let nextQuestion = parseFloat(question.id)
+    if (nextQuestion >= numberOfQuestions) {
+      nextQuestion = 0
     }
-
-    this.onAnswerSelected = this.onAnswerSelected.bind(this)
-    this.displayAnswers = this.displayAnswers.bind(this)
-    this.handleViewProgress = this.handleViewProgress.bind(this)
-    this.nextQuestion = this.nextQuestion.bind(this)
-    this.handleQuestionSelected = this.handleQuestionSelected.bind(this)
+    setQuestion(questions[nextQuestion])
+    setViewProgress(false)
   }
 
-  componentWillMount() {
-    this.setState({
-      question: this.questions[0],
-    })
+  if (!question) {
+    return null
   }
 
-  handleQuestionSelected(questionId) {
-    this.setState({
-      viewProgress: false,
-      selectedAnswer: null,
-      showAnswer: true,
-      question: this.questions[questionId - 1],
-    })
-  }
-
-  onAnswerSelected(event) {
-    event.preventDefault()
-    const target = event.target
-    this.setState((prevState, props) => {
-      return {
-        selectedAnswer: target.id,
-        showAnswer: true,
-      }
-    })
-  }
-
-  displayAnswers() {
-    this.setState((prevState) => ({
-      showAnswer: true,
-    }))
-  }
-
-  handleViewProgress() {
-    if (this.state.viewProgress === true) {
-      this.setState((prevState) => ({
-        viewProgress: false,
-      }))
-    } else {
-      this.setState((prevState) => ({
-        viewProgress: true,
-      }))
-    }
-  }
-
-  nextQuestion() {
-    this.setState((prevState, props) => {
-      let nextQuestion = parseFloat(prevState.question.id)
-      if (nextQuestion >= this.numberOfQuestions) {
-        nextQuestion = 0
-      }
-      return {
-        question: this.questions[nextQuestion],
-        selectedAnswer: null,
-        showAnswer: true,
-        viewProgress: false,
-      }
-    })
-  }
-
-  render() {
-    let title = this.state.viewProgress ? 'Frage auswählen' : 'Fragenkatalog'
-    return (
-      <AppContainer>
-        <Header
-          title={title}
-          withHomeButton={!this.state.viewProgress}
-          withViewProgress={true}
-          viewProgressOpen={this.state.viewProgress}
-          handleViewProgress={this.handleViewProgress}
-        />
-        <AllQuestionQuiz
-          viewProgress={this.state.viewProgress}
-          showAnswer={this.state.showAnswer}
-          onAnswerSelected={this.onAnswerSelected}
-          numberOfQuestions={this.numberOfQuestions}
-          displayAnswers={this.displayAnswers}
-          selectedAnswer={this.state.selectedAnswer}
-          question={this.state.question}
-          questions={this.questions}
-          handleQuestionSelected={this.handleQuestionSelected}
-          images={this.images}
-        />
-        <FooterQc nextQuestion={this.nextQuestion} />
-      </AppContainer>
-    )
-  }
+  let title = viewProgress ? 'Frage auswählen' : 'Fragenkatalog'
+  return (
+    <AppContainer>
+      <Header
+        title={title}
+        withHomeButton={!viewProgress}
+        withViewProgress={true}
+        viewProgressOpen={viewProgress}
+        handleViewProgress={handleViewProgress}
+      />
+      <AllQuestionQuiz
+        viewProgress={viewProgress}
+        showAnswer={showAnswer}
+        onAnswerSelected={() => {}}
+        numberOfQuestions={numberOfQuestions}
+        displayAnswers={displayAnswers}
+        selectedAnswer={null}
+        question={question}
+        questions={questions}
+        handleQuestionSelected={handleQuestionSelected}
+        images={images}
+      />
+      <FooterCatalogue nextQuestion={nextQuestion} />
+    </AppContainer>
+  )
 }
 
 export default QuestionCatalogue

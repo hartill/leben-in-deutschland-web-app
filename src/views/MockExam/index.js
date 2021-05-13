@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../../components/Header'
-import ExamFooter from '../../components/FooterExam'
+import ExamFooter from '../../components/Footer/FooterExam'
 import Exam from '../../components/Exam'
 import Cookies from 'universal-cookie'
 import { AppContainer } from '../../components/layout'
