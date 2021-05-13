@@ -13,10 +13,10 @@ export function Home({ selectedLocation, handleLocationChange }) {
         <Link to="/trainieren">
           <MenuItem className="ubung">Trainieren</MenuItem>
         </Link>
-        <Link to="/probeprufung">
+        <Link to="/probe-prufung">
           <MenuItem className="prufung">Probeprüfung</MenuItem>
         </Link>
-        <Link to="/fragenkatalog">
+        <Link to="/fragen-katalog">
           <MenuItem className="alleFragen">Fragenkatalog</MenuItem>
         </Link>
       </HomeContainer>

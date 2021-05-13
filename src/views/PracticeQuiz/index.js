@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer/FooterPractice'
-import Quiz from '../../components/Quiz/Quiz'
+import Quiz from '../../components/Quiz'
 import Cookies from 'universal-cookie'
 import { AppContainer } from '../../components/layout'
 

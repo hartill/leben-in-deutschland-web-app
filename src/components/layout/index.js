@@ -36,7 +36,7 @@ const Container = styled.div`
   }
 `
 
-const OverviewContainer = styled.div`
+const ScrollContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -51,4 +51,4 @@ const OverviewContainer = styled.div`
   }
 `
 
-export { AppContainer, FooterContainer, Container, OverviewContainer }
+export { AppContainer, FooterContainer, Container, ScrollContainer }

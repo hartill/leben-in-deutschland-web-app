@@ -9,19 +9,19 @@ const UserProgressContainer = styled.div`
   background-color: #23212b;
   color: #fff;
   height: 100%;
-
-  .UserProgress {
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left:0;
-    background-color: #2CC990;
-    height: 100%;
-  }
-
-  .Score {
-    z-index: 1;
-  }
 `
 
-export { UserProgressContainer }
+const UserProgressIndicator = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #2cc990;
+  height: 100%;
+`
+
+const Score = styled.div`
+  z-index: 1;
+`
+
+export { UserProgressContainer, UserProgressIndicator, Score }

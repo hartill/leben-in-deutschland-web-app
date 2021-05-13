@@ -221,12 +221,12 @@ function App() {
       />
       <Route
         exact
-        path="/probeprufung"
+        path="/probe-prufung"
         render={(props) => <MockExam {...props} questions={questions} totalNumberOfQuestions={numberOfQuestions} images={images} />}
       />
       <Route
         exact
-        path="/fragenkatalog"
+        path="/fragen-katalog"
         render={(props) => <QuestionCatalogue {...props} questions={questions} numberOfQuestions={numberOfQuestions} images={images} />}
       />
     </Switch>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import AllQuestionQuiz from '../../components/AllQuestionQuiz'
+import AllQuestionQuiz from '../../components/QuestionCatalogue'
 import FooterCatalogue from '../../components/Footer/FooterCatalogue'
 import Header from '../../components/Header'
 import { AppContainer } from '../../components/layout'

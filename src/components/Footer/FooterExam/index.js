@@ -3,7 +3,7 @@ import ProgressBar from '../ProgressBar'
 import ConfirmModal from '../../ConfirmModal'
 import { ReactComponent as ForwardArrowIcon } from '../../../svg/forwards-arrow.svg'
 import { FooterContainer } from '../../layout'
-import { ExamNextButton, ExamResetButton } from './styles'
+import { NextButton, ResetButton } from '../styles'
 
 function Footer({ viewProgress, examCompleted, restart, showAnswer, examProgress, numberOfQuestions, nextQuestion }) {
   const [isModalOpen, setIsModalOpen] = useState(null)
@@ -18,23 +18,23 @@ function Footer({ viewProgress, examCompleted, restart, showAnswer, examProgress
     if (viewProgress || examCompleted) {
       output.push(
         <>
-          <ExamResetButton onClick={() => openModal()} key={80984}>
+          <ResetButton onClick={() => openModal()} key={80984}>
             Neustart?
-          </ExamResetButton>
+          </ResetButton>
           <ConfirmModal title="Neustart?" isOpen={isModalOpen} onClose={() => closeModal()} onConfirm={handleCloseAndRestart} />
         </>
       )
     } else if (showAnswer) {
       output.push(
-        <ExamNextButton onClick={nextQuestion} key={1283}>
+        <NextButton onClick={nextQuestion} key={1283}>
           <ForwardArrowIcon />
-        </ExamNextButton>
+        </NextButton>
       )
     } else {
       output.push(
-        <ExamNextButton className="innactive" key={1209}>
+        <NextButton className="innactive" key={1209}>
           <ForwardArrowIcon />
-        </ExamNextButton>
+        </NextButton>
       )
     }
     return output

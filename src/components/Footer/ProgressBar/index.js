@@ -1,18 +1,17 @@
 import React from 'react'
-import {UserProgressContainer} from './styles'
+import { UserProgressContainer, UserProgressIndicator, Score } from './styles'
 
 export function UserProgressBar({ progress, numberOfQuestions }) {
-  let userProgress = progress.length
-  let userProgressPercent = 100 - (userProgress / numberOfQuestions) * 100
-  let userProgressStyle = {
+  const userProgressPercent = 100 - (progress.length / numberOfQuestions) * 100
+  const userProgressStyle = {
     right: userProgressPercent + '%',
   }
   return (
     <UserProgressContainer>
-      <div className="UserProgress" style={userProgressStyle}></div>
-      <div className="Score">
-        {userProgress} / {numberOfQuestions}
-      </div>
+      <UserProgressIndicator style={userProgressStyle} key={'3grgg'}></UserProgressIndicator>
+      <Score key={'okkk'}>
+        {progress.length} / {numberOfQuestions}
+      </Score>
     </UserProgressContainer>
   )
 }

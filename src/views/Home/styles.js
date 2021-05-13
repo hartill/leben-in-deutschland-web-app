@@ -1,10 +1,11 @@
 import styled from '@emotion/styled'
 import forwardsArrow from './../../svg/forwards-arrow.svg'
+import { theme } from '../../theme'
 
 const HomePageDiv = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #23212b;
+  background-color: ${theme.colors.primary};
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -22,15 +23,15 @@ const MenuItem = styled.div`
   margin-bottom: 1.5rem;
 
   &.ubung {
-    background-color: #37b1e3;
+    background-color: ${theme.colors.blue};
   }
 
   &.prufung {
-    background-color: #dd5152;
+    background-color: ${theme.colors.red};
   }
 
   &.alleFragen {
-    background-color: #2cc990;
+    background-color: ${theme.colors.green};
   }
 `
 

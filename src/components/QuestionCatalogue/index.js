@@ -1,23 +1,23 @@
 import React, { useState } from 'react'
-import GameOver from './GameOver'
-import QuestionOverview from './QuestionOverview'
-import Question from './Question/index'
+import AQOverview from './CatalogueOverview'
+import Question from '../Quiz/Question'
 import { Container } from '../layout'
-import { QuizContainer, DisplayImageText, Milk } from './styles'
+import { QuizContainer, DisplayImageText, Milk } from '../Quiz/styles'
+import { theme } from '../../theme'
 
-function Quiz({
+function AllQuestions({
   images,
-  viewProgress,
   restart,
   progress,
   incorrect,
   numberOfQuestions,
-  completed,
+  handleQuestionSelected,
   question,
   showAnswer,
   selectedAnswer,
   onAnswerSelected,
   displayAnswers,
+  viewProgress
 }) {
   const [showImage, setShowImage] = useState(false)
 
@@ -37,14 +37,15 @@ function Quiz({
   }
 
   if (viewProgress) {
-    return <QuestionOverview restart={restart} progress={progress} incorrect={incorrect} numberOfQuestions={numberOfQuestions} />
-  } else if (completed) {
     return (
-      <Container>
-        <QuizContainer>
-          <GameOver restart={restart} progress={progress} numberOfQuestions={numberOfQuestions} />
-        </QuizContainer>
-      </Container>
+      <AQOverview
+        restart={restart}
+        progress={progress}
+        incorrect={incorrect}
+        numberOfQuestions={numberOfQuestions}
+        handleQuestionSelected={handleQuestionSelected}
+        question={question}
+      />
     )
   } else {
     return (
@@ -58,7 +59,7 @@ function Quiz({
             progress={progress}
             displayAnswers={displayAnswers}
             renderImage={renderImage}
-            maxNumberQuestions={numberOfQuestions}
+            headerColor={theme.colors.green}
           />
         </QuizContainer>
       </Container>
@@ -66,4 +67,4 @@ function Quiz({
   }
 }
 
-export default Quiz
+export default AllQuestions

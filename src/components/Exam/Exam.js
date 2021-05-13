@@ -1,61 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Results from './Results/'
 import Review from './Review/'
-import Questions from './../Quiz/Questions'
+import Question from './../Quiz/Question'
+import { theme } from '../../theme'
+import { Container } from '../layout'
+import { QuizContainer, DisplayImageText, Milk } from '../Quiz/styles'
 
-class Exam extends React.Component {
-  constructor(props) {
-    super(props)
-    this.images = this.props.images
-    this.state = {
-      lightBoxIsOpen: false,
-    }
-    this.renderImage = this.renderImage.bind(this)
-  }
+function Exam({
+  images,
+  numberOfQuestions,
+  question,
+  showAnswer,
+  selectedAnswer,
+  onAnswerSelected,
+  displayAnswers,
+  viewProgress,
+  examProgress,
+  examCompleted,
+}) {
+  const [showImage, setShowImage] = useState(false)
 
-  componentWillMount() {
-    this.setState({
-      lightBoxIsOpen: false,
-    })
-  }
-
-  renderImage(image) {
+  const renderImage = (image) => {
     const imageKey = 'image_' + image
-    const ImageComponent = this.images[imageKey]
+    const ImageComponent = images[imageKey]
 
-    if (!this.state.lightBoxIsOpen) {
-      return (
-        <div className="QuestionImage" onClick={() => this.setState({ lightBoxIsOpen: true })}>
-          Bild ansehen
-        </div>
-      )
+    if (!showImage) {
+      return <DisplayImageText onClick={() => setShowImage(true)}>Bild ansehen</DisplayImageText>
     } else {
       return (
-        <div className="ImageOverlay" onClick={() => this.setState({ lightBoxIsOpen: false })}>
-          <img src={ImageComponent} className={'ImageOverlay-Image'} alt="imageKey" />
-        </div>
+        <Milk onClick={() => setShowImage(false)}>
+          <img src={ImageComponent} alt={imageKey} />
+        </Milk>
       )
     }
   }
 
-  render() {
-    if (this.props.viewProgress === true) {
-      return <Review examProgress={this.props.examProgress} numberOfQuestions={this.props.numberOfQuestions} />
-    } else if (this.props.examCompleted === true) {
-      return <Results examProgress={this.props.examProgress} numberOfQuestions={this.props.numberOfQuestions} />
-    } else {
-      return (
-        <Questions
-          question={this.props.question}
-          showAnswer={this.props.showAnswer}
-          selectedAnswer={this.props.selectedAnswer}
-          onAnswerSelected={this.props.onAnswerSelected}
-          displayAnswers={this.props.displayAnswers}
-          renderImage={this.renderImage}
-          headerColor={'redHeader'}
-        />
-      )
-    }
+  if (viewProgress) {
+    return <Review examProgress={examProgress} numberOfQuestions={numberOfQuestions} />
+  } else if (examCompleted) {
+    return <Results examProgress={examProgress} numberOfQuestions={numberOfQuestions} />
+  } else {
+    return (
+      <Container>
+        <QuizContainer>
+          <Question
+            question={question}
+            showAnswer={showAnswer}
+            selectedAnswer={selectedAnswer}
+            onAnswerSelected={onAnswerSelected}
+            displayAnswers={displayAnswers}
+            renderImage={renderImage}
+            headerColor={theme.colors.red}
+          />
+        </QuizContainer>
+      </Container>
+    )
   }
 }
 
