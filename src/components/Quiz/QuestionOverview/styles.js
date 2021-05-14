@@ -2,40 +2,30 @@ import styled from '@emotion/styled'
 import { theme } from '../../../theme'
 
 const QuizOverviewContainer = styled.div`
+  min-width: 15rem;
   max-width: 40rem;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 2rem 0;
-
-  @media screen and (max-width: 48rem) {
-    padding: 1rem 0;
-  }
+  padding: 1rem 0;
 `
 
 const QuestionBox = styled.div`
   position: relative;
-  flex: 0 0 9%;
-  margin: 3px;
-  box-sizing: margin-box;
+  float: left;
+  width: 10%;
+  padding-top: 10%;
   font-size: 0.8rem;
   overflow: hidden;
 
-  &:before {
-    content: '';
-    display: table;
-    padding-top: 100%;
-  }
-
   @media screen and (max-width: 48rem) {
-    flex: 0 0 16%;
+    width: 20%;
+    padding-top: 20%;
   }
 `
 
 const QuestionBoxInner = styled.div`
-  color: #ffffff;
+  margin: 3px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -43,10 +33,13 @@ const QuestionBoxInner = styled.div`
   right: 0;
   box-sizing: border-box;
   overflow: hidden;
+  color: #fff;
+  display: flex;
   display: flex;
   flex-flow: column nowrap;
-  align-items: stretch;
-  background-color: rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
 
   &.correct {
     background-color: ${theme.colors.green};
@@ -54,6 +47,10 @@ const QuestionBoxInner = styled.div`
 
   &.incorrect {
     background-color: ${theme.colors.red};
+  }
+
+  &.active {
+    background-color: ${theme.colors.blue};
   }
 `
 
@@ -82,11 +79,4 @@ const IncorrectAnswerCount = styled.div`
   justify-content: center;
 `
 
-export {
-  QuizOverviewContainer,
-  QuestionBox,
-  QuestionBoxInner,
-  QuestionOverviewBoxHeader,
-  QuestionOverviewBoxContent,
-  IncorrectAnswerCount,
-}
+export { QuizOverviewContainer, QuestionBox, QuestionBoxInner, QuestionOverviewBoxHeader, QuestionOverviewBoxContent, IncorrectAnswerCount }

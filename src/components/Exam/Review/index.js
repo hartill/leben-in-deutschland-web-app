@@ -1,57 +1,39 @@
 import React from 'react'
-import './review.css'
 import { ScrollContainer } from '../../layout'
+import { QuestionOverviewContainer, QuestionBox, QuestionBoxInner } from './styles'
 
-class Review extends React.Component {
-  constructor(props) {
-    super(props)
-    this.renderUserProgress = this.renderUserProgress.bind(this)
-  }
+function Review({ examProgress, numberOfQuestions }) {
+  let markup = []
+  for (let i = 0; i < examProgress.length; i++) {
+    let questionId = examProgress[i].questionId
+    let userScore = examProgress[i].userScore
+    let boxStyle = ''
 
-  renderUserProgress() {
-    let output = []
-    for (let i = 0; i < this.props.examProgress.length; i++) {
-      let questionId = this.props.examProgress[i].questionId
-      let userScore = this.props.examProgress[i].userScore
-      let boxStyle = ''
-
-      if (userScore) {
-        boxStyle = 'correct'
-      } else {
-        boxStyle = 'incorrect'
-      }
-
-      output.push(
-        <div className="ExamQuestionOverviewBox" key={questionId}>
-          <div className="ExamQuestionOverviewBoxInner">
-            <div className={'ExamQuestionOverviewBoxInnerInner ' + boxStyle}>{questionId}</div>
-          </div>
-        </div>
-      )
+    if (userScore) {
+      boxStyle = 'correct'
+    } else {
+      boxStyle = 'incorrect'
     }
-    for (let i = 0; i < this.props.numberOfQuestions - this.props.examProgress.length; i++) {
-      output.push(
-        <div className="ExamQuestionOverviewBox" key={500 + i}>
-          <div className="ExamQuestionOverviewBoxInner">
-            <div className="ExamQuestionOverviewBoxInnerInner">?</div>
-          </div>
-        </div>
-      )
-    }
-    return output
-  }
 
-  render() {
-    return (
-      <ScrollContainer>
-        <div className="ExOvContainer">
-          <div className="ExOvBodyContainer">
-            <div className="ExOvBody">{this.renderUserProgress()}</div>
-          </div>
-        </div>
-      </ScrollContainer>
+    markup.push(
+      <QuestionBox key={questionId}>
+        <QuestionBoxInner className={boxStyle}>{questionId}</QuestionBoxInner>
+      </QuestionBox>
     )
   }
+  for (let i = 0; i < numberOfQuestions - examProgress.length; i++) {
+    markup.push(
+      <QuestionBox key={500 + i}>
+        <QuestionBoxInner>?</QuestionBoxInner>
+      </QuestionBox>
+    )
+  }
+
+  return (
+    <ScrollContainer>
+      <QuestionOverviewContainer>{markup}</QuestionOverviewContainer>
+    </ScrollContainer>
+  )
 }
 
 export default Review

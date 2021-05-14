@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { theme } from '../../../theme'
 
-const QuizOverviewContainer = styled.div`
+const QuestionOverviewContainer = styled.div`
   min-width: 15rem;
   max-width: 40rem;
   width: 100%;
@@ -13,15 +13,10 @@ const QuizOverviewContainer = styled.div`
 const QuestionBox = styled.div`
   position: relative;
   float: left;
-  width: 10%;
-  padding-top: 10%;
+  width: 20%;
+  padding-top: 20%;
   font-size: 0.8rem;
   overflow: hidden;
-
-  @media screen and (max-width: 48rem) {
-    width: 20%;
-    padding-top: 20%;
-  }
 `
 
 const QuestionBoxInner = styled.div`
@@ -35,20 +30,18 @@ const QuestionBoxInner = styled.div`
   overflow: hidden;
   color: #fff;
   display: flex;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
+  flex-flow: row nowrap;
   justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
-  cursor: pointer;
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+  &.correct {
+    background-color: ${theme.colors.green};
   }
 
-  &.active {
-    background-color: ${theme.colors.blue};
+  &.incorrect {
+    background-color: ${theme.colors.red};
   }
 `
 
-export { QuizOverviewContainer, QuestionBox, QuestionBoxInner }
+export { QuestionOverviewContainer, QuestionBox, QuestionBoxInner }

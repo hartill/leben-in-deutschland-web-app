@@ -1,7 +1,6 @@
 import React from 'react'
 import { ScrollContainer } from '../../layout'
-import { QuizOverviewContainer, QuestionBox, QuestionBoxInner } from '../../Quiz/QuestionOverview/styles'
-import { QuestionBoxInnerInner } from './styles'
+import { QuizOverviewContainer, QuestionBox, QuestionBoxInner } from './styles'
 
 function CatalogueOverview({ i, question, numberOfQuestions, handleQuestionSelected }) {
   let markup = []
@@ -15,9 +14,7 @@ function CatalogueOverview({ i, question, numberOfQuestions, handleQuestionSelec
           handleQuestionSelected(questionId)
         }}
       >
-        <QuestionBoxInner>
-          <QuestionBoxInnerInner className={extraClass}>{questionId}</QuestionBoxInnerInner>
-        </QuestionBoxInner>
+        <QuestionBoxInner className={extraClass}>{questionId}</QuestionBoxInner>
       </QuestionBox>
     )
   }
