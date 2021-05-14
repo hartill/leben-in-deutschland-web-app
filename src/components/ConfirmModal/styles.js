@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { theme } from '../../theme'
 
 const Backdrop = styled.div`
   position: fixed;
@@ -20,7 +21,7 @@ const ModalContainer = styled.div`
   z-index: 9999;
   padding: 1.5rem 2rem;
   max-width: 100%;
-  color: #222;
+  color: ${theme.colors.darkFont};
   background: #fff;
   box-shadow: 0px 0px 3px #000;
 `
@@ -38,7 +39,7 @@ const ConfirmationButtonContainer = styled.div`
 `
 
 const ConfirmationButton = styled.div`
-  background-color: #11a6ce;
+  background-color: ${theme.colors.blue};
   border: none;
   padding: 0.5rem;
   min-width: 80px;

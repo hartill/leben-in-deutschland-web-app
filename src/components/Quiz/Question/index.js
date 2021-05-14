@@ -8,7 +8,7 @@ function Question({ question, headerColor, showAnswer, selectedAnswer, onAnswerS
 
   return (
     <>
-      <QuizHeader style={{ backgroundColor: headerColor ? headerColor : theme.colors.slightlyDarkerBlue }}>
+      <QuizHeader style={{ backgroundColor: headerColor ? headerColor : theme.colors.blue }}>
         <QuestionNumber>{question.id}</QuestionNumber>
         <QuestionCategory>{question.category}</QuestionCategory>
       </QuizHeader>

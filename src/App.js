@@ -70,11 +70,72 @@ import image_448 from './static/images/schleswigHolstein/448.png'
 import image_451 from './static/images/thuringen/451.png'
 import image_458 from './static/images/thuringen/458.png'
 
+const loadQuestions = (selectedLocation) => {
+  let questions = quizQuestions
+
+  if (selectedLocation !== 'none') {
+    switch (selectedLocation) {
+      case 'badenWurttemberg':
+        questions = questions.concat(badenWurttembergQuestions)
+        break
+      case 'bayern':
+        questions = questions.concat(bayernQuestions)
+        break
+      case 'berlin':
+        questions = questions.concat(berlinQuestions)
+        break
+      case 'brandenburg':
+        questions = questions.concat(brandenburgQuestions)
+        break
+      case 'bremen':
+        questions = questions.concat(bremenQuestions)
+        break
+      case 'hamburg':
+        questions = questions.concat(hamburgQuestions)
+        break
+      case 'hessen':
+        questions = questions.concat(hessenQuestions)
+        break
+      case 'mecklenburgVorpommern':
+        questions = questions.concat(mecklenburgVorpommernQuestions)
+        break
+      case 'niedersachsen':
+        questions = questions.concat(niedersachsenQuestions)
+        break
+      case 'nordrheinWestfalen':
+        questions = questions.concat(nordrheinWestfalenQuestions)
+        break
+      case 'rheinlandPfalz':
+        questions = questions.concat(rheinlandPfalzQuestions)
+        break
+      case 'saarland':
+        questions = questions.concat(saarlandQuestions)
+        break
+      case 'sachsen':
+        questions = questions.concat(sachsenQuestions)
+        break
+      case 'sachsenAnhalt':
+        questions = questions.concat(sachsenAnhaltQuestions)
+        break
+      case 'schleswigHolstein':
+        questions = questions.concat(schleswigHolsteinQuestions)
+        break
+      case 'thuringen':
+        questions = questions.concat(thuringenQuestions)
+        break
+      default:
+        questions = questions
+    }
+  }
+  return questions
+}
+
 function App() {
   const cookies = new Cookies()
-  const [selectedLocation, setSelectedLocation] = useState(cookies.get('selectedLocation') || 'none')
-  const [questions, setQuestions] = useState(quizQuestions)
-  const [numberOfQuestions, setNumberOfQuestions] = useState(300)
+  let location = cookies.get('selectedLocation') || 'none'
+  const [selectedLocation, setSelectedLocation] = useState(location)
+  const [questions, setQuestions] = useState(loadQuestions(location))
+  const [numberOfQuestions, setNumberOfQuestions] = useState(location !== 'none' ? 310 : 300)
 
   const images = {
     image_021: image_021,
@@ -123,77 +184,15 @@ function App() {
   }
 
   useEffect(() => {
-    loadQuestionOptions()
-  }, [])
+    setQuestions(loadQuestions(selectedLocation))
+    setNumberOfQuestions(selectedLocation !== 'none' ? 310 : 300)
+  }, [selectedLocation])
 
   const restart = () => {
     cookies.remove('examQuestions')
     cookies.remove('examProgress')
     cookies.remove('progress')
     cookies.remove('incorrect')
-  }
-
-  const loadQuestionOptions = () => {
-    let newQuestions = quizQuestions
-
-    setNumberOfQuestions(selectedLocation !== 'none' ? 310 : 300)
-
-    if (selectedLocation !== 'none') {
-      switch (selectedLocation) {
-        case 'badenWurttemberg':
-          newQuestions = newQuestions.concat(badenWurttembergQuestions)
-          break
-        case 'bayern':
-          newQuestions = newQuestions.concat(bayernQuestions)
-          break
-        case 'berlin':
-          newQuestions = newQuestions.concat(berlinQuestions)
-          break
-        case 'brandenburg':
-          newQuestions = newQuestions.concat(brandenburgQuestions)
-          break
-        case 'bremen':
-          newQuestions = newQuestions.concat(bremenQuestions)
-          break
-        case 'hamburg':
-          newQuestions = newQuestions.concat(hamburgQuestions)
-          break
-        case 'hessen':
-          newQuestions = newQuestions.concat(hessenQuestions)
-          break
-        case 'mecklenburgVorpommern':
-          newQuestions = newQuestions.concat(mecklenburgVorpommernQuestions)
-          break
-        case 'niedersachsen':
-          newQuestions = newQuestions.concat(niedersachsenQuestions)
-          break
-        case 'nordrheinWestfalen':
-          newQuestions = newQuestions.concat(nordrheinWestfalenQuestions)
-          break
-        case 'rheinlandPfalz':
-          newQuestions = newQuestions.concat(rheinlandPfalzQuestions)
-          break
-        case 'saarland':
-          newQuestions = newQuestions.concat(saarlandQuestions)
-          break
-        case 'sachsen':
-          newQuestions = newQuestions.concat(sachsenQuestions)
-          break
-        case 'sachsenAnhalt':
-          newQuestions = newQuestions.concat(sachsenAnhaltQuestions)
-          break
-        case 'schleswigHolstein':
-          newQuestions = newQuestions.concat(schleswigHolsteinQuestions)
-          break
-        case 'thuringen':
-          newQuestions = newQuestions.concat(thuringenQuestions)
-          break
-        default:
-          newQuestions = newQuestions
-      }
-
-      setQuestions(newQuestions)
-    }
   }
 
   const handleLocationChange = (event) => {

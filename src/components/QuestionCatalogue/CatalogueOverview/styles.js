@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { theme } from '../../../theme'
 
 const QuestionBoxInnerInner = styled.div`
   width: 100%;
@@ -15,7 +16,7 @@ const QuestionBoxInnerInner = styled.div`
   }
 
   &.active {
-    background-color: #11a6ce;
+    background-color: ${theme.colors.blue};
     opacity: 1;
   }
 `

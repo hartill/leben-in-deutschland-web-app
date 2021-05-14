@@ -16,12 +16,12 @@ function Modal({ isOpen, onClose, title, onConfirm }) {
     <>
       <Backdrop onClick={(e) => close(e)}>
         <ModalContainer>
-          <ModalTitle>{title}</ModalTitle>
+          <ModalTitle key={'80jjj'}>{title}</ModalTitle>
           <ConfirmationButtonContainer>
-            <ConfirmationButton onClick={() => onConfirm()} style={{ marginRight: '12px' }}>
+            <ConfirmationButton onClick={() => onConfirm()} style={{ marginRight: '12px' }} key={'80984'}>
               Ja
             </ConfirmationButton>
-            <ConfirmationButton onClick={() => onClose()}>Nein</ConfirmationButton>
+            <ConfirmationButton onClick={() => onClose()} key={'8ufhhfjkh'}>Nein</ConfirmationButton>
           </ConfirmationButtonContainer>
         </ModalContainer>
       </Backdrop>

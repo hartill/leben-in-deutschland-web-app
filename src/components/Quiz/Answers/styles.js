@@ -27,7 +27,7 @@ const AnswerOption = styled.label`
   }
 
   &.showCorrectAnswer {
-    background-color: ${theme.colors.slightlyDarkerBlue};
+    background-color: ${theme.colors.blue};
     color: #fff;
   }
 

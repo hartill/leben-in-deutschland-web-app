@@ -5,7 +5,7 @@ const QuizHeader = styled.div`
   display: flex;
   flex-shrink: 0;
   flex-grow: 0;
-  background-color: ${theme.colors.slightlyDarkerBlue};
+  background-color: ${theme.colors.blue};
   height: 3.75rem;
   justify-content: space-between;
   color: #fff;

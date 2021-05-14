@@ -7,5 +7,6 @@ export const theme = {
     slightlyDarkerBlue: '#11a6ce',
     green: '#2cc990',
     yellow: '#ffa400',
+    darkFont: '#222222'
   },
 }

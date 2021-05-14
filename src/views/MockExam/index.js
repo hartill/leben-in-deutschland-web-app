@@ -41,7 +41,7 @@ function MockExam({ questions, images, totalNumberOfQuestions }) {
       const newExamQuestions = generateQuestionArray()
       setExamQuestions(newExamQuestions)
     }
-  }, [])
+  }, [numberOfQuestions])
 
   useEffect(() => {
     if (examQuestions.length > 0) {
@@ -58,7 +58,7 @@ function MockExam({ questions, images, totalNumberOfQuestions }) {
     if (numberOfQuestions === 33 && examQuestions.length < 33) {
       restart()
     }
-  }, [])
+  }, [numberOfQuestions])
 
   useEffect(() => {
     writeCookie('examProgress', examProgress)
