@@ -4,9 +4,19 @@ export const theme = {
     secondary: '#3e4651',
     red: '#dd5152',
     blue: '#37b1e3',
-    slightlyDarkerBlue: '#11a6ce',
     green: '#2cc990',
     yellow: '#ffa400',
-    darkFont: '#222222'
+    darkFont: '#222222',
+    midFont: '#555555',
+    midGrey: '#3e4651',
+    white: '#ffffff',
+    black: '#000000',
+  },
+  size: {
+    maxColumnWidth: '40rem',
+    minColumnWidth: '15rem',
+  },
+  breakpoints: {
+    tablet: '48rem',
   },
 }
