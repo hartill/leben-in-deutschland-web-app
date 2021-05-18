@@ -1,6 +1,6 @@
 import React from 'react'
 import { GameOverContainer, GameOverBar } from './styles'
-import { QuizHeader, QuestionCategory, QuizBodyContainer } from '../Question/styles'
+import { QuizHeader, QuestionCategory } from '../Question/styles'
 
 interface IGameOver {}
 
@@ -10,13 +10,11 @@ const GameOver: React.FC<IGameOver> = () => {
       <QuizHeader>
         <QuestionCategory>Fertig!</QuestionCategory>
       </QuizHeader>
-      <QuizBodyContainer>
-        <GameOverContainer>
-          <GameOverBar className="black"></GameOverBar>
-          <GameOverBar className="red"></GameOverBar>
-          <GameOverBar className="yellow"></GameOverBar>
-        </GameOverContainer>
-      </QuizBodyContainer>
+      <GameOverContainer>
+        <GameOverBar className="black"></GameOverBar>
+        <GameOverBar className="red"></GameOverBar>
+        <GameOverBar className="yellow"></GameOverBar>
+      </GameOverContainer>
     </>
   )
 }

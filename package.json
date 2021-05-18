@@ -1,6 +1,6 @@
 {
-  "name": "leben-in-deutschland",
-  "version": "0.1.0",
+  "name": "leben-in-deutschland-web-app",
+  "version": "2.0.0",
   "private": true,
   "strict": false,
   "dependencies": {

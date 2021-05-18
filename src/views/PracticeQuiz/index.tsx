@@ -78,8 +78,12 @@ const PracticeQuiz: React.FC<IPracticeQuiz> = ({ questions, images, totalNumberO
   }
 
   if (!question && !completed) {
-    const nextQuestion = generateNextRandomQuestion(questions, progress, totalNumberOfQuestions)
-    setQuestion(nextQuestion)
+    if (progress.length >= totalNumberOfQuestions) {
+      setCompleted(true)
+    } else {
+      const nextQuestion = generateNextRandomQuestion(questions, progress, totalNumberOfQuestions)
+      setQuestion(nextQuestion)
+    }
     return null
   }
 
