@@ -3,11 +3,11 @@ import { ReactComponent as ForwardArrowIcon } from '../../../svg/forwards-arrow.
 import { FooterContainer } from '../../layout'
 import { FullWidthNextButton } from '../styles'
 
-interface IFooterQc {
+interface ICatalogueFooter {
   nextQuestion: Function
 }
 
-const FooterCatalogue: React.FC<IFooterQc> = ({ nextQuestion }) => {
+const CatalogueFooter: React.FC<ICatalogueFooter> = ({ nextQuestion }) => {
   return (
     <FooterContainer>
       <FullWidthNextButton onClick={() => nextQuestion()}>
@@ -17,4 +17,4 @@ const FooterCatalogue: React.FC<IFooterQc> = ({ nextQuestion }) => {
   )
 }
 
-export default FooterCatalogue
+export default CatalogueFooter

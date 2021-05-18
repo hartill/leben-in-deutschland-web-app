@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header'
-import Footer from '../../components/Footer/FooterPractice'
+import PracticeFooter from '../../components/Footer/PracticeFooter'
 import Quiz from '../../components/Quiz'
 import Cookies from 'universal-cookie'
 import { AppContainer } from '../../components/layout'
@@ -19,8 +19,8 @@ const PracticeQuiz: React.FC<IPracticeQuiz> = ({ questions, images, totalNumberO
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [completed, setCompleted] = useState(false)
   const [viewProgress, setViewProgress] = useState<Boolean>(false)
-  const [progress, setProgress] = useState(cookies.get('progress') ? cookies.get('progress') : [])
-  const [incorrect, setIncorrect] = useState(cookies.get('incorrect') ? cookies.get('incorrect') : [])
+  const [progress, setProgress] = useState<string[]>(cookies.get('progress') ? cookies.get('progress') : [])
+  const [incorrect, setIncorrect] = useState<string[]>(cookies.get('incorrect') ? cookies.get('incorrect') : [])
 
   useEffect(() => {
     incorrect.sort(function (a: any, b: any) {
@@ -106,7 +106,7 @@ const PracticeQuiz: React.FC<IPracticeQuiz> = ({ questions, images, totalNumberO
         completed={completed}
         images={images}
       />
-      <Footer
+      <PracticeFooter
         progress={progress}
         numberOfQuestions={totalNumberOfQuestions}
         nextQuestion={nextQuestion}

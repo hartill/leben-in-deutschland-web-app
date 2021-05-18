@@ -2,13 +2,13 @@ import React from 'react'
 import { ScrollContainer } from '../../layout'
 import { QuizOverviewContainer, QuestionBox, QuestionBoxInner } from './styles'
 
-interface ICatalogueOverview {
+interface IQuestionOverview {
   question: any
   numberOfQuestions: number
   handleQuestionSelected: Function
 }
 
-const CatalogueOverview: React.FC<ICatalogueOverview> = ({ question, numberOfQuestions, handleQuestionSelected }) => {
+const QuestionOverview: React.FC<IQuestionOverview> = ({ question, numberOfQuestions, handleQuestionSelected }) => {
   let markup = []
   for (let i = 1; i < numberOfQuestions + 1; i++) {
     const questionId = i
@@ -32,4 +32,4 @@ const CatalogueOverview: React.FC<ICatalogueOverview> = ({ question, numberOfQue
   )
 }
 
-export default CatalogueOverview
+export default QuestionOverview

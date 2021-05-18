@@ -10,17 +10,10 @@ interface IHome {
 }
 
 const Home: React.FC<IHome> = ({ selectedLocation, handleLocationChange }) => {
-  const confirmLocationChange = (e: any) => {
-    const continueWithLocationChange = window.confirm('Ihr Fortschritt wird zurückgesetzt')
-    if (continueWithLocationChange) {
-      handleLocationChange(e)
-    }
-  }
-
   return (
     <HomePageDiv>
       <Header title={'Leben in Deutschland Test'} />
-      <SelectLocation selectedLocation={selectedLocation} handleLocationChange={confirmLocationChange} />
+      <SelectLocation selectedLocation={selectedLocation} handleLocationChange={handleLocationChange} />
       <HomeContainer>
         <Link to="/trainieren">
           <MenuItem className="ubung">Trainieren</MenuItem>

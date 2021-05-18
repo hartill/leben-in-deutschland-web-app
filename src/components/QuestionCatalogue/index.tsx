@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import CatalogueOverview from './CatalogueOverview'
+import QuestionOverview from './QuestionOverview'
 import Question from '../Quiz/Question'
 import { Container } from '../layout'
 import { QuizContainer, DisplayImageText, Milk } from '../Quiz/styles'
@@ -42,7 +42,7 @@ const QuestionCatalogue: React.FC<IQuestionCatalogue> = ({
   }
 
   if (viewProgress) {
-    return <CatalogueOverview numberOfQuestions={numberOfQuestions} handleQuestionSelected={handleQuestionSelected} question={question} />
+    return <QuestionOverview numberOfQuestions={numberOfQuestions} handleQuestionSelected={handleQuestionSelected} question={question} />
   } else {
     return (
       <Container>

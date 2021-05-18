@@ -16,7 +16,7 @@ const GameOverBar = styled.div`
   }
 
   &.red {
-    backgroundcolor: ${theme.colors.red};
+    background-color: ${theme.colors.red};
   }
 
   &.yellow {

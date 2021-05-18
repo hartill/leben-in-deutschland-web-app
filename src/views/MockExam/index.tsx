@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../../components/Header'
-import ExamFooter from '../../components/Footer/FooterExam'
-import Exam from '../../components/Exam'
+import MockExamFooter from '../../components/Footer/MockExamFooter'
+import MockExam from '../../components/MockExam'
 import Cookies from 'universal-cookie'
 import { AppContainer } from '../../components/layout'
 import { writeCookie, generateQuestionArray } from '../../helpers'
@@ -12,17 +12,17 @@ interface IMockExam {
   totalNumberOfQuestions: number
 }
 
-const MockExam: React.FC<IMockExam> = ({ questions, images, totalNumberOfQuestions }) => {
+const MockExamView: React.FC<IMockExam> = ({ questions, images, totalNumberOfQuestions }) => {
   const cookies = new Cookies()
   const [question, setQuestion] = useState(null)
   const [showAnswer, setShowAnswer] = useState(false)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [examCompleted, setExamCompleted] = useState(false)
   const [viewProgress, setViewProgress] = useState(false)
-  const [examProgress, setExamProgress] = useState(cookies.get('examProgress') ? cookies.get('examProgress') : [])
-  const [examQuestions, setExamQuestions] = useState(cookies.get('examQuestions') ? cookies.get('examQuestions') : [])
+  const [examProgress, setExamProgress] = useState<any[]>(cookies.get('examProgress') ? cookies.get('examProgress') : [])
+  const [examQuestions, setExamQuestions] = useState<any[]>(cookies.get('examQuestions') ? cookies.get('examQuestions') : [])
 
-  let numberOfQuestions = totalNumberOfQuestions > 300 ? 33 : 30
+  const numberOfQuestions = totalNumberOfQuestions > 300 ? 33 : 30
 
   const restart = () => {
     cookies.remove('examQuestions')
@@ -38,12 +38,10 @@ const MockExam: React.FC<IMockExam> = ({ questions, images, totalNumberOfQuestio
     setExamCompleted(false)
   }
 
-  useEffect(() => {
-    if (!examQuestions.length) {
-      const newExamQuestions = generateQuestionArray(numberOfQuestions)
-      setExamQuestions(newExamQuestions)
-    }
-  }, [numberOfQuestions, examQuestions.length])
+  if (!examQuestions?.length) {
+    const newExamQuestions = generateQuestionArray(numberOfQuestions)
+    setExamQuestions(newExamQuestions)
+  }
 
   useEffect(() => {
     writeCookie('examQuestions', examQuestions)
@@ -54,10 +52,10 @@ const MockExam: React.FC<IMockExam> = ({ questions, images, totalNumberOfQuestio
   }, [examProgress])
 
   const checkForRestart = () => {
-    if (numberOfQuestions === 30 && examQuestions.length > 30) {
+    if (numberOfQuestions === 30 && examQuestions && examQuestions.length > 30) {
       restart()
     }
-    if (numberOfQuestions === 33 && examQuestions.length < 33) {
+    if (numberOfQuestions === 33 && examQuestions && examQuestions.length < 33) {
       restart()
     }
   }
@@ -97,7 +95,11 @@ const MockExam: React.FC<IMockExam> = ({ questions, images, totalNumberOfQuestio
   }
 
   if (!question && !examCompleted) {
-    setQuestion(questions[examQuestions[examProgress.length]])
+    if (examProgress.length >= numberOfQuestions && !examCompleted) {
+      setExamCompleted(true)
+    } else {
+      setQuestion(questions[examQuestions[examProgress.length]])
+    }
     return null
   }
 
@@ -111,7 +113,7 @@ const MockExam: React.FC<IMockExam> = ({ questions, images, totalNumberOfQuestio
         viewProgressOpen={viewProgress}
         handleViewProgress={handleViewProgress}
       />
-      <Exam
+      <MockExam
         viewProgress={viewProgress}
         examProgress={examProgress}
         showAnswer={showAnswer}
@@ -122,7 +124,7 @@ const MockExam: React.FC<IMockExam> = ({ questions, images, totalNumberOfQuestio
         examCompleted={examCompleted}
         images={images}
       />
-      <ExamFooter
+      <MockExamFooter
         examProgress={examProgress}
         numberOfQuestions={numberOfQuestions}
         nextQuestion={nextQuestion}
@@ -135,4 +137,4 @@ const MockExam: React.FC<IMockExam> = ({ questions, images, totalNumberOfQuestio
   )
 }
 
-export default MockExam
+export default MockExamView

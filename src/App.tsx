@@ -2,27 +2,27 @@ import React, { useState, useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Cookies from 'universal-cookie'
 import PracticeQuiz from './views/PracticeQuiz'
-import MockExam from './views/MockExam'
+import MockExamView from './views/MockExam'
 import QuestionCatalogue from './views/QuestionCatalogue'
 import Home from './views/Home'
 // Questions
-import quizQuestions from './api/quizQuestions'
-import badenWurttembergQuestions from './api/badenWurttembergQuestions'
-import bayernQuestions from './api/bayernQuestions'
-import berlinQuestions from './api/berlinQuestions'
-import brandenburgQuestions from './api/brandenburgQuestions'
-import bremenQuestions from './api/bremenQuestions'
-import hamburgQuestions from './api/hamburgQuestions'
-import hessenQuestions from './api/hessenQuestions'
-import mecklenburgVorpommernQuestions from './api/mecklenburgVorpommernQuestions'
-import niedersachsenQuestions from './api/niedersachsenQuestions'
-import nordrheinWestfalenQuestions from './api/nordrheinWestfalenQuestions'
-import rheinlandPfalzQuestions from './api/rheinlandPfalzQuestions'
-import saarlandQuestions from './api/saarlandQuestions'
-import sachsenQuestions from './api/sachsenQuestions'
-import sachsenAnhaltQuestions from './api/sachsenAnhaltQuestions'
-import schleswigHolsteinQuestions from './api/schleswigHolsteinQuestions'
-import thuringenQuestions from './api/thuringenQuestions'
+import quizQuestions from './data/quizQuestions'
+import badenWurttembergQuestions from './data/badenWurttembergQuestions'
+import bayernQuestions from './data/bayernQuestions'
+import berlinQuestions from './data/berlinQuestions'
+import brandenburgQuestions from './data/brandenburgQuestions'
+import bremenQuestions from './data/bremenQuestions'
+import hamburgQuestions from './data/hamburgQuestions'
+import hessenQuestions from './data/hessenQuestions'
+import mecklenburgVorpommernQuestions from './data/mecklenburgVorpommernQuestions'
+import niedersachsenQuestions from './data/niedersachsenQuestions'
+import nordrheinWestfalenQuestions from './data/nordrheinWestfalenQuestions'
+import rheinlandPfalzQuestions from './data/rheinlandPfalzQuestions'
+import saarlandQuestions from './data/saarlandQuestions'
+import sachsenQuestions from './data/sachsenQuestions'
+import sachsenAnhaltQuestions from './data/sachsenAnhaltQuestions'
+import schleswigHolsteinQuestions from './data/schleswigHolsteinQuestions'
+import thuringenQuestions from './data/thuringenQuestions'
 // Images
 import image_021 from './static/images/021.png'
 import image_055 from './static/images/055.png'
@@ -187,10 +187,10 @@ function App() {
   }, [selectedLocation])
 
   const restart = () => {
-    cookies.remove('examQuestions')
-    cookies.remove('examProgress')
-    cookies.remove('progress')
-    cookies.remove('incorrect')
+    cookies.remove('examQuestions', { path: '/' })
+    cookies.remove('examProgress', { path: '/' })
+    cookies.remove('progress', { path: '/' })
+    cookies.remove('incorrect', { path: '/' })
   }
 
   const handleLocationChange = (event: any) => {
@@ -210,7 +210,7 @@ function App() {
         <PracticeQuiz questions={questions} totalNumberOfQuestions={numberOfQuestions} images={images} />
       </Route>
       <Route exact path={'/probe-prufung'}>
-        <MockExam questions={questions} totalNumberOfQuestions={numberOfQuestions} images={images} />
+        <MockExamView questions={questions} totalNumberOfQuestions={numberOfQuestions} images={images} />
       </Route>
       <Route exact path={'/fragen-katalog'}>
         <QuestionCatalogue questions={questions} totalNumberOfQuestions={numberOfQuestions} images={images} />

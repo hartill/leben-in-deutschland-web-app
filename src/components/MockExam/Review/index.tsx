@@ -26,6 +26,7 @@ const Review: React.FC<IReview> = ({ examProgress, numberOfQuestions }) => {
       </QuestionBox>
     )
   }
+
   for (let i = 0; i < numberOfQuestions - examProgress.length; i++) {
     markup.push(
       <QuestionBox key={500 + i}>

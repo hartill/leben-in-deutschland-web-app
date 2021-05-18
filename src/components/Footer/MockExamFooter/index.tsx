@@ -6,7 +6,7 @@ import { FooterContainer } from '../../layout'
 import { NextButton, ResetButton } from '../styles'
 import { theme } from '../../../theme'
 
-interface IFooter {
+interface IMockExamFooter {
   viewProgress: Boolean
   examCompleted: Boolean
   restart: Function
@@ -16,7 +16,7 @@ interface IFooter {
   nextQuestion: Function
 }
 
-const Footer: React.FC<IFooter> = ({ viewProgress, examCompleted, restart, showAnswer, examProgress, numberOfQuestions, nextQuestion }) => {
+const MockExamFooter: React.FC<IMockExamFooter> = ({ viewProgress, examCompleted, restart, showAnswer, examProgress, numberOfQuestions, nextQuestion }) => {
   const [isModalOpen, setIsModalOpen] = useState<Boolean>(false)
 
   const openModal = () => {
@@ -55,11 +55,11 @@ const Footer: React.FC<IFooter> = ({ viewProgress, examCompleted, restart, showA
 
   return (
     <FooterContainer>
-      <ProgressBar progress={examProgress} numberOfQuestions={numberOfQuestions} key={'72873'} progressColor={theme.colors.blue} />
+      <ProgressBar progressLength={examProgress.length} totalNumberOfQuestions={numberOfQuestions} progressColor={theme.colors.blue} key={'72873'}/>
       {buttonMarkup}
       <ConfirmModal title="Neustart?" isOpen={isModalOpen} onClose={() => closeModal()} onConfirm={handleCloseAndRestart} key={'4498'} />
     </FooterContainer>
   )
 }
 
-export default Footer
+export default MockExamFooter

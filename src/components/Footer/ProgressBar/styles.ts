@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { theme } from '../../../theme'
 
-const UserProgressContainer = styled.div`
+const ProgressContainer = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -12,7 +12,7 @@ const UserProgressContainer = styled.div`
   height: 100%;
 `
 
-const UserProgressIndicator = styled.div`
+const ProgressIndicator = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -21,8 +21,8 @@ const UserProgressIndicator = styled.div`
   height: 100%;
 `
 
-const Score = styled.div`
+const DisplayScore = styled.div`
   z-index: 1;
 `
 
-export { UserProgressContainer, UserProgressIndicator, Score }
+export { ProgressContainer, ProgressIndicator, DisplayScore }

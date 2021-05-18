@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import QuestionCatalogueQuiz from '../../components/QuestionCatalogue'
-import FooterCatalogue from '../../components/Footer/FooterCatalogue'
+import CatalogueFooter from '../../components/Footer/CatalogueFooter'
 import Header from '../../components/Header'
 import { AppContainer } from '../../components/layout'
 
@@ -59,7 +59,7 @@ const QuestionCatalogue: React.FC<IQuestionCatalogue> = ({ questions, images, to
         handleQuestionSelected={handleQuestionSelected}
         images={images}
       />
-      <FooterCatalogue nextQuestion={nextQuestion} />
+      <CatalogueFooter nextQuestion={nextQuestion} />
     </AppContainer>
   )
 }

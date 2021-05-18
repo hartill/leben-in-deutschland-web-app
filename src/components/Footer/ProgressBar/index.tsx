@@ -1,25 +1,25 @@
 import React from 'react'
-import { UserProgressContainer, UserProgressIndicator, Score } from './styles'
+import { ProgressContainer, ProgressIndicator, DisplayScore } from './styles'
 
 interface IProgressBar {
-  progress: any
-  numberOfQuestions: number
+  progressLength: number
+  totalNumberOfQuestions: number
   progressColor: string
 }
 
-const ProgressBar: React.FC<IProgressBar> = ({ progress, numberOfQuestions, progressColor }) => {
-  const userProgressPercent = 100 - (progress.length / numberOfQuestions) * 100
+const ProgressBar: React.FC<IProgressBar> = ({ progressLength, totalNumberOfQuestions, progressColor }) => {
+  const userProgressPercent = Math.round(100 - (progressLength / totalNumberOfQuestions) * 100)
   const userProgressStyle = {
     right: userProgressPercent + '%',
     backgroundColor: progressColor,
   }
   return (
-    <UserProgressContainer key={'njk'}>
-      <UserProgressIndicator style={userProgressStyle} key={'3grgg'}></UserProgressIndicator>
-      <Score key={'okkk'}>
-        {progress.length} / {numberOfQuestions}
-      </Score>
-    </UserProgressContainer>
+    <ProgressContainer key={'njk'}>
+      <ProgressIndicator style={userProgressStyle} key={'3grgg'}></ProgressIndicator>
+      <DisplayScore key={'okkk'}>
+        {progressLength} / {totalNumberOfQuestions}
+      </DisplayScore>
+    </ProgressContainer>
   )
 }
 

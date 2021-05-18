@@ -6,7 +6,7 @@ import { theme } from '../../theme'
 import { Container } from '../layout'
 import { QuizContainer, DisplayImageText, Milk } from '../Quiz/styles'
 
-interface IExam {
+interface IMockExam {
   images: any
   numberOfQuestions: number
   question: any
@@ -18,7 +18,7 @@ interface IExam {
   examCompleted: Boolean
 }
 
-const Exam: React.FC<IExam> = ({
+const MockExam: React.FC<IMockExam> = ({
   images,
   numberOfQuestions,
   question,
@@ -68,4 +68,4 @@ const Exam: React.FC<IExam> = ({
   }
 }
 
-export default Exam
+export default MockExam
