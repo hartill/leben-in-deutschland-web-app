@@ -67,6 +67,7 @@ import image_441 from './static/images/schleswigHolstein/441.png'
 import image_448 from './static/images/schleswigHolstein/448.png'
 import image_451 from './static/images/thuringen/451.png'
 import image_458 from './static/images/thuringen/458.png'
+import PrivacyPolicy from './views/PrivacyPolicy'
 
 const loadQuestions = (selectedLocation: string) => {
   let questions = quizQuestions
@@ -206,6 +207,9 @@ function App() {
 
   return (
     <Switch>
+      <Route exact path={'/privacy-policy'}>
+        <PrivacyPolicy />
+      </Route>
       <Route exact path={'/trainieren'}>
         <PracticeQuiz questions={questions} totalNumberOfQuestions={numberOfQuestions} images={images} />
       </Route>

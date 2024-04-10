@@ -1,1 +1,3 @@
-### Leben in Deutschland Test Practice App
+### Leben in Deutschland Test
+
+Practice quiz for German integration exam
